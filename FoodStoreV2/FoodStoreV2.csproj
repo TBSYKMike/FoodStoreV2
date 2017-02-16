@@ -76,6 +76,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -210,6 +211,17 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="WebForms\ConfirmationPage_WebForm.aspx" />
+    <Content Include="WebForms\ForgotPassword_WebForm.aspx" />
+    <Content Include="WebForms\Login_WebForm.aspx" />
+    <Content Include="WebForms\OrderFinish_WebForm.aspx" />
+    <Content Include="WebForms\Payment_WebForm.aspx" />
+    <Content Include="WebForms\ProductPage_WebForm.aspx" />
+    <Content Include="WebForms\Register_WebForm.aspx" />
+    <Content Include="WebForms\SearchPage_WebForm.aspx" />
+    <Content Include="WebForms\ShoppingCart_WebForm.aspx" />
+    <Content Include="WebForms\ShoppingPage_WebForm.aspx" />
+    <Content Include="WebForms\ShowAndEditProfile_WebForm.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -382,6 +394,11 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CSharpClasses\Customer.cs" />
+    <Compile Include="CSharpClasses\DatabaseConnector.cs" />
+    <Compile Include="CSharpClasses\Order.cs" />
+    <Compile Include="CSharpClasses\Product.cs" />
+    <Compile Include="CSharpClasses\VerifyReCaptcha.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -415,6 +432,83 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ConfirmationPage_WebForm.aspx.cs">
+      <DependentUpon>ConfirmationPage_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ConfirmationPage_WebForm.aspx.designer.cs">
+      <DependentUpon>ConfirmationPage_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ForgotPassword_WebForm.aspx.cs">
+      <DependentUpon>ForgotPassword_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ForgotPassword_WebForm.aspx.designer.cs">
+      <DependentUpon>ForgotPassword_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Login_WebForm.aspx.cs">
+      <DependentUpon>Login_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Login_WebForm.aspx.designer.cs">
+      <DependentUpon>Login_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\OrderFinish_WebForm.aspx.cs">
+      <DependentUpon>OrderFinish_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\OrderFinish_WebForm.aspx.designer.cs">
+      <DependentUpon>OrderFinish_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Payment_WebForm.aspx.cs">
+      <DependentUpon>Payment_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Payment_WebForm.aspx.designer.cs">
+      <DependentUpon>Payment_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ProductPage_WebForm.aspx.cs">
+      <DependentUpon>ProductPage_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ProductPage_WebForm.aspx.designer.cs">
+      <DependentUpon>ProductPage_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Register_WebForm.aspx.cs">
+      <DependentUpon>Register_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Register_WebForm.aspx.designer.cs">
+      <DependentUpon>Register_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\SearchPage_WebForm.aspx.cs">
+      <DependentUpon>SearchPage_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\SearchPage_WebForm.aspx.designer.cs">
+      <DependentUpon>SearchPage_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ShoppingCart_WebForm.aspx.cs">
+      <DependentUpon>ShoppingCart_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ShoppingCart_WebForm.aspx.designer.cs">
+      <DependentUpon>ShoppingCart_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ShoppingPage_WebForm.aspx.cs">
+      <DependentUpon>ShoppingPage_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ShoppingPage_WebForm.aspx.designer.cs">
+      <DependentUpon>ShoppingPage_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ShowAndEditProfile_WebForm.aspx.cs">
+      <DependentUpon>ShowAndEditProfile_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ShowAndEditProfile_WebForm.aspx.designer.cs">
+      <DependentUpon>ShowAndEditProfile_WebForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
