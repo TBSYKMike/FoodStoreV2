@@ -84,6 +84,44 @@ namespace FoodStoreV2.CSharpClasses
             }
             return null;
         }
+        public void insertCustomer(String name, String streetAdress, String city, String postCode, String emailAdress, String userPassword, String userName)
+        {
+            startConnection();
+            createCommand("INSERT INTO Customers (name,street,city,postCode,email,password,userName) VALUES('" + name + "','" + streetAdress + "','" + city + "','" + postCode + "','" + emailAdress + "','" + userPassword + "','" + userName + "')");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public Boolean checkIfCollumnValueExist(String table, String collumn, String value)
+        {
+            startConnection();
+            createCommand("SELECT " + collumn + " FROM " + table + " WHERE " + collumn + "='" + value + "'");
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                conn.Close();
+                return false;
+            }
+            conn.Close();
+            return true;
+        }
+        public Boolean checkUserCredentials(String emailAdress, String password)
+        {
+            startConnection();
+            createCommand("SELECT email, password FROM Customers");
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.GetString(0).Equals(emailAdress) && reader.GetString(1).Equals(password))
+                {
+                    conn.Close();
+                    return true;
+                }
+            }
+
+            conn.Close();
+            return false;
+        }
 
     }
 }

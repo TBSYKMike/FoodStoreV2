@@ -10,34 +10,26 @@ namespace FoodStoreV2.WebForms
 {
     public partial class Register_WebForm : System.Web.UI.Page
     {
+        private DatabaseConnector databaseConnector;
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void test_CLICK(object sender, EventArgs e)
+        protected void emailExistValidator_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            DatabaseConnector databaseConnector = new DatabaseConnector();
-            Customer customer = databaseConnector.getCustomerObject("sven@live.se");
-            System.Diagnostics.Debug.WriteLine(customer.getName());
+            databaseConnector = new DatabaseConnector();
+            args.IsValid = databaseConnector.checkIfCollumnValueExist("Customers", "email", args.Value);
+        }
+        protected void userNameExistValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            databaseConnector = new DatabaseConnector();
+            args.IsValid = databaseConnector.checkIfCollumnValueExist("Customers", "userName", args.Value);
         }
 
-        protected void searchButton_Click(object sender, EventArgs e)
+        protected void registerButton_Click(object sender, EventArgs e)
         {
-            /*   this.Validate();
-               if (this.IsValid)//Needs to fulfill all validating
-               {
-                   System.Diagnostics.Debug.WriteLine("Tried to search for a book");
-                   //Search algoritm database
-                   DatabaseConnector databaseConnector = new DatabaseConnector();
-                  // List<Product> productList = databaseConnector.
-                   //Session.Add("productList", productList);
-                   Response.Redirect("BooksPage.aspx");
-               }
-               else
-               {
+            this.Validate();
 
-               }
-               */
             var encodedResponse = Request.Form["g-Recaptcha-Response"];
             VerifyReCaptcha captcha = new VerifyReCaptcha();
             bool isCaptchaValid = captcha.verifyCapcha(encodedResponse);
@@ -45,12 +37,111 @@ namespace FoodStoreV2.WebForms
             if (isCaptchaValid)
             {
                 System.Diagnostics.Debug.WriteLine("You are a real person!");
+                if (this.IsValid)//Needs to fulfill all validating
+                {
+                    databaseConnector = new DatabaseConnector();
+                    databaseConnector.insertCustomer(nameTextBox.Text, streetAdressTextBox.Text, cityTextbox.Text, postCodetextBox.Text, emailTextBox.Text, passwordTextBox.Text, userNameTextBox.Text);
+                    System.Diagnostics.Debug.WriteLine("inserted User in database");
+                }
+
             }
             else
             {
                 System.Diagnostics.Debug.WriteLine("You are not human!");
+                robotLabel.Visible = true;
             }
+          
+
         }
+
+
+        /* protected void searchButton_Click(object sender, EventArgs e)
+         {
+             /*   this.Validate();
+                if (this.IsValid)//Needs to fulfill all validating
+                {
+                    System.Diagnostics.Debug.WriteLine("Tried to search for a book");
+                    //Search algoritm database
+                    DatabaseConnector databaseConnector = new DatabaseConnector();
+                   // List<Product> productList = databaseConnector.
+                    //Session.Add("productList", productList);
+                    Response.Redirect("BooksPage.aspx");
+                }
+                else
+                {
+
+                }
+                */
+
+        //}
+
+
+        protected void streetValidate(object source, ServerValidateEventArgs args)
+        {
+            Boolean value = true;
+            Boolean space = false;
+            Boolean hasNumber = false;
+            if (Char.IsLetter(args.Value[0]))
+            {
+                System.Diagnostics.Debug.WriteLine("First is letter");
+                for (int i = 0; i < args.Value.Length; i++)
+                {
+                    System.Diagnostics.Debug.WriteLine("For letter:   " + args.Value[i]);
+                    if (Char.IsLetter(args.Value[i]))
+                    {
+                        if (space)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Fail:  letter after space");
+                            value = false;
+                            break;
+                        }
+                    }
+                    else if (char.IsWhiteSpace(args.Value[i]))
+                    {
+                        if (space)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Fail:  space again");
+                            value = false;
+                            break;
+                        }
+                        space = true;
+                    }
+                    else if (Char.IsNumber(args.Value[i]))
+                    {
+                        if (space == false)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Fail:  number before space");
+                            value = false;
+                            break;
+                        }
+                        else
+                        {
+                            System.Diagnostics.Debug.WriteLine("Have a number");
+                            hasNumber = true;
+                        }
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("Not a valid character");
+                        value = false;
+                        break;
+                    }
+                }
+                if (space = false || hasNumber == false)
+                {
+                    System.Diagnostics.Debug.WriteLine("no space and no number");
+                    value = false;
+                }
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("first character is not a letter");
+                value = false;
+            }
+            args.IsValid = value;
+        }
+
+  
     }
 
     
