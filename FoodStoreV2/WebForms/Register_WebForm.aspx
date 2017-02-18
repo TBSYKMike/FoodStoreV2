@@ -8,12 +8,13 @@
         <asp:CustomValidator ID="userNameExistValidator" ValidationGroup='register' runat="server" style="position:absolute; top: 150px; left: 377px; width: 14px; height: 12px;" ControlToValidate="userNameTextBox" Text="*" ErrorMessage="Username allready exist" OnServerValidate="userNameExistValidator_ServerValidate"></asp:CustomValidator>
     
         <asp:Label ID="passwordOneLabel" runat="server" Text="password" style="position:absolute; top: 228px; left: -17px; height: 27px; width: 66px; margin-left: 141px;"></asp:Label>
-        <asp:TextBox ID="passwordTextBox" runat="server" style="position:absolute; top: 223px; left: 205px; height: 22px; width: 139px;"></asp:TextBox> 
+        <asp:TextBox ID="passwordTextBox" TextMode="Password" runat="server" style="position:absolute; top: 223px; left: 205px; height: 22px; width: 139px;"></asp:TextBox> 
         <asp:RegularExpressionValidator ID="passwordValidator" runat="server" ValidationGroup='register' style="position:absolute; top: 236px; left: 364px; width: 15px; height: 15px;" ControlToValidate="passwordTextbox" Text="*" ErrorMessage="Password must be with numbers and letters and at least 10 char long" ValidationExpression ="^(?=.*\d)(?=.*[a-zA-Z]).{10,}$"></asp:RegularExpressionValidator>
-        <asp:CompareValidator ID="CompareValidator1" runat="server" ValidationGroup='register' style="position:absolute; top: 111px; left: 376px; height: 11px; width: 11px;" ErrorMessage="Passwords do not match" ControlToValidate="passwordTextBox" ControlToCompare="repasswordTextBox" Text="*" ></asp:CompareValidator>
+        <asp:CompareValidator ID="CompareValidator1" runat="server" ValidationGroup='register' style="position:absolute; top: 111px; left: 376px; height: 11px; width: 11px;" ErrorMessage="
+             not match" ControlToValidate="passwordTextBox" ControlToCompare="repasswordTextBox" Text="*" ></asp:CompareValidator>
        
         <asp:Label ID="passwordTwoLabel" runat="server" Text="re-enter password" style="position:absolute; top: 107px; left: 84px;"></asp:Label>
-        <asp:TextBox ID="repasswordTextBox" runat="server" style="position:absolute; top: 98px; left: 207px; height: 22px; width: 139px;"></asp:TextBox> 
+        <asp:TextBox ID="repasswordTextBox" TextMode="Password" runat="server" style="position:absolute; top: 98px; left: 207px; height: 22px; width: 139px;"></asp:TextBox> 
 
        
         <asp:Label ID="emailLabel" runat="server" Text="Email" style="position:absolute; top: 184px; left: 150px; width: 42px;"></asp:Label>

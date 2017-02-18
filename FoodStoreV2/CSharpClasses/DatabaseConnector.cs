@@ -25,7 +25,7 @@ namespace FoodStoreV2.CSharpClasses
         {
             using (conn = new MySqlConnection(conn_string.ToString()))
             using (cmd = conn.CreateCommand())
-                cmd.CommandText = string.Format(sqlCommand);
+            cmd.CommandText = string.Format(sqlCommand);
             conn.Open();
         }
         public Customer getCustomerObject(String email)
@@ -122,6 +122,14 @@ namespace FoodStoreV2.CSharpClasses
             conn.Close();
             return false;
         }
+        public void updateCustomerDetails(Customer customer, String oldEmail)
+        {
+            startConnection();
+            createCommand("UPDATE Customers SET name = '" + customer.getName() + "', street = '" + customer.getStreetAdress() + "', city = '" + customer.getCity() + "', postCode = '" + customer.getPostCode() + "', email = '" + customer.getEmailAdress() + "', password = '" + customer.getUserPassword() +"', userName = '" + customer.getUserName() + "' WHERE email = '" + oldEmail + "'");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
 
     }
 }

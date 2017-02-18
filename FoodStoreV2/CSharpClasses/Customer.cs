@@ -59,5 +59,9 @@ namespace FoodStoreV2.CSharpClasses
         {
             return customerID;
         }
+        public void setUserPassword(String userPassword)
+        {
+            this.userPassword = userPassword;
+        }
     }
 }

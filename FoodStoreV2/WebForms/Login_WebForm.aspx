@@ -4,7 +4,7 @@
     <div style="height: 552px">
     </div>
         <asp:Label ID="passwordLabel" runat="server" Text="password" style="position:absolute; top: 228px; left: -17px; height: 27px; width: 66px; margin-left: 141px;"></asp:Label>
-        <asp:TextBox ID="passwordTextBox" runat="server" style="position:absolute; top: 223px; left: 205px; height: 22px; width: 139px;"></asp:TextBox> 
+        <asp:TextBox ID="passwordTextBox" TextMode="Password" runat="server" style="position:absolute; top: 223px; left: 205px; height: 22px; width: 139px;"></asp:TextBox> 
 
          <asp:Label ID="wrongEmailOrPasswordLabel" runat="server" Text="Wrong username or password" style="position:absolute; top: 200px; left: 482px; color: red;" Visible="False"></asp:Label>
 
