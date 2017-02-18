@@ -50,25 +50,45 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <%
-                        Session["FirstName"] = "UserNaME"; %>
+                        if (string.IsNullOrEmpty(Session["runOnce"] as string)){
+                            Session["runOnce"] = "hmm";
+                            Session["FirstName"] = "";
+                        }
+                        //Session["FirstName"] = "";
+
+
+                        %>
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/WebForms/ShoppingPage_WebForm">Shop</a></li>
+                        <li><a runat="server" href="~/WebForms/SearchPage_WebForm">Search</a></li>
+                        <li><a runat="server" href="~/WebForms/ShoppingCart_WebForm">Cart</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
+
+
+
                     <%
+                      
+
+                        //if (string.IsNullOrEmpty(Session["logedInStatus"] as string)){    Session["logedInStatus"] = false;}
+
+
                         if ((String)Session["FirstName"] == (""))
+                       // if ((Boolean)Session["logedInStatus"] == false)
                         { %>
                     <ul style='display: inline' class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Account/Register">Register</a></li>
-                        <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                        <li><a runat="server" href="~/WebForms/Register_WebForm">Register</a></li>
+                        <li><a runat="server" href="~/WebForms/Login_WebForm" >Log in</a></li>
+                        <li><asp:linkbutton runat="server" OnClick="Button1_Click">LinkButtonNEW Login</asp:linkbutton></li>
                     </ul>
                     <% }
                         else
                         { %>
                     <ul style='display: inline' class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: (String)Session["FirstName"] %> !</a></li>
-                        <li><a runat="server" href="~/" title="Logout"> Logout </a></li>
+                        <li><a runat="server" href="~/WebForms/ShowAndEditProfile_WebForm" title="Manage your account">Hello, <%: (String)Session["FirstName"] %> !</a></li>
+                        <li><a runat="server" href="~/WebForms/ShoppingPage_WebForm" title="Logout" >Logout </a></li>
+                        <li><asp:linkbutton runat="server" OnClick="Button2_Click">LinkButtonNEW Logout</asp:linkbutton></li>
                     </ul>
                     <%} %>
                 </div>
@@ -83,7 +103,69 @@
                     <hr />
                 </div>
             </div>
-            <div class="col-sm-2" style="background-color: lavender;">.col-sm-4</div>
+            <div class="col-sm-2 row text-center" style="background-color: lavender;">
+                .col-sm-2
+                <div class="col-sm-12" style="background-color: lawngreen;">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    Ads              
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+                <div class="col-sm-12">
+                    <br />
+                </div>
+                <div class="col-sm-12" style="background-color: greenyellow;">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    Featured product 
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+                <div class="col-sm-12">
+                    <br />
+                </div>
+                <div class="col-sm-12" style="background-color: springgreen;">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    On Sale          
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+                <div class="col-sm-12">
+                    <br />
+                </div>
+            </div>
         </div>
         <footer>
             <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>

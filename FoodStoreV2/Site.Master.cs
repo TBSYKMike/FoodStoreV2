@@ -76,6 +76,26 @@ namespace FoodStoreV2
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            //Session["FirstName"] = "";
+            //Session.Add("FirstName", "");
+
+            Session.Clear();
+            Session.RemoveAll();
+            Session.Abandon();
+            Response.Redirect("~/");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session["FirstName"] = "mike";
+            Session.Add("FirstName", "mike");
+
+            Response.Redirect("~/WebForms/ShoppingPage_WebForm");
+        }
+
     }
 
 }

@@ -25,5 +25,38 @@ namespace FoodStoreV2.CSharpClasses
             this.amount = amount;
             this.onSale = onSale;
         }
+
+        public int getProductID()
+        {
+            return productID;
+        }
+
+        public string getName()
+        {
+            return name;
+        }
+
+        public string getPrice()
+        {
+            return price;
+        }
+
+        public int getCategory()
+        {
+            return category;
+        }
+
+        public string getAmount()
+        {
+            return amount;
+        }
+
+        public string getOnSale()
+        {
+            return onSale;
+        }
+
+
+
     }
 }
