@@ -33,5 +33,71 @@ namespace FoodStoreV2.WebForms
             return productList;
         }
 
+        protected string category_menu()
+        {
+            List<Category> productList = new List<Category>();
+
+            productList.Add(new Category(1, "NoCategory"));
+            productList.Add(new Category(2, "Meat"));
+            productList.Add(new Category(3, "Fish"));
+            productList.Add(new Category(4, "Vegetable"));
+            productList.Add(new Category(5, "Fruit"));
+            productList.Add(new Category(6, "Eggs"));
+            productList.Add(new Category(7, "Beans"));
+            productList.Add(new Category(8, "Drink"));
+            productList.Add(new Category(9, "Milk"));
+            productList.Add(new Category(10, "Bread"));
+
+            string url = "ShoppingPage_WebForm";
+            string temp = " <div id=\"collapse1\" class=\"panel\">  <ul class=\"list-group\"> <div class=\"panel-footer\"><strong><u>Category Menu</u></strong></div>";
+            temp += "  <li class=\"list-group-item\">" +
+                    " <a href=\"" + url + "?category=" + "show_all" + "\">" + "Show All" + "</a> "
+                + "</li>  ";
+            for (int i = 0; i < productList.Count(); i++)
+            {
+                string categoryID = productList[i].getCategoryID().ToString();
+                string categoryName = productList[i].getCategoryName().ToString();
+
+                temp += "  <li class=\"list-group-item\">" +
+                    " <a href=\"" + url + "?category=" + categoryID + "\">" + categoryName + "</a> "
+                + "</li>  ";
+            }
+            temp += " </ul>  </div> ";
+
+
+
+            return temp;
+        }
+
+
+        protected string getCategoryName(String categoryID)
+        {
+            List<Category> productList = new List<Category>();
+
+            productList.Add(new Category(1, "NoCategory"));
+            productList.Add(new Category(2, "Meat"));
+            productList.Add(new Category(3, "Fish"));
+            productList.Add(new Category(4, "Vegetable"));
+            productList.Add(new Category(5, "Fruit"));
+            productList.Add(new Category(6, "Eggs"));
+            productList.Add(new Category(7, "Beans"));
+            productList.Add(new Category(8, "Drink"));
+            productList.Add(new Category(9, "Milk"));
+            productList.Add(new Category(10, "Bread"));
+
+            string productName = "none";
+
+            for (int i=0; i<productList.Count(); i++)
+            {
+                if(productList[i].getCategoryID().ToString()== categoryID)
+                {
+                    productName = productList[i].getCategoryName().ToString();
+                }
+            }
+
+            return productName;
+        }
+
+
     }
 }
