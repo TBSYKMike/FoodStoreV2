@@ -74,25 +74,27 @@
 
                         //if (string.IsNullOrEmpty(Session["logedInStatus"] as string)){    Session["logedInStatus"] = false;}
 
-
-                        if ((String)Session["FirstName"] == (""))
+                        
+                        //  if ((String)Session["FirstName"] == (""))
+                        if ( callGetCustomerSessionObject() == null)
                         // if ((Boolean)Session["logedInStatus"] == false)
                         { %>
                     <ul style='display: inline' class="nav navbar-nav navbar-right">
                         <li><a runat="server" href="~/WebForms/Register_WebForm">Register</a></li>
-                             <li><a runat="server" href="~/WebForms/Login_WebForm">Log in</a></li>
+                        <li><a runat="server" href="~/WebForms/Login_WebForm">Log in</a></li>
                         <li>
-                            <asp:LinkButton runat="server" OnClick="Button1_Click">LnkBtnNEWLogin</asp:LinkButton>
+                            <!--      <asp:LinkButton runat="server" OnClick="Button1_Click">LnkBtnNEWLogin</asp:LinkButton> -->
                         </li>
                     </ul>
                     <% }
                         else
                         { %>
                     <ul style='display: inline' class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/WebForms/ShowAndEditProfile_WebForm" title="Manage your account">Hello, <%: (String)Session["FirstName"] %> !</a></li>
-                        <!--   <li><a runat="server" href="~/WebForms/ShoppingPage_WebForm" title="Logout">Logout </a></li>  -->
+                        <!--    <li><a runat="server" href="~/WebForms/ShowAndEditProfile_WebForm" title="Manage your account">Hello, <%: (String)Session["FirstName"] %> !</a></li> -->
+                        <li><a runat="server" href="~/WebForms/ShowAndEditProfile_WebForm" title="Manage your account">Hello, <%: callGetCustomerSessionObject().getUserName() %> !</a></li>
+                        <!--    <li><a runat="server" href="~/WebForms/ShoppingPage_WebForm" title="Logout">Logout </a></li>  -->
                         <li>
-                            <asp:LinkButton runat="server" OnClick="Button2_Click">LnkBtnNEWLogout</asp:LinkButton>
+                            <asp:LinkButton runat="server" OnClick="Button2_Click">Logoutv2</asp:LinkButton>
                         </li>
                     </ul>
                     <%} %>

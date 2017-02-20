@@ -23,7 +23,6 @@
     <style>
         /*Style the DIV*/
         .container1 .box1 {
-            
             float: left;
             margin: 2px;
             padding: 5px;
@@ -34,7 +33,7 @@
         /*Fade all the DIV when user hovers on any div*/
         .container1:hover .box1 {
             zoom: 1;
-          /*  filter: alpha(opacity=45);
+            /*  filter: alpha(opacity=45);
             opacity: 0.45;
             -webkit-transition: opacity .5s ease-in-out;
             -moz-transition: opacity .5s ease-in-out;
@@ -74,41 +73,48 @@
 
                 <%  if (Request.QueryString["category"] == null || Request.QueryString["category"] == "show_all")
                     { %>
-                <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center box1" style="margin: 1px 0px; background-color: beige;">
+                <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center " style="margin: 1px 0px; background-color: beige;">
                     <h3>All Products</h3>
                 </div>
-                <%      for (int i = 0; i < test_method().Count(); i++)
+                <%      for (int i = 0; i < getProductList().Count(); i++)
                     {%>
-
-                <div class="col-xs-6 col-sm-4 col-md-4 row panel text-center box1" style="margin: 1px 0px; background-color: beige;">
+                <!--  METHOD FOR PRODUCT ITEM Start  -->
+           <!---     <div class="col-xs-6 col-sm-4 col-md-4 row panel text-center box1" style="margin: 1px 0px; background-color: beige;">
                     <br />
-                    <div class="col-sm-12  " style="background-color: skyblue;" onclick="location.href='ProductPage_WebForm?param1=<%: test_method()[i].getProductID() %>';">
-                        <p>.item <%: i + 1 %> name</p>
-                        <p><%: test_method()[i].getName() %></p>
-                        <img class="img-rounded" src="https://www.w3schools.com/html/pic_mountain.jpg" alt="HTML5 Icon" style="width: 100%; height: 100%;">
+                    <div class="col-sm-12  " style="background-color: skyblue;" onclick="location.href='ProductPage_WebForm?param1=<%: getProductList()[i].getProductID() %>';">
+                        <p></p>
+                        <p>.itemNAME <%: getProductList()[i].getName() %></p>
+                        <img class="img-rounded" src="<%: getProductList()[i].getImageURL() %>" alt="HTML5 Icon" style="width: 100%; height: 15vw;">
                         <br />
-                        <p>.item <%: i + 1 %> info</p>
-                        <p><%: test_method()[i].getOnSale() %></p>
+                        <p>.itemINFO <%: getProductList()[i].getInfo() %> info</p>
+                        <p>.itemPRICE <%: getProductList()[i].getPrice() %> kr</p>
 
-                        <button type="button" class="btn btn-primary btn-std btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW2 Button</button>
+                             <button type="button" class="btn btn-primary btn-std btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW2 Button</button>
+                       
 
                     </div>
+                    
                     <div class="col-sm-12  " style="background-color: deepskyblue;" onclick="alert('You are clicking on buy item <%: i + 1 %>');">
                         <br />
                         .buy<br />
                         <br />
                     </div>
-                    <div class="col-sm-12  " style="background-color: cadetblue;" onclick="location.href='ProductPage_WebForm?param1=<%: test_method()[i].getProductID() %>';">
+                    <div class="col-sm-12  " style="background-color: cadetblue;" onclick="location.href='ProductPage_WebForm?param1=<%: getProductList()[i].getProductID() %>';">
                         .buyNEW<br />
+                    </div> 
+                    
+
+                    <div class="col-sm-12 ">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW2 Button</button>
                     </div>
-
-                    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW2 Button</button>
-
                     <div class="col-sm-12 ">
                         <p></p>
                     </div>
 
                 </div>
+                -->
+                <%= generateProduct(i) %>
+                <!--  METHOD FOR PRODUCT ITEM End  -->
 
                 <%      } %>
 
@@ -118,46 +124,55 @@
 
 
                 <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center " style="margin: 1px 0px; background-color: beige;">
-                    <h3>Category: <%= "CatID: "+Request.QueryString["category"]+" CatName: "+getCategoryName( Request.QueryString["category"] ) %></h3>
+                    <h3>Category: <%= ""+getCategoryName( Request.QueryString["category"] ) %></h3>
                 </div>
                 <!-- Codes for categories -->
 
 
-                <%      for (int i = 0; i < test_method().Count(); i++)
+                <%      for (int i = 0; i < getProductList().Count(); i++)
                     {%>
-                <%          if (Request.QueryString["category"] == test_method()[i].getCategory().ToString())
+                <%          if (Request.QueryString["category"] == getProductList()[i].getCategory().ToString())
                     {%>
-                <div class="col-xs-6 col-sm-4 col-md-4 row panel text-center " style="margin: 1px 0px; background-color: beige;">
-                    <div class="col-sm-12 ">
+
+                <!--  METHOD FOR PRODUCT ITEM Start  -->
+                <!---     <div class="col-xs-6 col-sm-4 col-md-4 row panel text-center box1" style="margin: 1px 0px; background-color: beige;">
+                    <br />
+                    <div class="col-sm-12  " style="background-color: skyblue;" onclick="location.href='ProductPage_WebForm?param1=<%: getProductList()[i].getProductID() %>';">
                         <p></p>
-                    </div>
-                    <div class="col-sm-12  " style="background-color: skyblue;" onclick="location.href='ProductPage_WebForm?param1=<%: test_method()[i].getProductID().ToString() %>';">
-                        <p>.item <%: i + 1 %> name</p>
-                        <p><%: test_method()[i].getName() %></p>
-                        <img class="img-rounded" src="https://www.w3schools.com/html/pic_mountain.jpg" alt="HTML5 Icon" style="width: 100%; height: 100%;">
+                        <p>.itemNAME <%: getProductList()[i].getName() %></p>
+                        <img class="img-rounded" src="<%: getProductList()[i].getImageURL() %>" alt="HTML5 Icon" style="width: 100%; height: 15vw;">
                         <br />
-                        <p>.item <%: i + 1 %> info</p>
-                        <p><%: test_method()[i].getOnSale() %></p>
+                        <p>.itemINFO <%: getProductList()[i].getInfo() %> info</p>
+                        <p>.itemPRICE <%: getProductList()[i].getPrice() %> kr</p>
 
-                        <button type="button" class="btn btn-primary btn-std btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW2 Button</button>
+                             <button type="button" class="btn btn-primary btn-std btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW2 Button</button>
+                       
 
                     </div>
+                    
                     <div class="col-sm-12  " style="background-color: deepskyblue;" onclick="alert('You are clicking on buy item <%: i + 1 %>');">
                         <br />
                         .buy<br />
                         <br />
                     </div>
-                    <div class="col-sm-12  " style="background-color: cadetblue;" onclick="location.href='ProductPage_WebForm?param1=<%: test_method()[i].getProductID() %>';">
+                    <div class="col-sm-12  " style="background-color: cadetblue;" onclick="location.href='ProductPage_WebForm?param1=<%: getProductList()[i].getProductID() %>';">
                         .buyNEW<br />
+                    </div> 
+                    
+
+                    <div class="col-sm-12 ">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW2 Button</button>
                     </div>
-
-                    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW2 Button</button>
-
                     <div class="col-sm-12 ">
                         <p></p>
                     </div>
 
                 </div>
+                -->
+                <%= generateProduct(i) %>
+                <!--  METHOD FOR PRODUCT ITEM End  -->
+
+
                 <%          } %>
                 <%      } %>
 

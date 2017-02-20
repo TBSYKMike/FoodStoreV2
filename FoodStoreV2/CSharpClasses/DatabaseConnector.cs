@@ -25,7 +25,7 @@ namespace FoodStoreV2.CSharpClasses
         {
             using (conn = new MySqlConnection(conn_string.ToString()))
             using (cmd = conn.CreateCommand())
-            cmd.CommandText = string.Format(sqlCommand);
+                cmd.CommandText = string.Format(sqlCommand);
             conn.Open();
         }
         public Customer getCustomerObject(String email)
@@ -42,20 +42,46 @@ namespace FoodStoreV2.CSharpClasses
             }
             return null;
         }
+
         public List<Product> getProductsOnCategory(int categoryID)
         {
             List<Product> productList = new List<Product>();
             startConnection();
-            createCommand("SELECT * FROM Products WHERE category=" + categoryID);
-
+            if (categoryID == 0)
+            {
+                createCommand("SELECT * FROM Products");
+            }
+            else
+            {
+                createCommand("SELECT * FROM Products WHERE category=" + categoryID);
+            }
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 Product product = new Product(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7));
+                productList.Add(product);
             }
             conn.Close();
             return productList;
         }
+
+        public List<Category> getCategories()
+        {
+            List<Category> categoryList = new List<Category>();
+            startConnection();
+
+            createCommand("SELECT * FROM Categories");
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Category category = new Category(reader.GetInt32(0), reader.GetString(1));
+                categoryList.Add(category);
+            }
+            conn.Close();
+            return categoryList;
+        }
+
         public Product getRandomProduct()
         {
             startConnection();
@@ -125,7 +151,7 @@ namespace FoodStoreV2.CSharpClasses
         public void updateCustomerDetails(Customer customer, String oldEmail)
         {
             startConnection();
-            createCommand("UPDATE Customers SET name = '" + customer.getName() + "', street = '" + customer.getStreetAdress() + "', city = '" + customer.getCity() + "', postCode = '" + customer.getPostCode() + "', email = '" + customer.getEmailAdress() + "', password = '" + customer.getUserPassword() +"', userName = '" + customer.getUserName() + "' WHERE email = '" + oldEmail + "'");
+            createCommand("UPDATE Customers SET name = '" + customer.getName() + "', street = '" + customer.getStreetAdress() + "', city = '" + customer.getCity() + "', postCode = '" + customer.getPostCode() + "', email = '" + customer.getEmailAdress() + "', password = '" + customer.getUserPassword() + "', userName = '" + customer.getUserName() + "' WHERE email = '" + oldEmail + "'");
             cmd.ExecuteNonQuery();
             conn.Close();
         }

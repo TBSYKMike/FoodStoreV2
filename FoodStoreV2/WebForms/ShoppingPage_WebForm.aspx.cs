@@ -15,48 +15,50 @@ namespace FoodStoreV2.WebForms
 
         }
 
-        protected List<Product> test_method()
+        protected List<Product> getProductList()
         {
             DatabaseConnector databaseConnector = new DatabaseConnector();
+            // parameter 0 means get all
+            List<Product> productList = databaseConnector.getProductsOnCategory(0);
 
-            List<Product> productList = new List<Product>();
-
-            productList.Add(new Product(1, "productname", "123kr", 1, "100", "onsale", "info", "img"));
-            productList.Add(new Product(2, "productname2", "234kr", 1, "100", "onsale", "info", "img"));
-            productList.Add(new Product(3, "productname3", "345kr", 2, "100", "normal", "info", "img"));
-            productList.Add(new Product(4, "productname4", "456kr", 2, "100", "normal", "info", "img"));
-            productList.Add(new Product(5, "productname5", "567kr", 3, "100", "normal", "info", "img"));
-            productList.Add(new Product(6, "productname6", "678kr", 4, "100", "normal", "info", "img"));
-            productList.Add(new Product(7, "productname7", "789kr", 4, "100", "normal", "info", "img"));
-
+            /*  productList.Add(new Product(1, "productname", "123kr", 1, "100", "onsale", "info", "img"));
+              productList.Add(new Product(2, "productname2", "234kr", 1, "100", "onsale", "info", "img"));
+              productList.Add(new Product(3, "productname3", "345kr", 2, "100", "normal", "info", "img"));
+              productList.Add(new Product(4, "productname4", "456kr", 2, "100", "normal", "info", "img"));
+              productList.Add(new Product(5, "productname5", "567kr", 3, "100", "normal", "info", "img"));
+              productList.Add(new Product(6, "productname6", "678kr", 4, "100", "normal", "info", "img"));
+              productList.Add(new Product(7, "productname7", "789kr", 4, "100", "normal", "info", "img"));
+              */
 
             return productList;
         }
 
         protected string category_menu()
         {
-            List<Category> productList = new List<Category>();
+            DatabaseConnector databaseConnector = new DatabaseConnector();
+            List<Category> categoryList = databaseConnector.getCategories();
 
-            productList.Add(new Category(1, "NoCategory"));
-            productList.Add(new Category(2, "Meat"));
-            productList.Add(new Category(3, "Fish"));
-            productList.Add(new Category(4, "Vegetable"));
-            productList.Add(new Category(5, "Fruit"));
-            productList.Add(new Category(6, "Eggs"));
-            productList.Add(new Category(7, "Beans"));
-            productList.Add(new Category(8, "Drink"));
-            productList.Add(new Category(9, "Milk"));
-            productList.Add(new Category(10, "Bread"));
+            /*      categoryList.Add(new Category(1, "NoCategory"));
+                  categoryList.Add(new Category(2, "Meat"));
+                  categoryList.Add(new Category(3, "Fish"));
+                  categoryList.Add(new Category(4, "Vegetable"));
+                  categoryList.Add(new Category(5, "Fruit"));
+                  categoryList.Add(new Category(6, "Eggs"));
+                  categoryList.Add(new Category(7, "Beans"));
+                  categoryList.Add(new Category(8, "Drink"));
+                  categoryList.Add(new Category(9, "Milk"));
+                  categoryList.Add(new Category(10, "Bread"));
+                  */
 
             string url = "ShoppingPage_WebForm";
             string temp = " <div id=\"collapse1\" class=\"panel\">  <ul class=\"list-group\"> <div class=\"panel-footer\"><strong><u>Category Menu</u></strong></div>";
             temp += "  <li class=\"list-group-item\">" +
                     " <a href=\"" + url + "?category=" + "show_all" + "\">" + "Show All" + "</a> "
                 + "</li>  ";
-            for (int i = 0; i < productList.Count(); i++)
+            for (int i = 0; i < categoryList.Count(); i++)
             {
-                string categoryID = productList[i].getCategoryID().ToString();
-                string categoryName = productList[i].getCategoryName().ToString();
+                string categoryID = categoryList[i].getCategoryID().ToString();
+                string categoryName = categoryList[i].getCategoryName().ToString();
 
                 temp += "  <li class=\"list-group-item\">" +
                     " <a href=\"" + url + "?category=" + categoryID + "\">" + categoryName + "</a> "
@@ -72,31 +74,59 @@ namespace FoodStoreV2.WebForms
 
         protected string getCategoryName(String categoryID)
         {
-            List<Category> productList = new List<Category>();
+            DatabaseConnector databaseConnector = new DatabaseConnector();
+            List<Category> categoryList = databaseConnector.getCategories();
 
-            productList.Add(new Category(1, "NoCategory"));
-            productList.Add(new Category(2, "Meat"));
-            productList.Add(new Category(3, "Fish"));
-            productList.Add(new Category(4, "Vegetable"));
-            productList.Add(new Category(5, "Fruit"));
-            productList.Add(new Category(6, "Eggs"));
-            productList.Add(new Category(7, "Beans"));
-            productList.Add(new Category(8, "Drink"));
-            productList.Add(new Category(9, "Milk"));
-            productList.Add(new Category(10, "Bread"));
+            /*    categoryList.Add(new Category(1, "NoCategory"));
+                categoryList.Add(new Category(2, "Meat"));
+                categoryList.Add(new Category(3, "Fish"));
+                categoryList.Add(new Category(4, "Vegetable"));
+                categoryList.Add(new Category(5, "Fruit"));
+                categoryList.Add(new Category(6, "Eggs"));
+                categoryList.Add(new Category(7, "Beans"));
+                categoryList.Add(new Category(8, "Drink"));
+                categoryList.Add(new Category(9, "Milk"));
+                categoryList.Add(new Category(10, "Bread"));
+                */
 
             string productName = "none";
 
-            for (int i=0; i<productList.Count(); i++)
+            for (int i = 0; i < categoryList.Count(); i++)
             {
-                if(productList[i].getCategoryID().ToString()== categoryID)
+                if (categoryList[i].getCategoryID().ToString() == categoryID)
                 {
-                    productName = productList[i].getCategoryName().ToString();
+                    productName = categoryList[i].getCategoryName().ToString();
+                    break;
                 }
             }
 
             return productName;
         }
+
+
+        protected string generateProduct(int i)
+        {
+            string tempHtml = "";
+            tempHtml += "<div class=\"col-xs-6 col sm-4 col-md-4 row panel text-center box1\" style=\"margin: 1px 0px; background-color: beige; \"><br />";
+                tempHtml += "<div class=\"col-sm-12  \" style=\"background-color: skyblue;\" onclick =\"location.href='ProductPage_WebForm?param1="+ getProductList()[i].getProductID() +"';\" > ";
+                    tempHtml += "<p></p>";
+                    tempHtml += "<p>.itemNAME "+ getProductList()[i].getName() +"</p>";
+                    tempHtml += "<img class=\"img -rounded\" src=\" "+ getProductList()[i].getImageURL() +" \" alt =\"HTML5 Icon\" style = \"width: 100%; height: 15vw;\">";
+                    tempHtml += "<br />";
+                    tempHtml += "<p>.itemINFO  " + getProductList()[i].getInfo() + " info</p>";
+                    tempHtml += "<p>.itemPRICE  " + getProductList()[i].getPrice() + " kr</p>";
+                tempHtml += "</div>";
+                tempHtml += "<div class=\"col -sm-12 \" > ";
+                    tempHtml += "<button type = \"button\" class=\"btn btn-primary btn-lg btn-block\" onclick =\"alert('You are clicking on buy item "+ (i + 1) +"'); \" >.BuyNEW2 Button</button>";
+                tempHtml += "</div>";
+                tempHtml += "<div class=\"col-sm-12 \" > ";
+                tempHtml += "<p></p>";
+                tempHtml += "</div>";
+            tempHtml += "</div>";
+
+            return tempHtml;
+        }
+
 
 
     }

@@ -19,7 +19,10 @@
             string selectedProductCategory = "none";
             string selectedProductAmount = "none";
             string selectedProductOnSale = "none";
+            string selectedProductInfo = "none";
+            string selectedProductImageURL = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
 
+            
             int productListPosition = 0;
             string test = test_method()[0].getName();
             if (Request.QueryString["param1"] != null)
@@ -39,6 +42,8 @@
                         selectedProductCategory = test_method()[productListPosition].getCategory().ToString();
                         selectedProductAmount = test_method()[productListPosition].getAmount().ToString();
                         selectedProductOnSale = test_method()[productListPosition].getOnSale().ToString();
+                        selectedProductInfo = test_method()[productListPosition].getInfo().ToString();
+                        selectedProductImageURL = test_method()[productListPosition].getImageURL().ToString();
 
                         test = "\n id: " + test_method()[productListPosition].getProductID().ToString();
                         test += "\n prodName: " + test_method()[productListPosition].getName().ToString();
@@ -94,7 +99,7 @@
             <br />
             <div class="col-sm-12" style="background-color: palevioletred;">
                 <br />
-                <img class="img-rounded" src="https://www.w3schools.com/html/pic_mountain.jpg" alt="HTML5 Icon" style="width: 100%; height: 100%;">
+                <img class="img-rounded" src="<%: selectedProductImageURL %>" alt="HTML5 Icon" style="width: 100%; height: 100%;">
                 <br />
                 <br />
             </div>
@@ -123,7 +128,7 @@
                 <br />
                 <br />
                 <br />
-                product id: <%: selectedProductID %>
+                .productID: <%: selectedProductID %>
                 <br />
                 <br />
                 <br />
@@ -132,7 +137,7 @@
                 <br />
                 <br />
                 <br />
-                product name: <%: selectedProductName %>
+                .productNAME: <%: selectedProductName %>
                 <br />
                 <br />
                 <br />
@@ -141,7 +146,7 @@
                 <br />
                 <br />
                 <br />
-                product price: <%: selectedProductPrice %>
+                .productPRICE: <%: selectedProductPrice %> kr
                 <br />
                 <br />
                 <br />
@@ -150,7 +155,16 @@
                 <br />
                 <br />
                 <br />
-                product amount left: <%: selectedProductAmount %>
+                .productAMOUNT: <%: selectedProductAmount %> left
+                <br />
+                <br />
+                <br />
+            </div>
+            <div class="col-sm-12" style="background-color: orchid;">
+                <br />
+                <br />
+                <br />
+                .productCATEGORY: <%: selectedProductCategory %>
                 <br />
                 <br />
                 <br />
@@ -159,7 +173,7 @@
                 <br />
                 <br />
                 <br />
-                product info 
+                .productINFO: <%: selectedProductInfo %>
                 <br />
                 <br />
                 <br />
@@ -168,7 +182,7 @@
                 <br />
                 <br />
                 <br />
-                .onsale: <%: selectedProductOnSale %>
+                .productONSALE: <%: selectedProductOnSale %>
                 <br />
                 <br />
                 <br />
@@ -177,7 +191,7 @@
                 <br />
                 <br />
                 <br />
-                .buy Click
+                .buy Click Button
                 <br />
                 <br />
                 <br />

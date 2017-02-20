@@ -60,7 +60,15 @@ namespace FoodStoreV2.CSharpClasses
             return onSale;
         }
 
+        public string getInfo()
+        {
+            return info;
+        }
 
+        public string getImageURL()
+        {
+            return image;
+        }
 
     }
 }

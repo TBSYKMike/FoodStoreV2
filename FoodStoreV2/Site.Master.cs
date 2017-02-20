@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using FoodStoreV2.CSharpClasses;
 
 namespace FoodStoreV2
 {
@@ -94,6 +95,12 @@ namespace FoodStoreV2
             Session.Add("FirstName", "mike");
 
             Response.Redirect("~/WebForms/ShoppingPage_WebForm");
+        }
+
+        protected Customer callGetCustomerSessionObject()
+        {
+            SessionValues sv = new SessionValues();
+            return sv.getCustomerSessionObject();
         }
 
     }
