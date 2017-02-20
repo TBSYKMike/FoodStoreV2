@@ -215,6 +215,7 @@
     <Content Include="WebForms\ForgotPassword_WebForm.aspx" />
     <Content Include="WebForms\Login_WebForm.aspx" />
     <Content Include="WebForms\OrderFinish_WebForm.aspx" />
+    <Content Include="WebForms\OrderHistory_WebForm.aspx" />
     <Content Include="WebForms\Payment_WebForm.aspx" />
     <Content Include="WebForms\ProductPage_WebForm.aspx" />
     <Content Include="WebForms\Register_WebForm.aspx" />
@@ -399,6 +400,7 @@
     <Compile Include="CSharpClasses\DatabaseConnector.cs" />
     <Compile Include="CSharpClasses\Order.cs" />
     <Compile Include="CSharpClasses\Product.cs" />
+    <Compile Include="CSharpClasses\SessionValues.cs" />
     <Compile Include="CSharpClasses\VerifyReCaptcha.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -461,6 +463,13 @@
     </Compile>
     <Compile Include="WebForms\OrderFinish_WebForm.aspx.designer.cs">
       <DependentUpon>OrderFinish_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\OrderHistory_WebForm.aspx.cs">
+      <DependentUpon>OrderHistory_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\OrderHistory_WebForm.aspx.designer.cs">
+      <DependentUpon>OrderHistory_WebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForms\Payment_WebForm.aspx.cs">
       <DependentUpon>Payment_WebForm.aspx</DependentUpon>

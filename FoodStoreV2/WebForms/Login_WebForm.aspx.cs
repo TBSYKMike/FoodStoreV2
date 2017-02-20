@@ -13,6 +13,7 @@ namespace FoodStoreV2.WebForms
         private DatabaseConnector databaseConnector;
         protected void Page_Load(object sender, EventArgs e)
         {
+            emailTextBox.Focus();
             databaseConnector = new DatabaseConnector();
             captcha.Visible = false;
             if(Session["failedLoginAttempts"] != null)
@@ -69,10 +70,12 @@ namespace FoodStoreV2.WebForms
             {
                 Customer customer = databaseConnector.getCustomerObject(emailTextBox.Text);
                 System.Diagnostics.Debug.WriteLine("logged in");
-                Session.Add("currentLogedInUserObject", customer);
-                Session.Add("logedInStatus", true);
-                Response.Redirect("ShoppingPage_WebForm.aspx");
-                //Response.Redirect("ShowAndEditProfile_WebForm.aspx");//För test
+                SessionValues sessionValues = new SessionValues();
+                sessionValues.setLoginSession(customer);
+               // Session.Add("currentLogedInUserObject", customer);
+                //Session.Add("logedInStatus", true);
+               // Response.Redirect("ShoppingPage_WebForm.aspx");
+                Response.Redirect("ShowAndEditProfile_WebForm.aspx");//För test
         }
 
         protected void forgotPasswordButton_Click(object sender, EventArgs e)
