@@ -4,12 +4,12 @@
     <div style="height: 552px">
     </div>
         <asp:Label ID="passwordLabel" runat="server" Text="password" style="position:absolute; top: 228px; left: -17px; height: 27px; width: 66px; margin-left: 141px;"></asp:Label>
-        <asp:TextBox ID="passwordTextBox" TextMode="Password" runat="server" style="position:absolute; top: 223px; left: 205px; height: 22px; width: 139px;"></asp:TextBox> 
+        <asp:TextBox TabIndex="1" ID="passwordTextBox" TextMode="Password" runat="server" style="position:absolute; top: 223px; left: 205px; height: 22px; width: 139px;"></asp:TextBox> 
 
          <asp:Label ID="wrongEmailOrPasswordLabel" runat="server" Text="Wrong username or password" style="position:absolute; top: 200px; left: 482px; color: red;" Visible="False"></asp:Label>
 
         <asp:Label ID="emailLabel" runat="server" Text="Email" style="position:absolute; top: 184px; left: 150px; width: 42px;"></asp:Label>
-        <asp:TextBox ID="emailTextBox" runat="server" style="position:absolute; top: 180px; left: 206px; height: 22px; width: 139px;"></asp:TextBox> 
+        <asp:TextBox TabIndex="2" ID="emailTextBox" runat="server" style="position:absolute; top: 180px; left: 206px; height: 22px; width: 139px;"></asp:TextBox> 
          
         
         <asp:Button ID="loginButton" runat="server" ValidationGroup='login' Text="Login" style="position:absolute;  top: 198px; left: 404px; height: 20px; width: 55px;" OnClick="registerButton_Click"/>

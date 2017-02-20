@@ -14,9 +14,11 @@ namespace FoodStoreV2.CSharpClasses
         private int category;
         private String amount;
         private String onSale;
+        private String info;
+        private String image;
 
 
-        public Product(int productID, String name, String price, int category, String amount, String onSale)
+        public Product(int productID, String name, String price, int category, String amount, String onSale, String info, String image)
         {
             this.productID = productID;
             this.name = name;
@@ -24,6 +26,8 @@ namespace FoodStoreV2.CSharpClasses
             this.category = category;
             this.amount = amount;
             this.onSale = onSale;
+            this.info = info;
+            this.image = image;
         }
 
         public int getProductID()
