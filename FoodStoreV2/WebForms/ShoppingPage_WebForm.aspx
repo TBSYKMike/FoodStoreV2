@@ -2,6 +2,61 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <script type="text/javascript" language="javascript">
+
+        $(document).ready(function () {
+            $('head').append('<style>.outlineElement {  border-color:blue; background-color:green;} </style>');
+
+            $('.container .box')
+        .mouseover(function (event) {
+            $(event.target).addClass('outlineElement');
+        })
+        .mouseout(function (event) {
+            $(event.target).removeClass('outlineElement');
+        });
+        });
+
+
+
+    </script>
+
+    <style>
+        /*Style the DIV*/
+        .container1 .box1 {
+            
+            float: left;
+            margin: 2px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        /*Fade all the DIV when user hovers on any div*/
+        .container1:hover .box1 {
+            zoom: 1;
+          /*  filter: alpha(opacity=45);
+            opacity: 0.45;
+            -webkit-transition: opacity .5s ease-in-out;
+            -moz-transition: opacity .5s ease-in-out;
+            -ms-transition: opacity .5s ease-in-out;
+            -o-transition: opacity .5s ease-in-out;
+            transition: opacity .5s ease-in-out; */
+        }
+
+        /*Fade out the particular DIV when user hover on that DIV*/
+        .container1 .box1:hover {
+            box-shadow: 3px 3px 15px #666;
+            border-color: cadetblue;
+            background: #C76C0C;
+            color: #fff;
+            cursor: pointer;
+            /*Opacity*/
+            zoom: 1;
+            filter: alpha(opacity=100);
+            opacity: 1;
+        }
+    </style>
+
 
     <div class="container-fluid">
         <h1>Welcome to the Shop</h1>
@@ -15,18 +70,18 @@
                 </div>
                 <div class="col-sm-12" style="background-color: darkturquoise;">Search </div>
             </div>
-            <div class="col-sm-10 row" style="background-color: lavender;">
+            <div class="col-sm-10 row container1" style="background-color: lavender;">
 
                 <%  if (Request.QueryString["category"] == null || Request.QueryString["category"] == "show_all")
                     { %>
-                <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center " style="margin: 1px 0px; background-color: beige;"> <h3>All Products</h3></div>
+                <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center box1" style="margin: 1px 0px; background-color: beige;">
+                    <h3>All Products</h3>
+                </div>
                 <%      for (int i = 0; i < test_method().Count(); i++)
-                        {%>
+                    {%>
 
-                <div class="col-xs-6 col-sm-4 col-md-4 row panel text-center " style="margin: 1px 0px; background-color: beige;">
-                    <div class="col-sm-12 ">
-                        <p></p>
-                    </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 row panel text-center box1" style="margin: 1px 0px; background-color: beige;">
+                    <br />
                     <div class="col-sm-12  " style="background-color: skyblue;" onclick="location.href='ProductPage_WebForm?param1=<%: test_method()[i].getProductID() %>';">
                         <p>.item <%: i + 1 %> name</p>
                         <p><%: test_method()[i].getName() %></p>
@@ -57,18 +112,21 @@
 
                 <%      } %>
 
-                <%  }else
+                <%  }
+                    else
                     { %>
 
-                
-                <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center " style="margin: 1px 0px; background-color: beige;"> <h3>Category: <%= "CatID: "+Request.QueryString["category"]+" CatName: "+getCategoryName( Request.QueryString["category"] ) %></h3></div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center " style="margin: 1px 0px; background-color: beige;">
+                    <h3>Category: <%= "CatID: "+Request.QueryString["category"]+" CatName: "+getCategoryName( Request.QueryString["category"] ) %></h3>
+                </div>
                 <!-- Codes for categories -->
 
 
                 <%      for (int i = 0; i < test_method().Count(); i++)
-                        {%>
+                    {%>
                 <%          if (Request.QueryString["category"] == test_method()[i].getCategory().ToString())
-                            {%>
+                    {%>
                 <div class="col-xs-6 col-sm-4 col-md-4 row panel text-center " style="margin: 1px 0px; background-color: beige;">
                     <div class="col-sm-12 ">
                         <p></p>

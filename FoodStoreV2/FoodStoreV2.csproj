@@ -395,6 +395,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="CSharpClasses\Cart.cs" />
+    <Compile Include="CSharpClasses\Category.cs" />
     <Compile Include="CSharpClasses\Customer.cs" />
     <Compile Include="CSharpClasses\DatabaseConnector.cs" />
     <Compile Include="CSharpClasses\Order.cs" />

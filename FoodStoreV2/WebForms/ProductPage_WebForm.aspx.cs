@@ -21,13 +21,13 @@ namespace FoodStoreV2.WebForms
 
             List <Product> productList = new List<Product>();
 
-            productList.Add(new Product(1, "productname", "123kr", 1, "100", "onsale"));
-            productList.Add(new Product(2, "productname2", "234kr", 1, "100", "onsale"));
-            productList.Add(new Product(3, "productname3", "345kr", 2, "100", "normal"));
-            productList.Add(new Product(4, "productname4", "456kr", 2, "100", "normal"));
-            productList.Add(new Product(5, "productname5", "567kr", 3, "100", "normal"));
-            productList.Add(new Product(6, "productname6", "678kr", 4, "100", "normal"));
-            productList.Add(new Product(7, "productname7", "789kr", 4, "100", "normal"));
+            productList.Add(new Product(1, "productname", "123kr", 1, "100", "onsale", "info", "img"));
+            productList.Add(new Product(2, "productname2", "234kr", 1, "100", "onsale", "info", "img"));
+            productList.Add(new Product(3, "productname3", "345kr", 2, "100", "normal", "info", "img"));
+            productList.Add(new Product(4, "productname4", "456kr", 2, "100", "normal", "info", "img"));
+            productList.Add(new Product(5, "productname5", "567kr", 3, "100", "normal", "info", "img"));
+            productList.Add(new Product(6, "productname6", "678kr", 4, "100", "normal", "info", "img"));
+            productList.Add(new Product(7, "productname7", "789kr", 4, "100", "normal", "info", "img"));
 
 
             return productList;
