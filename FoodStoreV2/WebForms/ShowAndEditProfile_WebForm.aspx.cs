@@ -12,9 +12,12 @@ namespace FoodStoreV2.WebForms
     {
         private Customer oldCustomerObject;
         private DatabaseConnector databaseConnecctor;
+        private SessionValues sessionValues;
         protected void Page_Load(object sender, EventArgs e)
         {
-            oldCustomerObject = (Customer)Session["currentLogedInUserObject"];
+            sessionValues = new SessionValues();
+            // oldCustomerObject = (Customer)Session["currentLogedInUserObject"];
+            oldCustomerObject = sessionValues.getCustomerSessionObject();
             databaseConnecctor = new DatabaseConnector();
             if (!Page.IsPostBack)
             {
@@ -50,7 +53,8 @@ namespace FoodStoreV2.WebForms
                         System.Diagnostics.Debug.WriteLine("nytt  " + newCustomerObject.getUserPassword());
                     }
                     databaseConnecctor.updateCustomerDetails(newCustomerObject, oldCustomerObject.getEmailAdress());
-                    Session.Add("currentLogedInUserObject", newCustomerObject);
+                 //   Session.Add("currentLogedInUserObject", newCustomerObject);
+                    sessionValues.setLoginSession(newCustomerObject);
                     updateConfirmLabel.Text = "You profile has been updated";
                 }
         }

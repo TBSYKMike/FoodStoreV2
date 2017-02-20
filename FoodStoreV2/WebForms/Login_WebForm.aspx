@@ -1,24 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login_WebForm.aspx.cs" Inherits="FoodStoreV2.WebForms.Login_WebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <div style="height: 552px">
-    </div>
+    
+     <div style="height: 552px">
+         <asp:TextBox class="form-control" TabIndex="0" ID="emailTextBox" runat="server" style="position:absolute; top: 180px; left: 206px; height: 40px; width: 200px;"></asp:TextBox>
+            <asp:TextBox  class="form-control" ID="passwordTextBox" TextMode="Password" runat="server" style="position:absolute; top: 223px; left: 205px; height:40px; width: 200px;"></asp:TextBox>
+           <asp:Button ID="loginButton" class="btn btn-primary btn-lg" runat="server" ValidationGroup='login' Text="Login" style="position:absolute;  top: 198px; left: 404px; height: 40px; width: 78px;" OnClick="registerButton_Click"/> 
+             <asp:Button ID="forgotPasswordButton" class="btn btn-primary btn-lg" runat="server" Text="Forgot password" style="position:absolute;   top: 144px; left: 822px; height: 44px; width: 178px;" OnClick="forgotPasswordButton_Click"/>
+            <asp:Button  ID="registerButton" class="btn btn-primary btn-lg" runat="server" Text="Register" style="position:absolute;  top: 224px; left: 833px; height: 42px; width: 126px;" OnClick="registerButton_Click1"/>
+         
+         
+            </div>
         <asp:Label ID="passwordLabel" runat="server" Text="password" style="position:absolute; top: 228px; left: -17px; height: 27px; width: 66px; margin-left: 141px;"></asp:Label>
-        <asp:TextBox TabIndex="1" ID="passwordTextBox" TextMode="Password" runat="server" style="position:absolute; top: 223px; left: 205px; height: 22px; width: 139px;"></asp:TextBox> 
+     
 
-         <asp:Label ID="wrongEmailOrPasswordLabel" runat="server" Text="Wrong username or password" style="position:absolute; top: 200px; left: 482px; color: red;" Visible="False"></asp:Label>
+         <asp:Label ID="wrongEmailOrPasswordLabel" runat="server" Text="Wrong username or password" style="position:absolute; top: 206px; left: 499px; color: red;" Visible="False"></asp:Label>
 
         <asp:Label ID="emailLabel" runat="server" Text="Email" style="position:absolute; top: 184px; left: 150px; width: 42px;"></asp:Label>
-        <asp:TextBox TabIndex="2" ID="emailTextBox" runat="server" style="position:absolute; top: 180px; left: 206px; height: 22px; width: 139px;"></asp:TextBox> 
+         
          
         
-        <asp:Button ID="loginButton" runat="server" ValidationGroup='login' Text="Login" style="position:absolute;  top: 198px; left: 404px; height: 20px; width: 55px;" OnClick="registerButton_Click"/>
+      
         
-        <asp:Button ID="registerButton" runat="server" Text="Register" style="position:absolute;  top: 224px; left: 833px; height: 22px;" OnClick="registerButton_Click1"/>
-        <asp:Button ID="forgotPasswordButton" runat="server" Text="Forgot password" style="position:absolute;  top: 168px; left: 831px; height: 22px;" OnClick="forgotPasswordButton_Click"/>
-        
+       
+    
         <div class="g-recaptcha" ID="captcha" runat="server" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" style= " position:absolute; height: 77px; width: 270px; margin-top: 188px; margin-right: 0px; top: 129px; left: 135px;"></div>
         <asp:Label ID="robotLabel" runat="server" Text="Are you a robot? If not, check the box!" style="position:absolute; top: 344px; left: 430px; color: red;" Visible="False"></asp:Label>
-      
+
 </asp:Content>
 
