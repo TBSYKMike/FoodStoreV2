@@ -18,7 +18,7 @@ namespace FoodStoreV2.CSharpClasses
             conn_string = new MySqlConnectionStringBuilder();
             conn_string.Server = "localhost";
             conn_string.UserID = "root";
-            conn_string.Password = "";
+            conn_string.Password = "root";
             conn_string.Database = "fooddatabase";
         }
         private void createCommand(String sqlCommand)
