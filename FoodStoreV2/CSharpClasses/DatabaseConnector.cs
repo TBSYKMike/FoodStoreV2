@@ -51,7 +51,7 @@ namespace FoodStoreV2.CSharpClasses
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Product product = new Product(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5));
+                Product product = new Product(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7));
             }
             conn.Close();
             return productList;
@@ -64,7 +64,7 @@ namespace FoodStoreV2.CSharpClasses
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Product product = new Product(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5));
+                Product product = new Product(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7));
                 conn.Close();
                 return product;
             }
