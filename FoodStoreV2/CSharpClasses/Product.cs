@@ -29,5 +29,51 @@ namespace FoodStoreV2.CSharpClasses
             this.info = info;
             this.image = image;
         }
+
+        public int getSearchHits()
+        {
+            return searchHits;
+        }
+        public void setSearchHits(int searchHits)
+        {
+            this.searchHits = searchHits;
+        }
+        public int getProductID()
+        {
+            return productID;
+        }
+        public int getCategory()
+        {
+            return category;
+        }
+        public String getName()
+        {
+            return name;
+        }
+        public String getPrice()
+        {
+            return price;
+        }
+        public String getAmount()
+        {
+            return amount;
+        }
+
+        public string getOnSale()
+        {
+            return onSale;
+        }
+
+        public string getInfo()
+        {
+            return info;
+        }
+
+        public string getImageURL()
+        {
+            return image;
+        }
+
+
     }
 }
