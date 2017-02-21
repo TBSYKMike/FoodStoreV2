@@ -100,6 +100,8 @@
                 <%      for (int i = 0; i < getProductList(categoryID).Count(); i++)
                     {%>
                 <!--  METHOD FOR PRODUCT ITEM Start  -->
+
+                <!--
                 <div class="col-xs-6 col-sm-4 col-md-4 row panel text-center box1" style="margin: 1px 0px; background-color: beige;">
                     <br />
                     <div class="col-sm-12  " style="background-color: skyblue;" onclick="location.href='ProductPage_WebForm?param1=<%: getProductList(categoryID)[i].getProductID() %>';">
@@ -110,11 +112,11 @@
                         <p>.itemINFO <%: getProductList(categoryID)[i].getInfo() %> info</p>
                         <p>.itemPRICE <%: getProductList(categoryID)[i].getPrice() %> kr</p>
 
-                        <!--     <button type="button" class="btn btn-primary btn-std btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW2 Button</button> 
-                       -->
+                             <button type="button" class="btn btn-primary btn-std btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW2 Button</button> 
+                       
 
                     </div>
-                    <!-- 
+                     
                     <div class="col-sm-12  " style="background-color: deepskyblue;" onclick="alert('You are clicking on buy item <%: i + 1 %>');">
                         <br />
                         .buy<br />
@@ -128,10 +130,10 @@
                     <div class="col-sm-12 ">
                         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="alert('You are clicking on buy item <%: i + 1 %>');">.BuyNEW3 Button</button>
                     </div>
-                    -->
+                    
                     <% int tmp = i; %>
                     <div class="col-sm-12 ">
-                        <asp:Button ID="Button1" class="btn btn-primary btn-lg btn-block" runat="server" OnClick="testCartList" Text="New ASP ADDCART" />
+                       <asp:Button ID="Button1" class="btn btn-primary btn-lg btn-block" runat="server" OnClick="testCartList" Text="New ASP ADDCART" />
                         <asp:Button ID="Button3" class="btn btn-primary btn-lg btn-block" runat="server" CommandArgument="1" OnCommand="Button1_Command" Text="New ASP ADDCART v2" />
                         <asp:Button ID="Button4" Text="Click Here1" runat="server" CommandArgument="1" />
 
@@ -148,6 +150,8 @@
                         <br />
                         <asp:Button Text="Submit" runat="server" OnClick="Submit" />
 
+                      
+                        <asp:PlaceHolder runat="server" ID="PlaceHolder1"></asp:PlaceHolder>
 
 
                     </div>
@@ -158,7 +162,11 @@
                     </div>
 
                 </div>
+                    -->
 
+                <%= generateProductPartBegin(i, categoryID) %>
+                <asp:PlaceHolder runat="server" ID="PlaceHolder01">  </asp:PlaceHolder>
+                <%= generateProductPartEnd(i, categoryID) %>
 
                 <!--  METHOD FOR PRODUCT ITEM End  -->
 
@@ -167,10 +175,6 @@
                 <%  }
                     else
                     {
-
-
-
-
                 %>
 
 
@@ -220,7 +224,8 @@
                 </div>
                 -->
                 <%= generateProductPartBegin(i, categoryID) %>
-                <asp:Button ID="Button2" class="btn btn-primary btn-lg btn-block" runat="server" OnClick="testCartList" Text="New ASP ADDCART" />
+                <!--<asp:Button ID="Button2" class="btn btn-primary btn-lg btn-block" runat="server" OnClick="testCartList" Text="New ASP ADDCART" /> -->
+                <asp:PlaceHolder runat="server" ID="PlaceHolder02">  </asp:PlaceHolder>
                 <%= generateProductPartEnd(i, categoryID) %>
                 <!--  METHOD FOR PRODUCT ITEM End  -->
 
