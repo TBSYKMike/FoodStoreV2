@@ -200,7 +200,7 @@ namespace FoodStoreV2.WebForms
             int i = 0;
             int.TryParse(Request.Form["myButtonValue"].ToString(), out i);
             //do somethign with i
-            ((List<FoodStoreV2.CSharpClasses.Cart>)Session["cartList"]).Add(new FoodStoreV2.CSharpClasses.Cart(i, 1000));
+          //  ((List<FoodStoreV2.CSharpClasses.Cart>)Session["cartList"]).Add(new FoodStoreV2.CSharpClasses.Cart(i, 1000));
         }
 
 
@@ -251,7 +251,7 @@ namespace FoodStoreV2.WebForms
             string name = Request.Form["Name"];
             string email = txtEmail.Value;
             int i = Int32.Parse(name);
-            ((List<FoodStoreV2.CSharpClasses.Cart>)Session["cartList"]).Add(new FoodStoreV2.CSharpClasses.Cart(i, 1000));
+          //  ((List<FoodStoreV2.CSharpClasses.Cart>)Session["cartList"]).Add(new FoodStoreV2.CSharpClasses.Cart(i, 1000));
         }
 
         protected void Load_Items(object sender, CommandEventArgs e)
