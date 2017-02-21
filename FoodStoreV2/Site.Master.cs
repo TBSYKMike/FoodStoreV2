@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using FoodStoreV2.CSharpClasses;
 
 namespace FoodStoreV2
 {
@@ -76,6 +77,32 @@ namespace FoodStoreV2
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            //Session["FirstName"] = "";
+            //Session.Add("FirstName", "");
+
+            Session.Clear();
+            Session.RemoveAll();
+            Session.Abandon();
+            Response.Redirect("~/");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session["FirstName"] = "mike";
+            Session.Add("FirstName", "mike");
+
+            Response.Redirect("~/WebForms/ShoppingPage_WebForm");
+        }
+
+        protected Customer callGetCustomerSessionObject()
+        {
+            SessionValues sv = new SessionValues();
+            return sv.getCustomerSessionObject();
+        }
+
     }
 
 }

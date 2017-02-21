@@ -12,7 +12,6 @@ namespace FoodStoreV2.CSharpClasses
         private MySqlConnection conn;
         private MySqlConnectionStringBuilder conn_string;
         private MySqlCommand cmd;
-        private List<Product> productList = new List<Product>();
 
         private void startConnection()
         {
@@ -26,7 +25,7 @@ namespace FoodStoreV2.CSharpClasses
         {
             using (conn = new MySqlConnection(conn_string.ToString()))
             using (cmd = conn.CreateCommand())
-            cmd.CommandText = string.Format(sqlCommand);
+                cmd.CommandText = string.Format(sqlCommand);
             conn.Open();
         }
         public Customer getCustomerObject(String email)
@@ -43,59 +42,46 @@ namespace FoodStoreV2.CSharpClasses
             }
             return null;
         }
+
         public List<Product> getProductsOnCategory(int categoryID)
         {
-
             List<Product> productList = new List<Product>();
             startConnection();
-            createCommand("SELECT * FROM Products WHERE category=" + categoryID);
-
+            if (categoryID == 0)
+            {
+                createCommand("SELECT * FROM Products");
+            }
+            else
+            {
+                createCommand("SELECT * FROM Products WHERE category=" + categoryID);
+            }
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 Product product = new Product(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7));
+                productList.Add(product);
             }
             conn.Close();
             return productList;
         }
-        public List<Product> getProductObjectsFromSearchResult(String searchValue)
+
+        public List<Category> getCategories()
         {
-            string[] searchValueSplittedOnSpace = searchValue.Split(null);
+            List<Category> categoryList = new List<Category>();
             startConnection();
-            for (int i = 0; i < searchValueSplittedOnSpace.Length; i++)
-            {
-                loopTroughProductQueries("SELECT * FROM Products WHERE name LIKE" + "'%" + searchValueSplittedOnSpace[i] + "%'");
-                loopTroughProductQueries("SELECT * FROM Products WHERE producer LIKE" + "'%" + searchValueSplittedOnSpace[i] + "%'");
-            }
-            List<Product> SortedList = productList.OrderByDescending(product => product.getSearchHits()).ToList(); //Sorting list on hit counter value
-            conn.Close();
-            return SortedList;
-        }
-        private void loopTroughProductQueries(String command)
-        {
-            Boolean productExist;
-            createCommand(command);
+
+            createCommand("SELECT * FROM Categories");
+
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                productExist = false;
-                for (int h = 0; h < productList.Count; h++)
-                {
-                    if (productList[h].getProductID().Equals(reader.GetString(0)))
-                    {
-                        productList[h].setSearchHits(productList[h].getSearchHits() + 1);
-                        productExist = true;
-                    }
-                }
-                if (productExist == false)
-                {
-                    //int productID, String name, String price, int category, String amount, String onSale, String info, String image)
-                    Product product = new Product(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7));
-                    productList.Add(product);
-                }
+                Category category = new Category(reader.GetInt32(0), reader.GetString(1));
+                categoryList.Add(category);
             }
-
+            conn.Close();
+            return categoryList;
         }
+
         public Product getRandomProduct()
         {
             startConnection();
@@ -165,7 +151,7 @@ namespace FoodStoreV2.CSharpClasses
         public void updateCustomerDetails(Customer customer, String oldEmail)
         {
             startConnection();
-            createCommand("UPDATE Customers SET name = '" + customer.getName() + "', street = '" + customer.getStreetAdress() + "', city = '" + customer.getCity() + "', postCode = '" + customer.getPostCode() + "', email = '" + customer.getEmailAdress() + "', password = '" + customer.getUserPassword() +"', userName = '" + customer.getUserName() + "' WHERE email = '" + oldEmail + "'");
+            createCommand("UPDATE Customers SET name = '" + customer.getName() + "', street = '" + customer.getStreetAdress() + "', city = '" + customer.getCity() + "', postCode = '" + customer.getPostCode() + "', email = '" + customer.getEmailAdress() + "', password = '" + customer.getUserPassword() + "', userName = '" + customer.getUserName() + "' WHERE email = '" + oldEmail + "'");
             cmd.ExecuteNonQuery();
             conn.Close();
         }

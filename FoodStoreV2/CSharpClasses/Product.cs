@@ -29,6 +29,7 @@ namespace FoodStoreV2.CSharpClasses
             this.info = info;
             this.image = image;
         }
+
         public int getSearchHits()
         {
             return searchHits;
@@ -57,5 +58,22 @@ namespace FoodStoreV2.CSharpClasses
         {
             return amount;
         }
+
+        public string getOnSale()
+        {
+            return onSale;
+        }
+
+        public string getInfo()
+        {
+            return info;
+        }
+
+        public string getImageURL()
+        {
+            return image;
+        }
+
+
     }
 }
