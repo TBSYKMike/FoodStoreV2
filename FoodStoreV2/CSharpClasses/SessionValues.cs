@@ -19,6 +19,14 @@ namespace FoodStoreV2.CSharpClasses
         {
             return (Customer)HttpContext.Current.Session["currentLogedInUserObject"];
         }
+        public void setCartSession(List<Product> cartList)
+        {
+            HttpContext.Current.Session["cartList"] = cartList;
+        }
+        public List<Product> getCartSessionList()
+        {
+            return (List<Product>)HttpContext.Current.Session["cartList"];
+        }
 
     }
 }

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrderHistory_WebForm.aspx.cs" Inherits="FoodStoreV2.WebForms.OrderHistory_WebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<div style="height: 552px">
+    <div style="height: 552px">
     </div>
       <p style="height: 470px; margin-left: 0px; width: 1299px; margin-right: 0px;" align="right">
                 

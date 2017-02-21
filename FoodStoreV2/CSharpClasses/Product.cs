@@ -16,7 +16,7 @@ namespace FoodStoreV2.CSharpClasses
         private String onSale;
         private String info;
         private String image;
-
+        private int searchHits;
 
         public Product(int productID, String name, String price, int category, String amount, String onSale, String info, String image)
         {
@@ -28,6 +28,34 @@ namespace FoodStoreV2.CSharpClasses
             this.onSale = onSale;
             this.info = info;
             this.image = image;
+        }
+        public int getSearchHits()
+        {
+            return searchHits;
+        }
+        public void setSearchHits(int searchHits)
+        {
+            this.searchHits = searchHits;
+        }
+        public int getProductID()
+        {
+            return productID;
+        }
+        public int getCategory()
+        {
+            return category;
+        }
+        public String getName()
+        {
+            return name;
+        }
+        public String getPrice()
+        {
+            return price;
+        }
+        public String getAmount()
+        {
+            return amount;
         }
     }
 }
