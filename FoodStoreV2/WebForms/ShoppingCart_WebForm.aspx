@@ -32,8 +32,8 @@
                         <ItemTemplate>
                             <asp:TextBox runat="server" ID="txtQuantity" OnTextChanged="txtQuantity_TextChanged"
                         AutoPostBack="True" Columns="5" Text='<%# Eval("Quantity") %>'></asp:TextBox><br />
-                            <asp:LinkButton runat="server" CssClass="noeffect" ID="addButton" Text="+" style="font-size:12px;" OnClick="addButton_Click"></asp:LinkButton>
-                            <asp:LinkButton runat="server" CssClass="noeffect" ID="removeButton" Text="-" style="font-size:12px;"  OnClick="removeButton_Click"></asp:LinkButton> 
+                            <asp:LinkButton runat="server" CssClass="noeffect" ID="addButton" Text="+" style="font-size:22px;" OnClick="addButton_Click"></asp:LinkButton>
+                            <asp:LinkButton runat="server" CssClass="noeffect" ID="removeButton" Text="-" style="font-size:22px;"  OnClick="removeButton_Click"></asp:LinkButton> 
                         </ItemTemplate>
                     </asp:TemplateField>
 

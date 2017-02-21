@@ -171,7 +171,7 @@ namespace FoodStoreV2.WebForms
         protected void confirmAndPayButton_Click(object sender, EventArgs e)
         {
             //Sätt carten
-            Response.Redirect("OrderFinish_WebForm.aspx");
+            Response.Redirect("ConfirmationPage_WebForm.aspx");
             System.Diagnostics.Debug.WriteLine("pay");
         }
 
