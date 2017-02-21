@@ -7,13 +7,18 @@ namespace FoodStoreV2.CSharpClasses
 {
     public class Cart
     {
-        private int productID;
+        private Product product;
         private int productAmount;
 
-        public Cart(int productID, int productAmount)
+
+        public Cart(Product product, int productAmount)
         {
-            this.productID = productID;
+            this.product = product;
             this.productAmount = productAmount;
+        }
+        public Cart()
+        {
+     
         }
         public void setProductAmount(int productAmount)
         {
@@ -23,10 +28,9 @@ namespace FoodStoreV2.CSharpClasses
         {
             return productAmount;
         }
-        public int getProductID()
+        public Product getProduct()
         {
-            return productID;
+            return product;
         }
-
     }
 }
