@@ -178,11 +178,12 @@
                 <br />
                 <br />
             </div>
-            <div class="col-sm-12" style="background-color: lightsteelblue;" onclick="alert('You are clicking on buy item');">
+            <div class="col-sm-12" style="background-color: lightsteelblue;" >
                 <br />
                 <br />
                 <br />
                 .buy Click Button
+                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click1" />
                 <br />
                 <br />
                 <br />
