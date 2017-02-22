@@ -18,7 +18,7 @@ namespace FoodStoreV2.WebForms
                 redirectAspx = "ShoppingPage_WebForm.aspx";
             }
             System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
-            String path = @"~/App_Data/AdResponses.xml";
+            String path = @"~/App_Data/AdResponses1.xml";
             doc.Load(Server.MapPath(path));
             System.Xml.XmlNode root = doc.DocumentElement;
             System.Xml.XmlNode adNode = root.SelectSingleNode(@"descendant::ad[@adname='" + adversitmentName + "']");

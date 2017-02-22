@@ -208,6 +208,20 @@ namespace FoodStoreV2.CSharpClasses
             }
 
         }
+        public int checkProductAmount(int productID)
+        {
+            startConnection();
+            createCommand("SELECT amount FROM Products WHERE id='" + productID + "'");
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int amount = Int32.Parse(reader.GetString(0));
+                conn.Close();
+                return amount;
+            }
+            conn.Close();
+            return 0;
+        }
 
 
     }

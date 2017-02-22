@@ -20,13 +20,16 @@ namespace FoodStoreV2.WebForms
         protected void Page_Load(object sender, EventArgs e)
         {
             if (sessionValues.getCartSessionList() != null)
-            {
+            { 
                 cartlist = sessionValues.getCartSessionList();
+                limitProductAmountOnStock();
             }
             else
             {
                // confirmAndPayButton.Enabled = false;
             }
+
+  
 
             if (!Page.IsPostBack)
             {
@@ -229,6 +232,19 @@ namespace FoodStoreV2.WebForms
             dataTable.Clear();
             addProductsDataToGridView();
             gridViewDataBind();
+        }
+
+        private void limitProductAmountOnStock()
+        {
+            for (int i = 0; i < cartlist.Count; i++)
+            {
+                int amountInStock = databaseConnector.checkProductAmount(cartlist[i].getProduct().getProductID());
+                if (cartlist[i].getProductAmount() > amountInStock)
+                {
+                cartlist[i].setProductAmount(amountInStock);
+                }
+            }
+                
         }
     }
 }

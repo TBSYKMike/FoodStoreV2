@@ -118,7 +118,7 @@
                     <br />
          
                       <asp:AdRotator ID="AdRotator2" runat="server" DataSourceID="XmlDataSource1" />                   
-                     <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/App_Data/Adversitment.xml"></asp:XmlDataSource>
+                     <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/App_Data/Adversitment1.xml"></asp:XmlDataSource>
 
                     <br />
                   
