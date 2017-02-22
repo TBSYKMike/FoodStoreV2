@@ -23,12 +23,13 @@ namespace FoodStoreV2.WebForms
         {
             String email = emailTextBox.Text;
             String pass;
+            SendMail sendMail = new SendMail();
             if (!con.checkIfCollumnValueExist("customers","email", email))
             {
                 errorMsg.Visible = false;
                 pass = createPass();
                 con.updateCustomerPassword(email, pass);
-                sendMail(email, pass);
+                sendMail.mailer(email, "New Password", "Your new Password: " + pass);
 
             }
             else
@@ -37,7 +38,7 @@ namespace FoodStoreV2.WebForms
             }
         }
 
-        protected void sendMail(String mail, String pass)
+        /*protected void sendMail(String mail, String pass)
         {
             try
             {
@@ -59,7 +60,7 @@ namespace FoodStoreV2.WebForms
             {
                 Response.Write( "Not sent " + ex.Message);
             }
-        }
+        }*/
 
         protected String createPass()
         {
