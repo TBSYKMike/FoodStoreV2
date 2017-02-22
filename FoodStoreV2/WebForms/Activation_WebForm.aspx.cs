@@ -21,14 +21,14 @@ namespace FoodStoreV2.WebForms
                 string code = Request.QueryString["confirmationCode"];
                 
 
-                if (!con.checkIfCollumnValueExist("customers", "isActivated", "0") && !con.checkIfCollumnValueExist("customers", "confirmationCode", code))
+                if (!con.checkIfCollumnValueExist("customers", "confirmationCode", code) && con.checkIfCustomerActive(code))
                 {
                     con.activateCustomer(1, code);
                     activeLabel.Text = "Activation Successful!";
                 }
-                else
+                else 
                 {
-                    activeLabel.Text = "Account is already active!";
+                    activeLabel.Text = "Invalid activation link!";
                 }
             }
         }
