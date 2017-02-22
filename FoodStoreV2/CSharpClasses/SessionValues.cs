@@ -34,19 +34,44 @@ namespace FoodStoreV2.CSharpClasses
 
         public void addToCart(int productID)
         {
+            getCartSessionList();
+
             DatabaseConnector dbc = new DatabaseConnector();
             List<Product> productList = dbc.getProductsOnCategory(0);
-            Product productObject =  new Product(1,"name","price1123", 1, "amount33", "onsale", "product info", "imgURL");
-            foreach ( Product tempProductObject in productList)
+            Product productObject = new Product(1, "name", "price1123", 1, "amount33", "onsale", "product info", "imgURL");
+            foreach (Product tempProductObject in productList)
             {
-                if(tempProductObject.getProductID() == productID)
+                if (tempProductObject.getProductID() == productID)
                 {
                     productObject = tempProductObject;
                     break;
                 }
             }
 
-            ((List<Cart>)HttpContext.Current.Session["cart"]).Add(new Cart(productObject, 1));
+
+            bool alreadyExists = ((List<Cart>)HttpContext.Current.Session["cart"]).Any(x => x.getProduct().getProductID() == productID);
+            if (alreadyExists)
+            {
+                // if object exist  in Session Cart
+                List<Cart> cartList = ((List<Cart>)HttpContext.Current.Session["cart"]);
+
+                for (int i = 0; i < ((List<Cart>)HttpContext.Current.Session["cart"]).Count; i++)
+                {
+                    if(((List<Cart>)HttpContext.Current.Session["cart"])[i].getProduct().getProductID() == productID)
+                    {
+                        int currentProductAmount = ((List<Cart>)HttpContext.Current.Session["cart"])[i].getProductAmount();
+                        currentProductAmount++;
+                        ((List<Cart>)HttpContext.Current.Session["cart"])[i].setProductAmount(currentProductAmount);
+                    }
+
+                }
+            }
+            else
+            {
+                // if object does not exist in Session Cart
+                ((List<Cart>)HttpContext.Current.Session["cart"]).Add(new Cart(productObject, 1));
+            }
+
         }
 
     }
