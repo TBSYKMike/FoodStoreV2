@@ -108,7 +108,12 @@ namespace FoodStoreV2.WebForms
                 LinkButton button = (LinkButton)sender;
                  row = (GridViewRow)button.NamingContainer;
             }
-           
+            else if (buttonType == "textBox")
+            {
+                TextBox button = (TextBox)sender;
+                row = (GridViewRow)button.NamingContainer;
+            }
+
             if (row != null)
             {
                 int index = row.RowIndex;
@@ -195,11 +200,19 @@ namespace FoodStoreV2.WebForms
                 int value;
                 bool isNumeric = int.TryParse(textBox.Text, out value);
                 
-                if (isNumeric || value <1)
+                if (isNumeric == false)
                 {
                     textBox.Text = "1";
-                }        
-                cartlist[index].setProductAmount(Int32.Parse(textBox.Text));
+                }
+                else if(value < 1)
+                {
+                    deleteFromCart(sender, "textBox");
+                }
+                else
+                {
+                    cartlist[index].setProductAmount(Int32.Parse(textBox.Text));
+                }
+              
             }
             sessionValues.setCartSession(cartlist);
 
