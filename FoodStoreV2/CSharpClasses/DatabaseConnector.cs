@@ -12,6 +12,7 @@ namespace FoodStoreV2.CSharpClasses
         private MySqlConnection conn;
         private MySqlConnectionStringBuilder conn_string;
         private MySqlCommand cmd;
+        private List<Product> productList = new List<Product>();
 
         private void startConnection()
         {
@@ -155,12 +156,43 @@ namespace FoodStoreV2.CSharpClasses
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public void updateCustomerPassword(String email, String newPassword)
+        public List<Product> getProductObjectsFromSearchResult(String searchValue)
         {
+            string[] searchValueSplittedOnSpace = searchValue.Split(null);
             startConnection();
-            createCommand("UPDATE Customers SET password = '" + newPassword +"' WHERE email = '" + email + "'");
-            cmd.ExecuteNonQuery();
+            for (int i = 0; i < searchValueSplittedOnSpace.Length; i++)
+            {
+                loopTroughProductQueries("SELECT * FROM Products WHERE name LIKE" + "'%" + searchValueSplittedOnSpace[i] + "%'");
+                loopTroughProductQueries("SELECT * FROM Products WHERE producer LIKE" + "'%" + searchValueSplittedOnSpace[i] + "%'");
+            }
+            List<Product> SortedList = productList.OrderByDescending(product => product.getSearchHits()).ToList(); //Sorting list on hit counter value
             conn.Close();
+            return SortedList;
+        }
+        private void loopTroughProductQueries(String command)
+        {
+            Boolean productExist;
+            createCommand(command);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                productExist = false;
+                for (int h = 0; h < productList.Count; h++)
+                {
+                    if (productList[h].getProductID().Equals(reader.GetString(0)))
+                    {
+                        productList[h].setSearchHits(productList[h].getSearchHits() + 1);
+                        productExist = true;
+                    }
+                }
+                if (productExist == false)
+                {
+                    //int productID, String name, String price, int category, String amount, String onSale, String info, String image)
+                    Product product = new Product(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7));
+                    productList.Add(product);
+                }
+            }
+
         }
 
 
