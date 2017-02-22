@@ -111,10 +111,17 @@ namespace FoodStoreV2.CSharpClasses
             }
             return null;
         }
-        public void insertCustomer(String name, String streetAdress, String city, String postCode, String emailAdress, String userPassword, String userName)
+        public void insertCustomer(String name, String streetAdress, String city, String postCode, String emailAdress, String userPassword, String userName, int isActivated, String code)
         {
             startConnection();
-            createCommand("INSERT INTO Customers (name,street,city,postCode,email,password,userName) VALUES('" + name + "','" + streetAdress + "','" + city + "','" + postCode + "','" + emailAdress + "','" + userPassword + "','" + userName + "')");
+            createCommand("INSERT INTO Customers (name,street,city,postCode,email,password,userName, isActivated, confirmationCode) VALUES('" + name + "','" + streetAdress + "','" + city + "','" + postCode + "','" + emailAdress + "','" + userPassword + "','" + userName + "','" + isActivated + "','" + code + "')");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void activateCustomer(int isActivated, String code)
+        {
+            startConnection();
+            createCommand("UPDATE Customers SET isActivated = '" + isActivated + "' WHERE confirmationCode = '" + code + "'");
             cmd.ExecuteNonQuery();
             conn.Close();
         }
