@@ -136,7 +136,7 @@ namespace FoodStoreV2.WebForms
                 int index = row.RowIndex;
                 System.Diagnostics.Debug.WriteLine("clicked on index:     " + index);
                 int newProductAmmount = cartlist[index].getProductAmount() + addValue;
-                if (newProductAmmount >= 0)
+                if (newProductAmmount > 0)
                 {
                     cartlist[index].setProductAmount(newProductAmmount);
                 }
@@ -192,12 +192,14 @@ namespace FoodStoreV2.WebForms
             {
                 int index = row.RowIndex;
                 System.Diagnostics.Debug.WriteLine("clicked on index:     " + index);
-              if(Int32.Parse(textBox.Text) < 0)
+                int value;
+                bool isNumeric = int.TryParse(textBox.Text, out value);
+                
+                if (isNumeric || value <1)
                 {
-                    cartlist[index].setProductAmount(Int32.Parse(textBox.Text));
-
-                }
-
+                    textBox.Text = "1";
+                }        
+                cartlist[index].setProductAmount(Int32.Parse(textBox.Text));
             }
             sessionValues.setCartSession(cartlist);
 
