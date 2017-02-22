@@ -222,5 +222,12 @@ namespace FoodStoreV2.WebForms
             gridViewDataBind();
         }
 
+        protected void clearCartButton_Click(object sender, EventArgs e)
+        {
+            sessionValues.setCartSession(null);
+            dataTable.Clear();
+            addProductsDataToGridView();
+            gridViewDataBind();
+        }
     }
 }

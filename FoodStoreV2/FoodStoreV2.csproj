@@ -199,6 +199,9 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="WebForms\AdRedirector.aspx" />
+    <Content Include="App_Data\AdResponses.xml" />
+    <Content Include="App_Data\Adversitment.xml" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -211,6 +214,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\elx_ad.jpg" />
+    <Content Include="Images\valencia_ad.png" />
     <Content Include="WebForms\ConfirmationPage_WebForm.aspx" />
     <Content Include="WebForms\ForgotPassword_WebForm.aspx" />
     <Content Include="WebForms\Login_WebForm.aspx" />
@@ -377,6 +382,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForms\AdRedirector.aspx.cs">
+      <DependentUpon>AdRedirector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\AdRedirector.aspx.designer.cs">
+      <DependentUpon>AdRedirector.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -523,9 +535,7 @@
       <DependentUpon>ShowAndEditProfile_WebForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

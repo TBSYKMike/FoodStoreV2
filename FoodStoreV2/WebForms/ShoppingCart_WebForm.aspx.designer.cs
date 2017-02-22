@@ -38,5 +38,14 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button confirmAndPayButton;
+        
+        /// <summary>
+        /// clearCartButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button clearCartButton;
     }
 }
