@@ -125,6 +125,20 @@ namespace FoodStoreV2.CSharpClasses
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public Boolean checkIfCustomerActive(String code)
+        {
+            startConnection();
+            createCommand("SELECT * FROM customers WHERE confirmationCode " + "= '" + code + "'" + " AND isActivated = " +"'1'" );
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                conn.Close();
+                return false;
+            }
+            conn.Close();
+            return true;
+        }
         public Boolean checkIfCollumnValueExist(String table, String collumn, String value)
         {
             startConnection();
