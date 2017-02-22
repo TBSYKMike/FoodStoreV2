@@ -211,6 +211,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="WebForms\Activation_WebForm.aspx" />
     <Content Include="WebForms\ConfirmationPage_WebForm.aspx" />
     <Content Include="WebForms\ForgotPassword_WebForm.aspx" />
     <Content Include="WebForms\Login_WebForm.aspx" />
@@ -437,6 +438,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Activation_WebForm.aspx.cs">
+      <DependentUpon>Activation_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Activation_WebForm.aspx.designer.cs">
+      <DependentUpon>Activation_WebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForms\ConfirmationPage_WebForm.aspx.cs">
       <DependentUpon>ConfirmationPage_WebForm.aspx</DependentUpon>

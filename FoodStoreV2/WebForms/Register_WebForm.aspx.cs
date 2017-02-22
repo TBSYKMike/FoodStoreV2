@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -39,9 +40,20 @@ namespace FoodStoreV2.WebForms
                 System.Diagnostics.Debug.WriteLine("You are a real person!");
                 if (this.IsValid)//Needs to fulfill all validating
                 {
+                    String activationCode = Membership.GeneratePassword(10, 3);
+                    SendMail sendMail = new SendMail();
+
+                    string msg = "Hello " + userNameTextBox.Text + "!";
+                    msg += "<br/>In order to use your account you need to activate it first.";
+                    msg += "<br/><br/>Please click the link to activate your account: ";
+                    msg += "<br/><a href = '" + Request.Url.AbsoluteUri.Replace("Register_WebForm", "Activation_WebForm.aspx?confirmationCode=" + activationCode) + "'>Activate here!</a>";
+                    
                     databaseConnector = new DatabaseConnector();
-                    databaseConnector.insertCustomer(nameTextBox.Text, streetAdressTextBox.Text, cityTextbox.Text, postCodetextBox.Text, emailTextBox.Text, passwordTextBox.Text, userNameTextBox.Text);
+                    databaseConnector.insertCustomer(nameTextBox.Text, streetAdressTextBox.Text, cityTextbox.Text, postCodetextBox.Text, emailTextBox.Text, passwordTextBox.Text, userNameTextBox.Text, 0, activationCode);
                     System.Diagnostics.Debug.WriteLine("inserted User in database");
+
+                    sendMail.mailer(emailTextBox.Text, "Account Activation", msg);
+
                 }
 
             }
