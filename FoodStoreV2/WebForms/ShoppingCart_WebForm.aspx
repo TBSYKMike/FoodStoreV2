@@ -48,7 +48,7 @@
                 </Columns>
      </asp:GridView>
 
-        <asp:Label ID="CustomerInfoLabel" runat="server" style="position:absolute; top: 208px; left: 666px; height: 68px; width: 199px;"></asp:Label>
+        <asp:Label ID="CustomerInfoLabel" color='red' runat="server" style="position:absolute; top: 197px; left: 577px; height: 68px; width: 199px;"></asp:Label>
         <asp:Button ID="confirmAndPayButton" class="btn btn-primary btn-lg" runat="server" Text="Confirm and pay" style="position:absolute; top: 331px; left: 672px;" OnClick="confirmAndPayButton_Click"/>
                 </div>
     

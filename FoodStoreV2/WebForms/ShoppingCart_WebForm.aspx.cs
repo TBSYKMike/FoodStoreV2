@@ -31,7 +31,6 @@ namespace FoodStoreV2.WebForms
 
             if (!Page.IsPostBack)
             {
-                testFillCart();
                 System.Diagnostics.Debug.WriteLine("Not Post back");
                 dataTable = new DataTable();
                 createDataTable();
@@ -45,21 +44,6 @@ namespace FoodStoreV2.WebForms
             }
             ViewState["DataTable"] = dataTable;
             // setCustomerInfoLabel();
-        }
-        private void testFillCart()
-        {
-            productList = databaseConnector.getProductObjectsFromSearchResult("R");
-            Cart cart22 = new Cart(productList[0], 1);
-            Cart cart23 = new Cart(productList[1], 2);
-
-            cartlist.Add(cart22);
-            cartlist.Add(cart23);
-            sessionValues.setCartSession(cartlist);
-
-        }
-        private void getCartProducts()
-        {
-
         }
 
         private void createDataTable()
@@ -108,10 +92,23 @@ namespace FoodStoreV2.WebForms
         }
         protected void deleteFromCartButton_Click(object sender, EventArgs e)
         {
+            deleteFromCart(sender, "button");
+        }
+        private void deleteFromCart(object sender, String buttonType)
+        {
             System.Diagnostics.Debug.WriteLine("Delete product");
-
-            Button button = (Button)sender;
-            GridViewRow row = (GridViewRow)button.NamingContainer;
+            GridViewRow row = null;
+            if (buttonType == "button")
+            {
+                Button button = (Button)sender;
+                row = (GridViewRow)button.NamingContainer;
+            }
+            else if (buttonType == "linkButton")
+            {
+                LinkButton button = (LinkButton)sender;
+                 row = (GridViewRow)button.NamingContainer;
+            }
+           
             if (row != null)
             {
                 int index = row.RowIndex;
@@ -139,7 +136,16 @@ namespace FoodStoreV2.WebForms
                 int index = row.RowIndex;
                 System.Diagnostics.Debug.WriteLine("clicked on index:     " + index);
                 int newProductAmmount = cartlist[index].getProductAmount() + addValue;
-                cartlist[index].setProductAmount(newProductAmmount);
+                if (newProductAmmount >= 0)
+                {
+                    cartlist[index].setProductAmount(newProductAmmount);
+                }
+                else
+                {
+                    //Delete
+                    deleteFromCart(sender, "linkButton");
+                }
+              
             }
             sessionValues.setCartSession(cartlist);
 
@@ -186,7 +192,12 @@ namespace FoodStoreV2.WebForms
             {
                 int index = row.RowIndex;
                 System.Diagnostics.Debug.WriteLine("clicked on index:     " + index);
-                cartlist[index].setProductAmount(Int32.Parse(textBox.Text));
+              if(Int32.Parse(textBox.Text) < 0)
+                {
+                    cartlist[index].setProductAmount(Int32.Parse(textBox.Text));
+
+                }
+
             }
             sessionValues.setCartSession(cartlist);
 
