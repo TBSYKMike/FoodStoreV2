@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>~/Images/valencia_ad.png</ImageUrl>
+    <NavigateUrl>WebForms/AdRedirector.aspx?ad=Widgets&amp;target=http://en.valenciacf.com/ </NavigateUrl>
+    <AlternativeText>Valencia CF</AlternativeText>
+    <Impressions>3</Impressions>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/elx_ad.jpg</ImageUrl>
+    <NavigateUrl>WebForms/AdRedirector.aspx?ad=Widgets&amp;target=http://www.elchecf.es/ </NavigateUrl>
+    <AlternativeText>Elche CF</AlternativeText>
+    <Impressions>2</Impressions>
+  </Ad>
+
+
+</Advertisements>

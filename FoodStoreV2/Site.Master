@@ -63,7 +63,7 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/WebForms/ShoppingPage_WebForm">Shop</a></li>
                         <li><a runat="server" href="~/WebForms/SearchPage_WebForm">Search</a></li>
-                        <li><a runat="server" href="~/WebForms/ShoppingCart_WebForm">Cart</a></li>
+                        <li><a runat="server" href="~/WebForms/ShoppingCart_WebForm">Cart <span class="badge"><%: getTotalAmount() %></span></a></li>
                         <!--  <li><a runat="server" href="~/Contact">Contact</a></li> -->
                     </ul>
 
@@ -116,20 +116,13 @@
                 .col-sm-2
                 <div class="col-sm-12" style="background-color: lawngreen;">
                     <br />
+         
+                      <asp:AdRotator ID="AdRotator2" runat="server" DataSourceID="XmlDataSource1" />                   
+                     <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/App_Data/Adversitment.xml"></asp:XmlDataSource>
+
                     <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    Ads              
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                  
+                          
                 </div>
                 <div class="col-sm-12">
                     <br />

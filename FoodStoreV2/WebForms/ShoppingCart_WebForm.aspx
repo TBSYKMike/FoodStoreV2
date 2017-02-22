@@ -40,7 +40,7 @@
 
                <asp:TemplateField>
             <ItemTemplate>
-                     <asp:Button  ID="registerButton" class="btn btn-primary btn-xs" runat="server" Text="Delete" OnClick="deleteFromCartButton_Click"/>
+                     <asp:Button  ID="deleteButton" class="btn btn-primary btn-xs" runat="server" Text="Delete" OnClick="deleteFromCartButton_Click"/>
             </ItemTemplate>
         </asp:TemplateField>
 
@@ -50,6 +50,7 @@
 
         <asp:Label ID="CustomerInfoLabel" color='red' runat="server" style="position:absolute; top: 197px; left: 577px; height: 68px; width: 199px;"></asp:Label>
         <asp:Button ID="confirmAndPayButton" class="btn btn-primary btn-lg" runat="server" Text="Confirm and pay" style="position:absolute; top: 331px; left: 672px;" OnClick="confirmAndPayButton_Click"/>
+          <asp:Button ID="clearCartButton" class="btn btn-primary btn-lg" runat="server" Text="Clear cart" style="position:absolute; top: 341px; left: 536px; height: 40px; width: 122px;" OnClick="clearCartButton_Click"/>
                 </div>
     
 
