@@ -190,8 +190,10 @@ namespace FoodStoreV2.WebForms
             //((List<FoodStoreV2.CSharpClasses.Cart>)Session["cartList"]).Add(new FoodStoreV2.CSharpClasses.Cart(value, 1000));
             int id = Convert.ToInt32(e.CommandArgument);
             // Do something with id
-            Response.Redirect("ProductPage_WebForm?param1=" + id.ToString() + "");
+            //Response.Redirect("ProductPage_WebForm?param1=" + id.ToString() + "");
 
+            SessionValues sv = new SessionValues();
+            sv.addToCart(id);
         }
 
 

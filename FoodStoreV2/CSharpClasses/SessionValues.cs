@@ -25,7 +25,28 @@ namespace FoodStoreV2.CSharpClasses
         }
         public List<Cart> getCartSessionList()
         {
+            if (HttpContext.Current.Session["cart"] == null)
+            {
+                HttpContext.Current.Session["cart"] = new List<Cart>();
+            }
             return (List<Cart>)HttpContext.Current.Session["cart"];
+        }
+
+        public void addToCart(int productID)
+        {
+            DatabaseConnector dbc = new DatabaseConnector();
+            List<Product> productList = dbc.getProductsOnCategory(0);
+            Product productObject =  new Product(1,"name","price1123", 1, "amount33", "onsale", "product info", "imgURL");
+            foreach ( Product tempProductObject in productList)
+            {
+                if(tempProductObject.getProductID() == productID)
+                {
+                    productObject = tempProductObject;
+                    break;
+                }
+            }
+
+            ((List<Cart>)HttpContext.Current.Session["cart"]).Add(new Cart(productObject, 1));
         }
 
     }
