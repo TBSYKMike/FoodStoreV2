@@ -108,7 +108,12 @@ namespace FoodStoreV2.WebForms
                 LinkButton button = (LinkButton)sender;
                  row = (GridViewRow)button.NamingContainer;
             }
-           
+            else if (buttonType == "textBox")
+            {
+                TextBox button = (TextBox)sender;
+                row = (GridViewRow)button.NamingContainer;
+            }
+
             if (row != null)
             {
                 int index = row.RowIndex;
@@ -136,7 +141,7 @@ namespace FoodStoreV2.WebForms
                 int index = row.RowIndex;
                 System.Diagnostics.Debug.WriteLine("clicked on index:     " + index);
                 int newProductAmmount = cartlist[index].getProductAmount() + addValue;
-                if (newProductAmmount >= 0)
+                if (newProductAmmount > 0)
                 {
                     cartlist[index].setProductAmount(newProductAmmount);
                 }
@@ -192,12 +197,22 @@ namespace FoodStoreV2.WebForms
             {
                 int index = row.RowIndex;
                 System.Diagnostics.Debug.WriteLine("clicked on index:     " + index);
-              if(Int32.Parse(textBox.Text) < 0)
+                int value;
+                bool isNumeric = int.TryParse(textBox.Text, out value);
+                
+                if (isNumeric == false)
+                {
+                    textBox.Text = "1";
+                }
+                else if(value < 1)
+                {
+                    deleteFromCart(sender, "textBox");
+                }
+                else
                 {
                     cartlist[index].setProductAmount(Int32.Parse(textBox.Text));
-
                 }
-
+              
             }
             sessionValues.setCartSession(cartlist);
 
