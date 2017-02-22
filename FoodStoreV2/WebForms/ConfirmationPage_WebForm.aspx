@@ -44,5 +44,7 @@
                 }, '#paypal-button');
             </script>
 
+            <div id="paypal-button"></div>
+
 
 </asp:Content>
