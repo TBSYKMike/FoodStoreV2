@@ -164,7 +164,7 @@ namespace FoodStoreV2.WebForms
             {
                 int index = row.RowIndex;
                 System.Diagnostics.Debug.WriteLine("clicked on product:   " + cartlist[index].getProduct().getName());
-                //Redirect to product page    Response.Redirect(".aspx");
+                Response.Redirect("ProductPage_WebForm?param1=" + cartlist[index].getProduct().getProductID());
             }
         }
 

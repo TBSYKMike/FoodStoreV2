@@ -73,16 +73,7 @@
         <%: test_method()[0].getName() %>
         <br />
         <%: test_method()[1].getName() %>
-        <br />
-        <%: test_method()[2].getName() %>
-        <br />
-        <%: test_method()[3].getName() %>
-        <br />
-        <%: test_method()[4].getName() %>
-        <br />
-        <%: test_method()[5].getName() %>
-        <br />
-        <%: test_method()[6].getName() %>
+        <br />       
     </div>
 
     <div class="col-sm-12 row text-center " style="background-color: navajowhite;">
