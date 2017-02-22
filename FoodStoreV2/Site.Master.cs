@@ -103,6 +103,28 @@ namespace FoodStoreV2
             return sv.getCustomerSessionObject();
         }
 
+        protected List <Cart> callGetCartSessionListObject()
+        {
+            SessionValues sv = new SessionValues();
+            return sv.getCartSessionList();
+        }
+
+
+        protected string getTotalAmount()
+        {
+            SessionValues sv = new SessionValues();
+            sv.getCartSessionList();
+            int totalAmount = 0;
+            for(int i = 0; i < sv.getCartSessionList().Count; i++)
+            {
+                totalAmount += sv.getCartSessionList()[i].getProductAmount();
+                System.Diagnostics.Debug.WriteLine("count total cart amount" + sv.getCartSessionList()[i].getProductAmount());
+            }
+
+            return totalAmount.ToString();
+        }
+
+
     }
 
 }
