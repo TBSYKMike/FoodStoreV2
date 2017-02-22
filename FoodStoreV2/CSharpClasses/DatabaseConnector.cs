@@ -156,6 +156,13 @@ namespace FoodStoreV2.CSharpClasses
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public void updateCustomerPassword(String email, String newPassword)
+        {
+            startConnection();
+            createCommand("UPDATE Customers SET password = '" + newPassword + "' WHERE email = '" + email + "'");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         public List<Product> getProductObjectsFromSearchResult(String searchValue)
         {
             string[] searchValueSplittedOnSpace = searchValue.Split(null);
