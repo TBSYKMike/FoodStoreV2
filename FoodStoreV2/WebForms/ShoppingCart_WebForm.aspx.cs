@@ -14,7 +14,6 @@ namespace FoodStoreV2.WebForms
     public partial class ShoppingCart_WebForm : System.Web.UI.Page
     {
         private List<Cart> cartlist = new List<Cart>();
-        private List<Product> productList;
         private DataTable dataTable;
         private SessionValues sessionValues = new SessionValues();
         private DatabaseConnector databaseConnector = new DatabaseConnector();
@@ -26,7 +25,7 @@ namespace FoodStoreV2.WebForms
             }
             else
             {
-
+               // confirmAndPayButton.Enabled = false;
             }
 
             if (!Page.IsPostBack)
@@ -224,7 +223,9 @@ namespace FoodStoreV2.WebForms
 
         protected void clearCartButton_Click(object sender, EventArgs e)
         {
-            sessionValues.setCartSession(null);
+            System.Diagnostics.Debug.WriteLine("Cleared cart");
+            cartlist = new List<Cart>();
+            sessionValues.setCartSession(cartlist);
             dataTable.Clear();
             addProductsDataToGridView();
             gridViewDataBind();
