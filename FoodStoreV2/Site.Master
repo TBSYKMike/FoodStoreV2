@@ -184,16 +184,6 @@
             <div class="fb-like" data-href="https://www.facebook.com/Foodforeveryone-354846188242297/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
         </div>
 
-        <asp:ScriptManager ID="ScriptManager1" runat="server" />
-        <asp:Timer runat="server" id="UpdateTimer" interval="5000" ontick="UpdateTimer_Tick" />
-        <asp:UpdatePanel runat="server" id="TimedPanel" updatemode="Conditional">
-            <Triggers>
-                <asp:AsyncPostBackTrigger controlid="UpdateTimer" eventname="Tick" />
-            </Triggers>
-            <ContentTemplate>
-                <asp:Label runat="server" id="DateStampLabel" />
-            </ContentTemplate>
-        </asp:UpdatePanel>
 
     </form>
 
