@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FoodStoreV2.CSharpClasses;
 
 namespace FoodStoreV2
 {
@@ -13,5 +14,14 @@ namespace FoodStoreV2
         {
 
         }
+
+        protected Product getRandomProduct()
+        {
+            DatabaseConnector dbc = new DatabaseConnector();
+            Product randomProductList = dbc.getRandomProduct(false);// get onsale parameter = true; else false will generate random
+
+            return randomProductList;
+        }
+
     }
 }

@@ -27,38 +27,55 @@
                     <li data-target="#myCarousel" data-slide-to="3"></li>
                 </ol>
 
+
+                <%  
+
+                    FoodStoreV2.CSharpClasses.Product productObj1 = getRandomProduct();
+                    FoodStoreV2.CSharpClasses.Product productObj2 = getRandomProduct();
+                    FoodStoreV2.CSharpClasses.Product productObj3 = getRandomProduct();
+                    FoodStoreV2.CSharpClasses.Product productObj4 = getRandomProduct();
+
+                    %>
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-
+                    
                     <div class="item active">
-                        <img src="https://www.w3schools.com/bootstrap/img_chania.jpg" alt="Chania" width="460" height="345">
+                        <img src="<%: productObj1.getImageURL() %>" alt="Chania" width="460" height="345">
                         <div class="carousel-caption">
-                            <h3>Chania</h3>
-                            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                            <a href="<%= ResolveUrl("~/WebForms/ProductPage_WebForm.aspx") + "?param1=" + productObj1.getProductID() %>">
+                                <h2 style="background-color:white"><%: productObj1.getName() %></h2>
+                                <h3 style="background-color:white"><%: productObj1.getPrice() %> kr </h3>
+                            </a>
                         </div>
                     </div>
 
                     <div class="item">
-                        <img src="https://www.w3schools.com/bootstrap/img_chania2.jpg" alt="Chania" width="460" height="345">
+                        <img src="<%: productObj2.getImageURL() %>" alt="Chania" width="460" height="345">
                         <div class="carousel-caption">
-                            <h3>Chania</h3>
-                            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                            <a href="<%= ResolveUrl("~/WebForms/ProductPage_WebForm.aspx") + "?param1=" + productObj2.getProductID() %>">
+                                <h2 style="background-color:white"><%: productObj2.getName() %></h2>
+                                <h3 style="background-color:white"><%: productObj2.getPrice() %> kr </h3>
+                            </a>
                         </div>
                     </div>
 
                     <div class="item">
-                        <img src="https://www.w3schools.com/bootstrap/img_flower.jpg" alt="Flower" width="460" height="345">
+                        <img src="<%: productObj3.getImageURL() %>" alt="Chania" width="460" height="345">
                         <div class="carousel-caption">
-                            <h3>Flowers</h3>
-                            <p>Beatiful flowers in Kolymbari, Crete.</p>
+                            <a href="<%= ResolveUrl("~/WebForms/ProductPage_WebForm.aspx") + "?param1=" + productObj3.getProductID() %>">
+                                <h2 style="background-color:white"><%: productObj3.getName() %></h2>
+                                <h3 style="background-color:white"><%: productObj3.getPrice() %> kr </h3>
+                            </a>
                         </div>
                     </div>
 
                     <div class="item">
-                        <img src="https://www.w3schools.com/bootstrap/img_flower2.jpg" alt="Flower" width="460" height="345">
+                        <img src="<%: productObj4.getImageURL() %>" alt="Chania" width="460" height="345">
                         <div class="carousel-caption">
-                            <h3>Flowers</h3>
-                            <p>Beatiful flowers in Kolymbari, Crete.</p>
+                            <a href="<%= ResolveUrl("~/WebForms/ProductPage_WebForm.aspx") + "?param1=" + productObj4.getProductID() %>">
+                                <h2 style="background-color:white"><%: productObj4.getName() %></h2>
+                                <h3 style="background-color:white"><%: productObj4.getPrice() %> kr </h3>
+                            </a>
                         </div>
                     </div>
 
