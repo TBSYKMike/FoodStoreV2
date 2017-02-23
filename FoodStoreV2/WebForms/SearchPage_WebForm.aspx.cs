@@ -149,9 +149,9 @@ namespace FoodStoreV2.WebForms
 
                 for (int i = 0; i < productList.Count(); i++)
                 {
-                    if (otherTextBox.Checked.Equals(true) && productList[i].getCategory().Equals(1) || ppapCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(2) || fruitCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(3)
-                    || fishCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(4) || japaneseFoodCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(5)
-                    || pancakeCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(6) || vegetableCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(7))
+                    if ((otherTextBox.Checked.Equals(true) && productList[i].getCategory().Equals(1)) || (ppapCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(2)) || (fruitCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(3))
+                    || (fishCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(4)) || (japaneseFoodCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(5))
+                    || (pancakeCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(6)) || (vegetableCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(7)))
                     {
                         //Boken matchar någon av kategorierna
                         System.Diagnostics.Debug.WriteLine("Sökresultat :     " + productList[i].getName() + "  kategori:   " + productList[i].getCategory());

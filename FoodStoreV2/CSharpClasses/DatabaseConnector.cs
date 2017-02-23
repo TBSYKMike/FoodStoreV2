@@ -201,8 +201,8 @@ namespace FoodStoreV2.CSharpClasses
             startConnection();
             for (int i = 0; i < searchValueSplittedOnSpace.Length; i++)
             {
-                loopTroughProductQueries("SELECT * FROM Products WHERE name LIKE" + "'%" + searchValueSplittedOnSpace[i] + "%'");
-                loopTroughProductQueries("SELECT * FROM Products WHERE producer LIKE" + "'%" + searchValueSplittedOnSpace[i] + "%'");
+                loopTroughProductQueries("SELECT * FROM Products WHERE name LIKE" + "'%" + searchValueSplittedOnSpace[i] + "%' OR producer LIKE" + "'%" + searchValueSplittedOnSpace[i] + "%'");
+              //  loopTroughProductQueries("SELECT * FROM Products WHERE producer LIKE" + "'%" + searchValueSplittedOnSpace[i] + "%'");
             }
             List<Product> SortedList = productList.OrderByDescending(product => product.getSearchHits()).ToList(); //Sorting list on hit counter value
             conn.Close();
