@@ -124,6 +124,13 @@ namespace FoodStoreV2
             return totalAmount.ToString();
         }
 
+        protected Product getRandomProduct(Boolean onSale)
+        {
+            DatabaseConnector dbc = new DatabaseConnector();
+            Product randomProductList = dbc.getRandomProduct(onSale);// get onsale parameter = true; else false will generate random
+            
+            return randomProductList;
+        }
 
     }
 
