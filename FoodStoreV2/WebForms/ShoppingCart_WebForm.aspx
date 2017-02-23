@@ -47,9 +47,10 @@
 
                 </Columns>
      </asp:GridView>
+         <asp:Label ID="cartEmptyLabel" color='red' runat="server" text="Cart is empty!" style="position:absolute; top: 307px; left: 939px; height: 49px; width: 135px;" Visible="false"></asp:Label>
         <asp:Label ID="userInformation" runat="server" style="position:absolute; top: 11px; left: 767px; height: 126px; width: 340px;"></asp:Label>
         <asp:Label ID="totalPriceLabel" runat="server" style="position:absolute; top: 129px; left: 847px; height: 93px; width: 339px;"></asp:Label>
-        <asp:Label ID="CustomerInfoLabel" color='red' runat="server" style="position:absolute; top: 197px; left: 577px; height: 71px; width: 224px;"></asp:Label>
+        <asp:Label ID="CustomerInfoLabel" color='red' runat="server" style="position:absolute; top: 211px; left: 560px; height: 36px; width: 239px;"></asp:Label>
         <asp:Button ID="confirmAndPayButton" class="btn btn-primary btn-lg" runat="server" Text="Confirm and pay" style="position:absolute; top: 240px; left: 873px;" OnClick="confirmAndPayButton_Click"/>
           <asp:Button ID="clearCartButton" class="btn btn-primary btn-lg" runat="server" Text="Clear cart" style="position:absolute; top: 341px; left: 536px; height: 40px; width: 122px;" OnClick="clearCartButton_Click"/>
                 </div>

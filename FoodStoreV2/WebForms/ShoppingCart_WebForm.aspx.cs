@@ -30,17 +30,21 @@ namespace FoodStoreV2.WebForms
 
             if (sessionValues.getCartSessionList() != null)
             {
- 
                 cartlist = sessionValues.getCartSessionList();
                 limitProductAmountOnStock();
                 updatePriceLabel();
             }
-            else
-            {
-               // confirmAndPayButton.Enabled = false;
-            }
 
-  
+            if (!cartlist.Any())
+            {
+                System.Diagnostics.Debug.WriteLine("Not logged in");
+                // confirmAndPayButton.Enabled = false;
+                cartEmptyLabel.Visible = true;
+                totalPriceLabel.Visible = false;
+                CustomerInfoLabel.Visible = false;
+                confirmAndPayButton.Enabled = false;
+      
+            }
 
             if (!Page.IsPostBack)
             {
