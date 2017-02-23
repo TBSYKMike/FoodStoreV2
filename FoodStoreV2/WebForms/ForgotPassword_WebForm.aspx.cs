@@ -21,8 +21,11 @@ namespace FoodStoreV2.WebForms
 
         protected void forgotPasswordButton_Click(object sender, EventArgs e)
         {
+            //gets the email from te textbox and then checks if a user with that mail exists
             String email = emailTextBox.Text;
             String pass;
+
+            //sends the new password via mail
             SendMail sendMail = new SendMail();
             if (!con.checkIfCollumnValueExist("customers","email", email))
             {
@@ -38,32 +41,9 @@ namespace FoodStoreV2.WebForms
             }
         }
 
-        /*protected void sendMail(String mail, String pass)
-        {
-            try
-            {
-                MailMessage msg = new MailMessage();
-
-                msg.To.Add(mail);
-                msg.From = new MailAddress("thatchat12345@gmail.com");
-                msg.Subject = "Password recovery";
-                msg.Body = "Your new password: " + pass;
-
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-                smtpClient.EnableSsl = true;
-                smtpClient.Credentials = new System.Net.NetworkCredential("thatchat12345@gmail.com", "TraktorBengt123");
-                smtpClient.Send(msg);
-
-                Response.Write("Sent");
-            }
-            catch (Exception ex)
-            {
-                Response.Write( "Not sent " + ex.Message);
-            }
-        }*/
-
         protected String createPass()
         {
+            //Creates a randomly generated password that is 10 characters long with 3 numerals
             String pass = Membership.GeneratePassword(10, 3);
 
             return pass;

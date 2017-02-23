@@ -1,0 +1,4 @@
+﻿Foodstore provides easy access to different food wares. 
+By signing up you will be able to browse between different wares
+and add them to your shoppingcart. Payment is down securely with
+Paypal.

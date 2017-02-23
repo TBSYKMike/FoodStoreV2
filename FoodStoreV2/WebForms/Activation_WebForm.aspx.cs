@@ -20,7 +20,7 @@ namespace FoodStoreV2.WebForms
             {
                 string code = Request.QueryString["confirmationCode"];
                 
-
+                //if the activationcode is valid activate the user
                 if (!con.checkIfCollumnValueExist("customers", "confirmationCode", code) && con.checkIfCustomerActive(code))
                 {
                     con.activateCustomer(1, code);
