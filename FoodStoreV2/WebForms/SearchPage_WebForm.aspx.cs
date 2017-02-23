@@ -160,11 +160,14 @@ namespace FoodStoreV2.WebForms
                         && pancakeCheckBox.Checked.Equals(false) && vegetableCheckBox.Checked.Equals(false))
                     {
                         //Om vi inte gjort någon kategorisökning
+                        System.Diagnostics.Debug.WriteLine("Else if search page");
                     }
                     else
                     {
                         //Om vi gjort kategorisökning och boken inte passade in.
+                        System.Diagnostics.Debug.WriteLine("Removed:   " + (productList[i].getName()));
                         productList.Remove(productList[i]);
+                    
                     }
                 }
                 Session.Add("productList", productList);
