@@ -221,7 +221,6 @@
     <Content Include="WebForms\ConfirmationPage_WebForm.aspx" />
     <Content Include="WebForms\ForgotPassword_WebForm.aspx" />
     <Content Include="WebForms\GetHint.aspx" />
-    <Content Include="WebForms\Information.txt" />
     <Content Include="WebForms\Login_WebForm.aspx" />
     <Content Include="WebForms\OrderFinish_WebForm.aspx" />
     <Content Include="WebForms\OrderHistory_WebForm.aspx" />
@@ -233,7 +232,6 @@
     <Content Include="WebForms\ShoppingPage_WebForm.aspx" />
     <Content Include="WebForms\ShowAndEditProfile_WebForm.aspx" />
     <Content Include="ClassDiagram1.cd" />
-    <Content Include="WebForms\test.asp" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
