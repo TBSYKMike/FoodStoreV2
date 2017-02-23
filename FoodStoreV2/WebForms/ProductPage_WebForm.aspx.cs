@@ -81,5 +81,47 @@ namespace FoodStoreV2.WebForms
 
             return categoryName;
         }
+
+
+
+        protected string category_menu()
+        {
+            DatabaseConnector databaseConnector = new DatabaseConnector();
+            List<Category> categoryList = databaseConnector.getCategories();
+
+            /*      categoryList.Add(new Category(1, "NoCategory"));
+                  categoryList.Add(new Category(2, "Meat"));
+                  categoryList.Add(new Category(3, "Fish"));
+                  categoryList.Add(new Category(4, "Vegetable"));
+                  categoryList.Add(new Category(5, "Fruit"));
+                  categoryList.Add(new Category(6, "Eggs"));
+                  categoryList.Add(new Category(7, "Beans"));
+                  categoryList.Add(new Category(8, "Drink"));
+                  categoryList.Add(new Category(9, "Milk"));
+                  categoryList.Add(new Category(10, "Bread"));
+                  */
+
+            string url = "ShoppingPage_WebForm";
+            string temp = " <div id=\"collapse1\" class=\"panel\">  <ul class=\"list-group\"> <div class=\"panel-footer\"><strong><u>Category Menu</u></strong></div>";
+            temp += "  <li class=\"list-group-item\">" +
+                    " <a href=\"" + url + "?category=" + "show_all" + "\">" + "Show All" + "</a> "
+                + "</li>  ";
+            for (int i = 0; i < categoryList.Count(); i++)
+            {
+                string categoryID = categoryList[i].getCategoryID().ToString();
+                string categoryName = categoryList[i].getCategoryName().ToString();
+
+                temp += "  <li class=\"list-group-item\">" +
+                    " <a href=\"" + url + "?category=" + categoryID + "\">" + categoryName + "</a> "
+                + "</li>  ";
+            }
+            temp += " </ul>  </div> ";
+
+
+
+            return temp;
+        }
+
+
     }
 }

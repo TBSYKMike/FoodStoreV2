@@ -68,11 +68,7 @@
             }
 
         %>
-        <%: test %>
-        <br />
-        <%: test_method()[0].getName() %>
-        <br />
-        <%: test_method()[1].getName() %>
+     
         <br />       
     </div>
 
@@ -81,8 +77,9 @@
     </div>
     <div class="col-sm-12 row text-center " style="background-color: blue;">
         <div class="col-sm-2" style="background-color: burlywood;">
-            Menu
+            
             <br />
+             <%= category_menu() %>
             <br />
             <br />
         </div>
@@ -97,21 +94,11 @@
             <br />
             <div class="col-sm-12 text-left" style="background-color: violet;">
                 <br />
+                Product INFO: 
+                <br />
+                <%: selectedProductInfo %>
                 <br />
                 <br />
-                .productINFO: <%: selectedProductInfo %>
-                <br />
-                <br />
-                <br /><br />
-                <br />
-                <br />
-                .productINFO: <%: selectedProductInfo %>
-                <br />
-                <br />
-                <br /><br />
-                <br />
-                <br />
-                .productINFO: <%: selectedProductInfo %>
                 <br />
                 <br />
                 <br />

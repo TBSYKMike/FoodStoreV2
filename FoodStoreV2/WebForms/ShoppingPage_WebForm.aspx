@@ -59,15 +59,15 @@
 
     <div class="container-fluid">
         <h1>Welcome to the Shop</h1>
-        <p>Resize the browser window to see the effect.</p>
+        
         <div class="row">
             <div class="col-sm-2" style="background-color: darksalmon;">
                 <div class="col-sm-12" style="background-color: burlywood;">
-                    Menu
+                    
                     <br />
                     <%= category_menu() %>
                 </div>
-                <div class="col-sm-12" style="background-color: darkturquoise;">Search </div>
+                
             </div>
             <div class="col-sm-10 row container1" style="background-color: lavender;">
 
