@@ -22,40 +22,67 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.GridView searchResultGridView;
         
         /// <summary>
-        /// category1 control.
+        /// ppapCheckBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox category1;
+        protected global::System.Web.UI.WebControls.CheckBox ppapCheckBox;
         
         /// <summary>
-        /// category2 control.
+        /// fruitCheckBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox category2;
+        protected global::System.Web.UI.WebControls.CheckBox fruitCheckBox;
         
         /// <summary>
-        /// category3 control.
+        /// fishCheckBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox category3;
+        protected global::System.Web.UI.WebControls.CheckBox fishCheckBox;
         
         /// <summary>
-        /// category4 control.
+        /// japaneseFoodCheckBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox category4;
+        protected global::System.Web.UI.WebControls.CheckBox japaneseFoodCheckBox;
+        
+        /// <summary>
+        /// pancakeCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox pancakeCheckBox;
+        
+        /// <summary>
+        /// vegetableCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox vegetableCheckBox;
+        
+        /// <summary>
+        /// otherTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox otherTextBox;
         
         /// <summary>
         /// searchTextBox control.

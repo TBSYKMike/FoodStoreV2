@@ -1,23 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="SearchPage_WebForm.aspx.cs" Inherits="FoodStoreV2.WebForms.SearchPage_WebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<script>
-function showHint(str) {
-    if (str.length == 0) { 
-        document.getElementById("txtHint").innerHTML = "";
-        return;
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("txtHint").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET", "test.asp?q=" + str, true);
-        xmlhttp.send();
-    }
-}
-</script>
 
 
     
@@ -61,13 +44,15 @@ function showHint(str) {
          </asp:GridView>
      
 
-        <asp:CheckBox ID="category1" runat="server" style="position:absolute; top: 283px; left: 578px;" Text="category1" />
-        <asp:CheckBox ID="category2" runat="server" style="position:absolute; top: 173px; left: 575px;" Text="category2" />
-        <asp:CheckBox ID="category3" runat="server" style="position:absolute; top: 229px; left: 574px;" Text="category3" />
-        <asp:CheckBox ID="category4" runat="server" style="position:absolute; top: 131px; left: 586px;" Text="category4" />
+        <asp:CheckBox ID="ppapCheckBox" runat="server" style="position:absolute; top: 182px; left: 589px;" Text="PPAP" />
+        <asp:CheckBox ID="fruitCheckBox" runat="server" style="position:absolute; top: 237px; left: 591px;" Text="Fruit" />
+        <asp:CheckBox ID="fishCheckBox" runat="server" style="position:absolute; top: 131px; left: 586px;" Text="Fish" />
+        <asp:CheckBox ID="japaneseFoodCheckBox" runat="server" style="position:absolute; top: 263px; left: 593px;" Text="Japanese Food" />
+        <asp:CheckBox ID="pancakeCheckBox" runat="server" style="position:absolute; top: 153px; left: 587px;" Text="Pancake" />
+        <asp:CheckBox ID="vegetableCheckBox" runat="server" style="position:absolute; top: 208px; left: 590px;" Text="Vegetable" />
+        <asp:CheckBox ID="otherTextBox" runat="server" style="position:absolute; top: 292px; left: 594px;" Text="Other" />
 
-          <asp:TextBox class="form-control" ID="searchTextBox" onkeyup="showHint(this.value)" runat="server" style="position:absolute; top: 155px; left: 755px; width: 248px;"></asp:TextBox>
-          <p>Suggestions: <span id="txtHint"></span></p>
+          <asp:TextBox class="form-control" ID="searchTextBox"  runat="server" style="position:absolute; top: 155px; left: 755px; width: 248px;"></asp:TextBox>
              <asp:RequiredFieldValidator ID="searchFieldValidator" runat="server" ValidationGroup='search' ErrorMessage="Search field cant be empty" ControlToValidate="searchTextBox" style="position:absolute; top: 244px; left: 797px;"></asp:RequiredFieldValidator>
      
            <asp:Button class="btn btn-primary btn-lg" ID="searchButton" runat="server" ValidationGroup='search' Text="Search" style="position:absolute; top: 156px; left: 1048px;" OnClick="searchButton_Click" />

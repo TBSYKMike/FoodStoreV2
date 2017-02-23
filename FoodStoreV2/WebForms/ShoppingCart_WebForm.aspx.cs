@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -19,6 +20,14 @@ namespace FoodStoreV2.WebForms
         private DatabaseConnector databaseConnector = new DatabaseConnector();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if(sessionValues.getCustomerSessionObject() == null)
+            {
+                //Response.Redirect("Login_WebForm");
+                Response.Redirect("Login_WebForm?param1=" + "cartLogin");
+            }
+
+
             if (sessionValues.getCartSessionList() != null)
             {
  
@@ -40,6 +49,7 @@ namespace FoodStoreV2.WebForms
                 createDataTable();
                 addProductsDataToGridView();
                 gridViewDataBind();
+                setUserInformation();
             }
             else
             {
@@ -57,6 +67,7 @@ namespace FoodStoreV2.WebForms
             dataTable.Columns.Add("Price", typeof(string));
             dataTable.Columns.Add("Category", typeof(string));
         }
+        
 
         protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
         {
@@ -270,6 +281,15 @@ namespace FoodStoreV2.WebForms
             totalPriceLabel.Text = "The total price is " + totalPrice.ToString();
         
     }
+        private void setUserInformation()
+        {
+            Customer customer = sessionValues.getCustomerSessionObject();
+            StringBuilder userInformation = new StringBuilder();
+            userInformation.Append("Order will be sent to:   \n");
+            userInformation.Append("Adress:   " + customer.getStreetAdress() + "   " +  customer.getPostCode() + "   " + customer.getCity() + "\n");
+            userInformation.Append("Email:   " + customer.getEmailAdress());
+            CustomerInfoLabel.Text = userInformation.ToString();
+        }
 
 
 

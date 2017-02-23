@@ -145,24 +145,29 @@ namespace FoodStoreV2.WebForms
             if (this.IsValid)//Needs to fulfill all validating
             {
                 DatabaseConnector databaseConnector = new DatabaseConnector();
-                List<Product> productList = databaseConnector.getProductObjectsFromSearchResult(searchTextBox.Text);
+                List<Product> productList = databaseConnector.getProductObjectsFromSearchResult(searchTextBox.Text);     
 
                 for (int i = 0; i < productList.Count(); i++)
                 {
-                    if (category1.Checked.Equals(true) && productList[i].getCategory().Equals(1) || category2.Checked.Equals(true) && productList[i].getCategory().Equals(2)
-                    || category3.Checked.Equals(true) && productList[i].getCategory().Equals(3) || category4.Checked.Equals(true) && productList[i].getCategory().Equals(4))
+                    if (otherTextBox.Checked.Equals(true) && productList[i].getCategory().Equals(1) || ppapCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(2) || fruitCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(3)
+                    || fishCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(4) || japaneseFoodCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(5)
+                    || pancakeCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(6) || vegetableCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(7))
                     {
                         //Boken matchar någon av kategorierna
                         System.Diagnostics.Debug.WriteLine("Sökresultat :     " + productList[i].getName() + "  kategori:   " + productList[i].getCategory());
                     }
-                    else if (category1.Checked.Equals(false) && category2.Checked.Equals(false) && category3.Checked.Equals(false) && category4.Checked.Equals(false))
+                    else if (otherTextBox.Checked.Equals(false) && ppapCheckBox.Checked.Equals(false) && fruitCheckBox.Checked.Equals(false) && fishCheckBox.Checked.Equals(false) && japaneseFoodCheckBox.Checked.Equals(false)
+                        && pancakeCheckBox.Checked.Equals(false) && vegetableCheckBox.Checked.Equals(false))
                     {
                         //Om vi inte gjort någon kategorisökning
+                        System.Diagnostics.Debug.WriteLine("Else if search page");
                     }
                     else
                     {
                         //Om vi gjort kategorisökning och boken inte passade in.
+                        System.Diagnostics.Debug.WriteLine("Removed:   " + (productList[i].getName()));
                         productList.Remove(productList[i]);
+                    
                     }
                 }
                 Session.Add("productList", productList);
