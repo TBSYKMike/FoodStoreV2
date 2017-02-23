@@ -99,16 +99,6 @@ namespace FoodStoreV2.WebForms
             }
         }
 
-
-
-
-
-
-
-
-
-
-
         protected void streetValidate(object source, ServerValidateEventArgs args)
         {
             Boolean value = true;
@@ -184,6 +174,11 @@ namespace FoodStoreV2.WebForms
             }
             System.Diagnostics.Debug.WriteLine("Old password compare method + value:   " + passwordMatch);
             args.IsValid = passwordMatch;
+        }
+
+        protected void orderHistoryButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrderHistory_WebForm");
         }
     }
 }

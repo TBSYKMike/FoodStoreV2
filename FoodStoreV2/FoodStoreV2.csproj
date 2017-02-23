@@ -404,6 +404,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CSharpClasses\ActualOrder.cs" />
     <Compile Include="CSharpClasses\Cart.cs" />
     <Compile Include="CSharpClasses\Category.cs" />
     <Compile Include="CSharpClasses\SendMail.cs" />

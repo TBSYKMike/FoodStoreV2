@@ -50,4 +50,6 @@
         <asp:Button ID="updateButton" runat="server" Text="Update profile" OnClientClick="hideResultLabel();" ValidationGroup='update' style="position:absolute; top: 357px; left: 480px;" OnClick="updateButton_Click"/>
         <asp:Label ID="updateConfirmLabel" runat="server" Text="Account updated!" style="position:absolute; top: 356px; left: 632px; height: 38px; width: 127px;" Visible="False"></asp:Label>
      
+        <asp:Button ID="orderHistoryButton" runat="server" Text="Order history" style="position:absolute; top: 105px; left: 512px;" OnClick="orderHistoryButton_Click"/>
+        
 </asp:Content>

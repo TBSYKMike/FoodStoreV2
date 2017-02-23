@@ -43,6 +43,20 @@ namespace FoodStoreV2.CSharpClasses
             }
             return null;
         }
+        public Product getProductObject(int productID)
+        {
+            startConnection();
+            createCommand("SELECT * FROM Products WHERE id=" + "'" + productID + "'");
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Product product = new Product(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7));
+                conn.Close();
+                return product;
+            }
+            return null;
+        }
 
         public List<Product> getProductsOnCategory(int categoryID)
         {
@@ -101,11 +115,25 @@ namespace FoodStoreV2.CSharpClasses
             return null;
         }
 
-        public List<Order> getCustomerOrders(int customerID)
+        public List<ActualOrder> getCustomerOrders(int customerID)
         {
             startConnection();
-            createCommand("SELECT * FROM Orders WHERE idOrder=" + customerID);
-            List <Order> userOrders = new List<Order>();
+            createCommand("SELECT * FROM Orders WHERE customerId=" + customerID);
+            List <ActualOrder> userOrders = new List<ActualOrder>();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ActualOrder order = new ActualOrder(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2));
+                userOrders.Add(order);
+            }
+            conn.Close();
+            return userOrders;
+        }
+        public List<Order> getCustomerOrderDetails(int orderID)
+        {
+            startConnection();
+            createCommand("SELECT * FROM OrderDetails WHERE ordersID=" + orderID);
+            List<Order> userOrders = new List<Order>();
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -115,6 +143,7 @@ namespace FoodStoreV2.CSharpClasses
             conn.Close();
             return userOrders;
         }
+
         public void insertCustomer(String name, String streetAdress, String city, String postCode, String emailAdress, String userPassword, String userName, int isActivated, String code)
         {
             startConnection();

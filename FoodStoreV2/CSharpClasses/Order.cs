@@ -13,10 +13,10 @@ namespace FoodStoreV2.CSharpClasses
         private int productID;
         private int productAmount;
 
-        public Order(int orderID, int customerID, int productID, int productAmount)
+        public Order(int customerID, int orderID, int productID, int productAmount)
         {
-            this.orderID = orderID;
             this.customerID = customerID;
+            this.orderID = orderID;
             this.productID = productID;
             this.productAmount = productAmount;
         }
