@@ -132,10 +132,7 @@ namespace FoodStoreV2
             return randomProductList;
         }
 
-        protected void UpdateTimer_Tick(object sender, EventArgs e)
-        {
-            DateStampLabel.Text = DateTime.Now.ToString();
-        }
+        
 
     }
 
