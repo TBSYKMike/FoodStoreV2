@@ -87,7 +87,7 @@ namespace FoodStoreV2.CSharpClasses
         {
             startConnection();
             if(onSale)
-                createCommand("SELECT * FROM Products WHERE onSale= 'on_onSale' ORDER BY RAND() LIMIT 1");
+                createCommand("SELECT * FROM Products WHERE onSale= 'is_onSale' ORDER BY RAND() LIMIT 1");
             else
                 createCommand("SELECT * FROM Products ORDER BY RAND() LIMIT 1");
 
