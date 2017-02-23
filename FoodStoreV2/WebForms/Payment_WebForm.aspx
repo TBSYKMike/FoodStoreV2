@@ -2,7 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-
+       <%
+           FoodStoreV2.CSharpClasses.SessionValues sessionValues = new  FoodStoreV2.CSharpClasses.SessionValues();
+           String totalPrice = sessionValues.getTotalPrice();
+            %>
     <script>
                 paypal.Button.render({
                     
@@ -26,7 +29,7 @@
                         return paypal.rest.payment.create(env, client, {
                             transactions: [
                                 {
-                                    amount: {total: '10', currency: 'SEK'}
+                                    amount: {total: "<%=totalPrice%>", currency: 'SEK'}
                                 }
                             ]
                         });

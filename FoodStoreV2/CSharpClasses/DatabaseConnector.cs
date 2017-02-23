@@ -188,6 +188,13 @@ namespace FoodStoreV2.CSharpClasses
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public void updateProductAmount(int productID, int newAmount)
+        {
+            startConnection();
+            createCommand("UPDATE Products SET amount = '" + newAmount + "' WHERE id = '" + productID + "'");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         public List<Product> getProductObjectsFromSearchResult(String searchValue)
         {
             string[] searchValueSplittedOnSpace = searchValue.Split(null);
@@ -258,13 +265,12 @@ namespace FoodStoreV2.CSharpClasses
             return id;
         }
 
-        public void insertOrderDetails(Order order)
+        public void insertOrderDetails(Order order, int productAmount)
         {
             startConnection();
-            createCommand("INSERT INTO OrdersDetails (ordersID,productID,orderAmount) VALUES('" + order.getOrderID() + "','" + order.getProductID() + "','" + order.getProductAmount() + "')");
+            createCommand("INSERT INTO fooddatabase.orderdetails (ordersID,productID,orderAmount) VALUES('" + order.getOrderID() + "','" + order.getProductID() + "','" + productAmount + "')");
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-
     }
 }

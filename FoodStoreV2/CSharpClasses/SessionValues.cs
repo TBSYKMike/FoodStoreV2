@@ -73,6 +73,14 @@ namespace FoodStoreV2.CSharpClasses
             }
 
         }
+        public void setTotalPrice(String totalPrice)
+        {
+            HttpContext.Current.Session["totalPrice"] = totalPrice;
+        }
+        public String getTotalPrice()
+        {
+            return (String)HttpContext.Current.Session["totalPrice"];
+        }
 
     }
 }

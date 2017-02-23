@@ -200,7 +200,8 @@ namespace FoodStoreV2.WebForms
         protected void confirmAndPayButton_Click(object sender, EventArgs e)
         {
             // Response.Redirect("Payment_WebForm?param1=" + totalPriceLabel.Text);
-            Response.Redirect("OrderFinish_WebForm?param1=" + totalPriceLabel.Text);
+
+            Response.Redirect("Payment_WebForm");
             System.Diagnostics.Debug.WriteLine("pay");
         }
 
@@ -279,9 +280,23 @@ namespace FoodStoreV2.WebForms
             {
                 totalPrice += Int32.Parse(cartlist[i].getProduct().getPrice()) * cartlist[i].getProductAmount();
             }
-            totalPriceLabel.Text = "The total price is " + totalPrice.ToString();
+            if(totalPrice < 500)
+            {
+                int remainingSum = 500 - totalPrice;
+                totalPriceLabel.Text = "The  price is " + totalPrice.ToString() + " plus Shipping:  49 kr \n" + "Buy for " + remainingSum + " more for free shipping!";
+                int priceIncludingShipping = totalPrice + 49;
+                sessionValues.setTotalPrice(priceIncludingShipping.ToString());
+            }
+            else
+            {
+                totalPriceLabel.Text = "The total price is " + totalPrice.ToString() + " \n Shipping is free for you my friend!";
+                sessionValues.setTotalPrice(totalPrice.ToString());
+            }
+             
+            
+
+        }
         
-    }
         private void setUserInformation()
         {
             Customer customer = sessionValues.getCustomerSessionObject();

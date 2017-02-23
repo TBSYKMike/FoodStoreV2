@@ -48,17 +48,34 @@ namespace FoodStoreV2.WebForms
             for(int i=0;i< cartlist.Count; i++)
             {
                 Order order = new Order(orderID, customer.getCustomerID(), cartlist[i].getProduct().getProductID(), Int32.Parse(cartlist[i].getProduct().getAmount()));
-                databaseConnector.insertOrderDetails(order);
+                databaseConnector.insertOrderDetails(order, cartlist[i].getProductAmount());
+
+                int oldValue = databaseConnector.checkProductAmount(cartlist[i].getProduct().getProductID());
+                int newValue = oldValue - cartlist[i].getProductAmount();
+                databaseConnector.updateProductAmount(cartlist[i].getProduct().getProductID(), newValue);
             }
+
+
         }
 
         private void sendOrderCompleted() {
             
             for(int i = 0; i < cartlist.Count; i++) {
-                order.Append(cartlist[i].getProduct().getName()).Append(" Quantity:").Append(cartlist[i].getProduct().getAmount()).Append(" Price per item:").Append(cartlist[i].getProduct().getPrice()).Append("SEK\n");
+                order.Append(cartlist[i].getProduct().getName()).Append(" Quantity:").Append(cartlist[i].getProductAmount()).Append(" Price per item:").Append(cartlist[i].getProduct().getPrice()).Append("SEK<br></br>");
             }
+            Customer customer = sessionValues.getCustomerSessionObject();
+            String customerInfo = "";
 
-            sendMail.mailer(sessionValues.getCustomerSessionObject().getEmailAdress(), "Your order at Foodstore" , "Here are the details of your order.\n\n" + order + "\nThank you for buying at Foodstore!");
+            customerInfo += "Your details: <br />" +
+            "Name:  " + customer.getName() + " <br />" +
+            "Email:  " + customer.getEmailAdress() + " <br />" +
+            "Street adress:  " + customer.getStreetAdress() + " <br />" +
+            "City:  " + customer.getCity() + " <br />" +
+            "Post code:  " + customer.getPostCode() + " <br />";
+
+            sendMail.mailer(sessionValues.getCustomerSessionObject().getEmailAdress(), "Your order at Foodstore" , "Here are the details of your order.  <br /> <br />" + order + " <br />Total price is:    " + sessionValues.getTotalPrice() + " <br /> " +customerInfo + "< br /> < br />Thank you for buying at Foodstore!");
+
+
         }
     }
 }
