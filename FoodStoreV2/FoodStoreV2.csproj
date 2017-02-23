@@ -232,6 +232,7 @@
     <Content Include="WebForms\ShoppingPage_WebForm.aspx" />
     <Content Include="WebForms\ShowAndEditProfile_WebForm.aspx" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="WebForms\test.asp" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
