@@ -18,7 +18,10 @@ namespace FoodStoreV2.WebForms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((List<Product>)Session["bookList"] != null)
+            {
+                productList = (List<Product>)Session["bookList"];
+            }
             if (!Page.IsPostBack)
             {
                 dataTable = new DataTable();
@@ -47,15 +50,15 @@ namespace FoodStoreV2.WebForms
 
         private void createDataTable()
         {
-            dataTable.Columns.Add("Name");
-            dataTable.Columns.Add("Price");
-            dataTable.Columns.Add("Category");
-            dataTable.Columns.Add("Amount");
+            dataTable.Columns.Add("Name", typeof(string));
+            dataTable.Columns.Add("Price", typeof(string));
+            dataTable.Columns.Add("Category", typeof(string));
+            dataTable.Columns.Add("Amount", typeof(string));
         }
 
         protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
+        /*    if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(searchResultGridView, "Select$" + e.Row.RowIndex);
 
@@ -63,7 +66,7 @@ namespace FoodStoreV2.WebForms
                 string onMouseOutStyle = "this.style.backgroundColor='transparent'";
                 e.Row.Attributes.Add("onmouseover", onMouseOverStyle);
                 e.Row.Attributes.Add("onmouseout", onMouseOutStyle);
-            }
+            }*/
         }
 
         protected void OnSelectedIndexChanged(object sender, EventArgs e)
@@ -120,6 +123,20 @@ namespace FoodStoreV2.WebForms
             }
         }
 
+        protected void product_onClick(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Product on click in search");
+            LinkButton linkButton = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)linkButton.NamingContainer;
+
+            if (row != null)
+            {
+                int index = row.RowIndex;
+                Response.Redirect("ProductPage_WebForm?param1=" + productList[index].getProductID());
+            }
+        }
+
+
         protected void searchButton_Click(object sender, EventArgs e)
         {
             dataTable.Clear();
@@ -149,7 +166,7 @@ namespace FoodStoreV2.WebForms
                     }
                 }
                 Session.Add("bookList", productList);
-                  addProductsDataToGridView();
+                addProductsDataToGridView();
                 gridViewDataBind();
                 //    Response.Redirect("SearchPage_WebForm.aspx");
             }

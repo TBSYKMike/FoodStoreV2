@@ -175,8 +175,8 @@ namespace FoodStoreV2.WebForms
 
         protected void product_onClick(object sender, EventArgs e)
         {
-            LinkButton textBox = (LinkButton)sender;
-            GridViewRow row = (GridViewRow)textBox.NamingContainer;
+            LinkButton linkButton = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)linkButton.NamingContainer;
 
             if (row != null)
             {
