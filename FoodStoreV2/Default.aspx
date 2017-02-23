@@ -88,31 +88,30 @@
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
+            <h2>The Shop</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                In our shop you can find all sorts of groceries fitting for everyone! Foods from A-Z, but mostly fish and PPAP.
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                <a class="btn btn-default" href="http://localhost:53559/WebForms/ShoppingPage_WebForm">To the Shop! &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
+            <h2>Search</h2>
             <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+                Our search function lets you serach for the foods you love!
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+                <a class="btn btn-default" href="http://localhost:53559/WebForms/SearchPage_WebForm">Let's Search! &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Register</h2>
+            <p>
+                Before you can use this site in all of it's glory you need to have an account.
+            </p>
+            <p>
+                <a class="btn btn-default" href="http://localhost:53559/WebForms/Register_WebForm">Register me! &raquo;</a>
             </p>
         </div>
     </div>
