@@ -18,9 +18,9 @@ namespace FoodStoreV2.WebForms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((List<Product>)Session["bookList"] != null)
+            if ((List<Product>)Session["productList"] != null)
             {
-                productList = (List<Product>)Session["bookList"];
+                productList = (List<Product>)Session["productList"];
             }
             if (!Page.IsPostBack)
             {
@@ -111,7 +111,7 @@ namespace FoodStoreV2.WebForms
         }
         private void addProductsDataToGridView()
         {
-            productList = (List<Product>)Session["bookList"];
+            productList = (List<Product>)Session["productList"];
             for (int i = 0; i < productList.Count; i++)
             {
                 DataRow dataRow = dataTable.NewRow();
@@ -165,7 +165,7 @@ namespace FoodStoreV2.WebForms
                         productList.Remove(productList[i]);
                     }
                 }
-                Session.Add("bookList", productList);
+                Session.Add("productList", productList);
                 addProductsDataToGridView();
                 gridViewDataBind();
                 //    Response.Redirect("SearchPage_WebForm.aspx");

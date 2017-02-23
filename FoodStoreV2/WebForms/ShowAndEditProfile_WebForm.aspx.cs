@@ -16,6 +16,10 @@ namespace FoodStoreV2.WebForms
         protected void Page_Load(object sender, EventArgs e)
         {
             sessionValues = new SessionValues();
+            if (sessionValues.getCustomerSessionObject() == null)
+            {
+                Response.Redirect("ShoppingPage_WebForm");
+            }
             // oldCustomerObject = (Customer)Session["currentLogedInUserObject"];
             oldCustomerObject = sessionValues.getCustomerSessionObject();
             databaseConnecctor = new DatabaseConnector();
@@ -33,7 +37,7 @@ namespace FoodStoreV2.WebForms
 
             if (this.IsValid)
             {
-                Customer newCustomerObject = new Customer(oldCustomerObject.getCustomerID(), nameTextBox.Text, streetAdressTextBox.Text, cityTextbox.Text, postCodetextBox.Text, emailTextBox.Text, passwordTextBox.Text, userNameTextBox.Text);
+                Customer newCustomerObject = new Customer(oldCustomerObject.getCustomerID(), nameTextBox.Text, streetAdressTextBox.Text, cityTextbox.Text, postCodetextBox.Text, emailTextBox.Text, passwordTextBox.Text, userNameTextBox.Text,1);
                 updateConfirmLabel.Visible = true;
                 if (newCustomerObject.getCity().Equals(oldCustomerObject.getCity()) &&  newCustomerObject.getUserName().Equals(oldCustomerObject.getUserName()) &&
                     newCustomerObject.getEmailAdress().Equals(oldCustomerObject.getEmailAdress()) && newCustomerObject.getPostCode().Equals(oldCustomerObject.getPostCode()) &&

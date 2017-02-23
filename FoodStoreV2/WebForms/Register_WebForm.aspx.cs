@@ -30,7 +30,7 @@ namespace FoodStoreV2.WebForms
         protected void registerButton_Click(object sender, EventArgs e)
         {
             this.Validate();
-
+            accountCreatedLabel.Visible = Page.IsValid;
             var encodedResponse = Request.Form["g-Recaptcha-Response"];
             VerifyReCaptcha captcha = new VerifyReCaptcha();
             bool isCaptchaValid = captcha.verifyCapcha(encodedResponse);
@@ -53,7 +53,6 @@ namespace FoodStoreV2.WebForms
                     System.Diagnostics.Debug.WriteLine("inserted User in database");
 
                     sendMail.mailer(emailTextBox.Text, "Account Activation", msg);
-
                 }
 
             }

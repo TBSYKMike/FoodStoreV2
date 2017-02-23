@@ -15,8 +15,9 @@ namespace FoodStoreV2.CSharpClasses
         private String emailAdress;
         private String userPassword;
         private String userName;
+        private int isActive;
 
-        public Customer(int customerID, String name, String streetAdress, String city, String postCode, String emailAdress, String userPassword, String userName)
+        public Customer(int customerID, String name, String streetAdress, String city, String postCode, String emailAdress, String userPassword, String userName, int isActive)
         {
             this.customerID = customerID;
             this.name = name;
@@ -26,6 +27,7 @@ namespace FoodStoreV2.CSharpClasses
             this.emailAdress = emailAdress;
             this.userPassword = userPassword;
             this.userName = userName;
+            this.isActive = isActive;
         }
         public String getName()
         {
@@ -62,6 +64,10 @@ namespace FoodStoreV2.CSharpClasses
         public void setUserPassword(String userPassword)
         {
             this.userPassword = userPassword;
+        }
+        public int getIsActive()
+        {
+            return isActive;
         }
     }
 }
