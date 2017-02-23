@@ -11,5 +11,32 @@ namespace FoodStoreV2.WebForms {
     
     
     public partial class ConfirmationPage_WebForm {
+        
+        /// <summary>
+        /// userInformationLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label userInformationLabel;
+        
+        /// <summary>
+        /// confirmAndPayButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button confirmAndPayButton;
+        
+        /// <summary>
+        /// updateConfirmLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label updateConfirmLabel;
     }
 }
