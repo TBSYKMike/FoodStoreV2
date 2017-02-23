@@ -29,7 +29,27 @@ namespace FoodStoreV2.WebForms
             }
 
             sendOrderCompleted();
+            insertOrder();
 
+        }
+        
+        private void insertOrder()
+        {
+            Customer customer = sessionValues.getCustomerSessionObject();
+            DatabaseConnector databaseConnector = new DatabaseConnector();
+            DateTime thisDay = DateTime.Now;
+            String thisDayAsString = thisDay.ToString();
+            databaseConnector.insertOrder(customer.getCustomerID(), thisDayAsString);
+
+            int orderID = databaseConnector.getOrderID();
+
+            // public Order(int orderID, int customerID, int productID, int productAmount)
+            
+            for(int i=0;i< cartlist.Count; i++)
+            {
+                Order order = new Order(orderID, customer.getCustomerID(), cartlist[i].getProduct().getProductID(), Int32.Parse(cartlist[i].getProduct().getAmount()));
+                databaseConnector.insertOrderDetails(order);
+            }
         }
 
         private void sendOrderCompleted() {

@@ -241,6 +241,30 @@ namespace FoodStoreV2.CSharpClasses
             return 0;
         }
 
+        public void insertOrder(int customerID, String date)
+        {
+            startConnection();
+            createCommand("INSERT INTO Orders (customerId,date) VALUES('" + customerID + "','" + date + "')");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public int getOrderID()
+        {
+            startConnection();
+            createCommand("SELECT COUNT(*) FROM Orders");
+            Object o = cmd.ExecuteScalar();
+            Int32 id = Convert.ToInt32(o);
+            conn.Close();
+            return id;
+        }
+
+        public void insertOrderDetails(Order order)
+        {
+            startConnection();
+            createCommand("INSERT INTO OrdersDetails (ordersID,productID,orderAmount) VALUES('" + order.getOrderID() + "','" + order.getProductID() + "','" + order.getProductAmount() + "')");
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
     }
 }

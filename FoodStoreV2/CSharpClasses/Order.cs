@@ -20,5 +20,21 @@ namespace FoodStoreV2.CSharpClasses
             this.productID = productID;
             this.productAmount = productAmount;
         }
+        public int getOrderID()
+        {
+            return orderID;
+        }
+        public int getCustomerID()
+        {
+            return customerID;
+        }
+        public int getProductID()
+        {
+            return productID;
+        }
+        public int getProductAmount()
+        {
+            return productAmount;
+        }
     }
 }

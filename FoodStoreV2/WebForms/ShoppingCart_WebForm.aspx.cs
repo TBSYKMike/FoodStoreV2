@@ -199,7 +199,8 @@ namespace FoodStoreV2.WebForms
 
         protected void confirmAndPayButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Payment_WebForm?param1=" + totalPriceLabel.Text);
+            // Response.Redirect("Payment_WebForm?param1=" + totalPriceLabel.Text);
+            Response.Redirect("OrderFinish_WebForm?param1=" + totalPriceLabel.Text);
             System.Diagnostics.Debug.WriteLine("pay");
         }
 
