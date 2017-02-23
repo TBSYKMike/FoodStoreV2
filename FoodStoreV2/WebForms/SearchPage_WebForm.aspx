@@ -61,10 +61,13 @@ function showHint(str) {
          </asp:GridView>
      
 
-        <asp:CheckBox ID="category1" runat="server" style="position:absolute; top: 283px; left: 578px;" Text="category1" />
-        <asp:CheckBox ID="category2" runat="server" style="position:absolute; top: 173px; left: 575px;" Text="category2" />
-        <asp:CheckBox ID="category3" runat="server" style="position:absolute; top: 229px; left: 574px;" Text="category3" />
-        <asp:CheckBox ID="category4" runat="server" style="position:absolute; top: 131px; left: 586px;" Text="category4" />
+        <asp:CheckBox ID="ppapCheckBox" runat="server" style="position:absolute; top: 182px; left: 589px;" Text="PPAP" />
+        <asp:CheckBox ID="fruitCheckBox" runat="server" style="position:absolute; top: 237px; left: 591px;" Text="Fruit" />
+        <asp:CheckBox ID="fishCheckBox" runat="server" style="position:absolute; top: 131px; left: 586px;" Text="Fish" />
+        <asp:CheckBox ID="japaneseFoodCheckBox" runat="server" style="position:absolute; top: 263px; left: 593px;" Text="Japanese Food" />
+        <asp:CheckBox ID="pancakeCheckBox" runat="server" style="position:absolute; top: 153px; left: 587px;" Text="Pancake" />
+        <asp:CheckBox ID="vegetableCheckBox" runat="server" style="position:absolute; top: 208px; left: 590px;" Text="Vegetable" />
+        <asp:CheckBox ID="otherTextBox" runat="server" style="position:absolute; top: 292px; left: 594px;" Text="Other" />
 
           <asp:TextBox class="form-control" ID="searchTextBox" onkeyup="showHint(this.value)" runat="server" style="position:absolute; top: 155px; left: 755px; width: 248px;"></asp:TextBox>
           <p>Suggestions: <span id="txtHint"></span></p>

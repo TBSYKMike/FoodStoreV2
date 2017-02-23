@@ -10,9 +10,21 @@ namespace FoodStoreV2.WebForms
 {
     public partial class Login_WebForm : System.Web.UI.Page
     {
+        private Boolean redirectToCart = false;
         private DatabaseConnector databaseConnector;
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+            bool qKeys = Request.QueryString.HasKeys();
+            if (qKeys)
+            {
+                if (Request.QueryString["param1"] == "cartLogin")
+                {
+                    redirectToCart = true;
+                    cartLoginRequireLabel.Visible = true;
+                }
+            }
+
             emailTextBox.Focus();
             databaseConnector = new DatabaseConnector();
             captcha.Visible = false;
@@ -78,7 +90,14 @@ namespace FoodStoreV2.WebForms
                 // Session.Add("currentLogedInUserObject", customer);
                 //Session.Add("logedInStatus", true);
                 // Response.Redirect("ShoppingPage_WebForm.aspx");
-                Response.Redirect("ShowAndEditProfile_WebForm.aspx");//För test
+                if (redirectToCart)
+                {
+                    Response.Redirect("ShoppingCart_WebForm.aspx");
+                }
+                else
+                {
+                    Response.Redirect("ShowAndEditProfile_WebForm.aspx");
+                }
             }
             else
             {

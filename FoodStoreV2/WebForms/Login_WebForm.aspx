@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login_WebForm.aspx.cs" Inherits="FoodStoreV2.WebForms.Login_WebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    
+     <asp:Label ID="cartLoginRequireLabel" runat="server" Text="You have to login in before proceeding to cart" style="position:absolute; top: 104px; left: 153px;  color: red; height: 46px; width: 312px;" Visible="False"></asp:Label>
      <div style="height: 552px">
          <asp:TextBox class="form-control" TabIndex="0" ID="emailTextBox" runat="server" style="position:absolute; top: 180px; left: 206px; height: 40px; width: 200px;"></asp:TextBox>
             <asp:TextBox  class="form-control" ID="passwordTextBox" TextMode="Password" runat="server" style="position:absolute; top: 223px; left: 205px; height:40px; width: 200px;"></asp:TextBox>
