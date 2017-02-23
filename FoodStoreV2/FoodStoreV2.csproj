@@ -220,6 +220,7 @@
     <Content Include="WebForms\AdRedirector.aspx" />
     <Content Include="WebForms\ConfirmationPage_WebForm.aspx" />
     <Content Include="WebForms\ForgotPassword_WebForm.aspx" />
+    <Content Include="WebForms\GetHint.aspx" />
     <Content Include="WebForms\Login_WebForm.aspx" />
     <Content Include="WebForms\OrderFinish_WebForm.aspx" />
     <Content Include="WebForms\OrderHistory_WebForm.aspx" />
@@ -473,6 +474,13 @@
     </Compile>
     <Compile Include="WebForms\ForgotPassword_WebForm.aspx.designer.cs">
       <DependentUpon>ForgotPassword_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\GetHint.aspx.cs">
+      <DependentUpon>GetHint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\GetHint.aspx.designer.cs">
+      <DependentUpon>GetHint.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForms\Login_WebForm.aspx.cs">
       <DependentUpon>Login_WebForm.aspx</DependentUpon>
