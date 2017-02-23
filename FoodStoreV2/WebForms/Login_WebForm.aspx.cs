@@ -29,10 +29,9 @@ namespace FoodStoreV2.WebForms
             }
         }
 
+
         protected void registerButton_Click(object sender, EventArgs e)
         {        
-          
-
                 if (databaseConnector.checkUserCredentials(emailTextBox.Text, passwordTextBox.Text))
                 {
                      if (captcha.Visible) {
@@ -58,7 +57,7 @@ namespace FoodStoreV2.WebForms
 
                 }
                 else
-                {
+                {   
                          System.Diagnostics.Debug.WriteLine("NOT logged in");
                          int newValue = (int)Session["failedLoginAttempts"] + 1;
                          Session.Add("failedLoginAttempts", newValue);
@@ -68,14 +67,25 @@ namespace FoodStoreV2.WebForms
             
             private void succesfulLogIn()
             {
+                
                 Customer customer = databaseConnector.getCustomerObject(emailTextBox.Text);
+            if (customer.getIsActive() == 1)
+            {
+                accountActivatedLabel.Visible = false;
                 System.Diagnostics.Debug.WriteLine("logged in");
                 SessionValues sessionValues = new SessionValues();
                 sessionValues.setLoginSession(customer);
-               // Session.Add("currentLogedInUserObject", customer);
+                // Session.Add("currentLogedInUserObject", customer);
                 //Session.Add("logedInStatus", true);
-               // Response.Redirect("ShoppingPage_WebForm.aspx");
+                // Response.Redirect("ShoppingPage_WebForm.aspx");
                 Response.Redirect("ShowAndEditProfile_WebForm.aspx");//För test
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Customer is not activated");
+                accountActivatedLabel.Visible = true;
+            }
+            
         }
 
         protected void forgotPasswordButton_Click(object sender, EventArgs e)

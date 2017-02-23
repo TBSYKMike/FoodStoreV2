@@ -1,6 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register_WebForm.aspx.cs" Inherits="FoodStoreV2.WebForms.Register_WebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+     <script type="text/javascript">
+             function hideResultLabel() {
+                document.getElementById('<%= accountCreatedLabel.ClientID %>').style.display = 'none';
+         }
+         </script>
     <div style="height: 638px">
     </div>
         <asp:Label ID="userNameLabel" runat="server" Text="User name" style="position:absolute; top: 144px; left: -24px; height: 17px; width: 75px; margin-left: 141px;"></asp:Label>
@@ -38,8 +45,8 @@
 
         <asp:ValidationSummary ID="ValidationSummary1" runat="server"  ValidationGroup='register' HeaderText="All the errors:    "   style="position:absolute; top: 135px; left: 754px; height: 152px; width: 337px;"/>
         
-        <asp:Button ID="registerButton" class="btn btn-primary btn-lg" runat="server" Text="Register" ValidationGroup='register' style="position:absolute; top: 586px; left: 146px; height: 42px; width: 130px;" OnClick="registerButton_Click"/>
-        <asp:Label ID="accountCreatedLabel" runat="server" Text="Account created. You can now login with your account!" style="position:absolute; top: 591px; left: 360px;" Visible="False"></asp:Label>
+        <asp:Button ID="registerButton" class="btn btn-primary btn-lg" runat="server" OnClientClick="hideResultLabel();" Text="Register" ValidationGroup='register' style="position:absolute; top: 586px; left: 146px; height: 42px; width: 130px;" OnClick="registerButton_Click"/>
+        <asp:Label ID="accountCreatedLabel" runat="server" Text="Account created. Before login account activation is required. Check your mail!" style="position:absolute; top: 591px; left: 360px;" Visible="False"></asp:Label>
         
         <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" style= " position:absolute; height: 77px; width: 270px; margin-top: 188px; margin-right: 0px; top: 274px; left: 94px;"></div>
         <asp:Label ID="robotLabel" runat="server" Text="Are you a robot? If not, check the box!" style="position:absolute; top: 488px; left: 389px; color: red;" Visible="False"></asp:Label>

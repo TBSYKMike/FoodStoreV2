@@ -13,7 +13,7 @@
             </div>
         <asp:Label ID="passwordLabel" runat="server" Text="password" style="position:absolute; top: 228px; left: -17px; height: 27px; width: 66px; margin-left: 141px;"></asp:Label>
      
-
+         <asp:Label ID="accountActivatedLabel" runat="server" Text="Your account is not activated" style="position:absolute; top: 177px; left: 500px; color: red;" Visible="False"></asp:Label>
          <asp:Label ID="wrongEmailOrPasswordLabel" runat="server" Text="Wrong username or password" style="position:absolute; top: 206px; left: 499px; color: red;" Visible="False"></asp:Label>
 
         <asp:Label ID="emailLabel" runat="server" Text="Email" style="position:absolute; top: 184px; left: 150px; width: 42px;"></asp:Label>
