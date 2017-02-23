@@ -44,7 +44,8 @@ namespace FoodStoreV2.WebForms
             {
                 ID = "ButtonBuy" + getProductList(categoryID)[i].getProductID(),
                 CommandArgument = getProductList(categoryID)[i].getProductID().ToString(),
-                Text = "SubmitBuy" + getProductList(categoryID)[i].getProductID(),
+                //Text = "SubmitBuy" + getProductList(categoryID)[i].getProductID(),
+                Text = "BUY",
                 CssClass = "btn btn-primary btn-lg btn-block"
 
             };
@@ -212,11 +213,12 @@ namespace FoodStoreV2.WebForms
             tempHtml += "<div class=\"col-xs-6 col sm-4 col-md-4 row panel text-center box1\" style=\"margin: 1px 0px; background-color: beige; \"><br />";
             tempHtml += "<div class=\"col-sm-12  \" style=\"background-color: skyblue;\" onclick =\"location.href='ProductPage_WebForm?param1=" + getProductList(categoryID)[i].getProductID() + "';\" > ";
             tempHtml += "<p></p>";
-            tempHtml += "<p>.itemNAME " + getProductList(categoryID)[i].getName() + "</p>";
+            
             tempHtml += "<img class=\"img -rounded\" src=\" " + getProductList(categoryID)[i].getImageURL() + " \" alt =\"HTML5 Icon\" style = \"width: 100%; height: 15vw;\">";
             tempHtml += "<br />";
-            tempHtml += "<p>.itemINFO  " + getProductList(categoryID)[i].getInfo() + " info</p>";
-            tempHtml += "<p>.itemPRICE  " + getProductList(categoryID)[i].getPrice() + " kr</p>";
+            tempHtml += "<p> " + getProductList(categoryID)[i].getName() + "</p>";
+            //tempHtml += "<p>.itemINFO  " + getProductList(categoryID)[i].getInfo() + " info</p>";
+            tempHtml += "<p>  " + getProductList(categoryID)[i].getPrice() + " kr</p>";
             tempHtml += "</div>";
             tempHtml += "<div class=\"col -sm-12 \" > ";
 
