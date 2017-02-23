@@ -20,9 +20,11 @@ namespace FoodStoreV2.WebForms
         protected void Page_Load(object sender, EventArgs e)
         {
             if (sessionValues.getCartSessionList() != null)
-            { 
+            {
+ 
                 cartlist = sessionValues.getCartSessionList();
                 limitProductAmountOnStock();
+                updatePriceLabel();
             }
             else
             {
@@ -125,6 +127,7 @@ namespace FoodStoreV2.WebForms
             //Gör om hela gridviewen då jag inte hittar hur man uppdaterar en textfield som är i en kollumn
             dataTable.Clear();
             addProductsDataToGridView();
+            updatePriceLabel();
             gridViewDataBind();
 
         }
@@ -158,6 +161,8 @@ namespace FoodStoreV2.WebForms
 
             //Gör om hela gridviewen då jag inte hittar hur man uppdaterar en textfield som är i en kollumn
             dataTable.Clear();
+            limitProductAmountOnStock();
+            updatePriceLabel();
             addProductsDataToGridView();
             gridViewDataBind();
         }
@@ -183,8 +188,7 @@ namespace FoodStoreV2.WebForms
 
         protected void confirmAndPayButton_Click(object sender, EventArgs e)
         {
-            //Sätt carten
-            Response.Redirect("ConfirmationPage_WebForm.aspx");
+            Response.Redirect("Payment_WebForm?param1=" + totalPriceLabel.Text);
             System.Diagnostics.Debug.WriteLine("pay");
         }
 
@@ -220,6 +224,8 @@ namespace FoodStoreV2.WebForms
 
             //Gör om hela gridviewen då jag inte hittar hur man uppdaterar en textfield som är i en kollumn
             dataTable.Clear();
+            limitProductAmountOnStock();
+            updatePriceLabel();
             addProductsDataToGridView();
             gridViewDataBind();
         }
@@ -231,6 +237,7 @@ namespace FoodStoreV2.WebForms
             sessionValues.setCartSession(cartlist);
             dataTable.Clear();
             addProductsDataToGridView();
+            updatePriceLabel();
             gridViewDataBind();
         }
 
@@ -241,10 +248,30 @@ namespace FoodStoreV2.WebForms
                 int amountInStock = databaseConnector.checkProductAmount(cartlist[i].getProduct().getProductID());
                 if (cartlist[i].getProductAmount() > amountInStock)
                 {
-                cartlist[i].setProductAmount(amountInStock);
+                    cartlist[i].setProductAmount(amountInStock);
+                    CustomerInfoLabel.Text = cartlist[i].getProduct().getName() + " have " + amountInStock + " in stock ";
+                }
+                else
+                {
+                    CustomerInfoLabel.Text = "";
                 }
             }
                 
         }
+        private void updatePriceLabel()
+        {
+        //    MasterPage masterPage = (MasterPage)Page.Master;
+        //  masterPage.
+            int totalPrice = 0;
+            for (int i = 0; i <cartlist.Count; i++)
+            {
+                totalPrice += Int32.Parse(cartlist[i].getProduct().getPrice()) * cartlist[i].getProductAmount();
+            }
+            totalPriceLabel.Text = "The total price is " + totalPrice.ToString();
+        
+    }
+
+
+
     }
 }

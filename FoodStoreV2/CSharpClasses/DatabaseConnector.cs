@@ -83,10 +83,13 @@ namespace FoodStoreV2.CSharpClasses
             return categoryList;
         }
 
-        public Product getRandomProduct()
+        public Product getRandomProduct(Boolean onSale)
         {
             startConnection();
-            createCommand("SELECT * FROM Products ORDER BY RAND() LIMIT 1");
+            if(onSale)
+                createCommand("SELECT * FROM Products WHERE onSale= 'on_onSale' ORDER BY RAND() LIMIT 1");
+            else
+                createCommand("SELECT * FROM Products ORDER BY RAND() LIMIT 1");
 
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -97,6 +100,7 @@ namespace FoodStoreV2.CSharpClasses
             }
             return null;
         }
+
         public Order getCustomerOrders(int customerID)
         {
             startConnection();
