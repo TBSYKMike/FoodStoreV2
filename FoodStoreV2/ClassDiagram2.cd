@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FoodStoreV2.About" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>About.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.BundleConfig" Collapsed="true">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.EmailService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FoodStoreV2.SmsService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FoodStoreV2.ApplicationUserManager" Collapsed="true">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.ApplicationSignInManager" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.RouteConfig" Collapsed="true">
+    <Position X="3.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Startup" Collapsed="true">
+    <Position X="7" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\Startup.Auth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Contact" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Contact.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2._Default" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Default.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Global" Collapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.IdentityHelper" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwSAAAAAAAAAAQAABAAgAAAAAAAAIAAgAAACAAAgAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.SiteMaster" Collapsed="true">
+    <Position X="3.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAggAAACQKBAAAAIAAEYBABAAAAAAIAAAA=</HashCode>
+      <FileName>Site.Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Site_Mobile" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAACAAAAAIAAAIAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Site.Mobile.Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.ViewSwitcher" Collapsed="true">
+    <Position X="14" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEIAAIA=</HashCode>
+      <FileName>ViewSwitcher.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.AddPhoneNumber" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAQCAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Account\AddPhoneNumber.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.Confirm" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAIIAEAA=</HashCode>
+      <FileName>Account\Confirm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.ForgotPassword">
+    <Position X="7.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAAIAAAACCAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAA=</HashCode>
+      <FileName>Account\Forgot.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.Lockout" Collapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Account\Lockout.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.Login" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAQAAACCAAAAAAAAAAAAQAAAAABACAAAAAAIgAAA=</HashCode>
+      <FileName>Account\Login.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.Manage" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAADAgAAgUAAAAAAQABAIAAAAQABAAAAAAIkAAA=</HashCode>
+      <FileName>Account\Manage.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.ManageLogins" Collapsed="true">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAABEAAAAQAAAAABAAAAAAAAAAAAAAAAAAIEAAA=</HashCode>
+      <FileName>Account\ManageLogins.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.ManagePassword" Collapsed="true">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAhAAABAACQAAAAANAAAAAAAAAAAAAABAABAgIkAIA=</HashCode>
+      <FileName>Account\ManagePassword.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.OpenAuthProviders" Collapsed="true">
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAIAAAA=</HashCode>
+      <FileName>Account\OpenAuthProviders.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.Register" Collapsed="true">
+    <Position X="8.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAAIAAAAAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
+      <FileName>Account\Register.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.RegisterExternalLogin" Collapsed="true">
+    <Position X="12.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAgAIACAAAAACAAAAAAAAAAAAIwAAA=</HashCode>
+      <FileName>Account\RegisterExternalLogin.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.ResetPassword" Collapsed="true">
+    <Position X="14" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAACAACAAAAAAAAAAAAAAAAAAAAACAAAAAIAAIAA=</HashCode>
+      <FileName>Account\ResetPassword.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.ResetPasswordConfirmation" Collapsed="true">
+    <Position X="1.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Account\ResetPasswordConfirmation.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.TwoFactorAuthenticationSignIn" Collapsed="true">
+    <Position X="8.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQIAgAAAIACEAAAIABAgAAAEABAAAAAAAAAAAAIIABA=</HashCode>
+      <FileName>Account\TwoFactorAuthenticationSignIn.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Account.VerifyPhoneNumber" Collapsed="true">
+    <Position X="10.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAABAAIAAAA=</HashCode>
+      <FileName>Account\VerifyPhoneNumber.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.CSharpClasses.Cart" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAgAAAAAAAAAAAAABAAAAAAAAAAAQAAAAAAg=</HashCode>
+      <FileName>CSharpClasses\Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.CSharpClasses.Category" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAgAAAAAAIACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CSharpClasses\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.CSharpClasses.Customer" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCCAAhBAAgAAAAAAAAACBEAAAQEAAAQgAAEAAECEIA=</HashCode>
+      <FileName>CSharpClasses\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.CSharpClasses.DatabaseConnector" Collapsed="true">
+    <Position X="1.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgABAEACABQAAAQAAgBEAAAAAAwAgCEBAAAEAAEAACE=</HashCode>
+      <FileName>CSharpClasses\DatabaseConnector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.CSharpClasses.Order" Collapsed="true">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAEAA=</HashCode>
+      <FileName>CSharpClasses\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.CSharpClasses.Product" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABARAAAAAAgAAIAAAAABAAVCAEhgAAQIAMAAAAAAA=</HashCode>
+      <FileName>CSharpClasses\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.CSharpClasses.SendMail">
+    <Position X="11.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CSharpClasses\SendMail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.CSharpClasses.SessionValues" Collapsed="true">
+    <Position X="8.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAIAAAEAAAAAAAAAAAAAAAAAACAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>CSharpClasses\SessionValues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.CSharpClasses.VerifyReCaptcha" Collapsed="true">
+    <Position X="12.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>CSharpClasses\VerifyReCaptcha.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Models.ApplicationUser" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.Models.ApplicationDbContext" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.Activation_WebForm">
+    <Position X="9.5" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>WebForms\Activation_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.AdRedirector" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>WebForms\AdRedirector.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.ConfirmationPage_WebForm" Collapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>WebForms\ConfirmationPage_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.ForgotPassword_WebForm">
+    <Position X="5.5" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gCAAAAAAAAAAAAEABAAAAYIAAAAAAAAAQAAAAAIABAA=</HashCode>
+      <FileName>WebForms\ForgotPassword_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.getHint" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAMAAAA=</HashCode>
+      <FileName>WebForms\GetHint.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.Login_WebForm">
+    <Position X="2.75" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BCAAAAAgQQIABAAIBCAAQAIBAAAAAAAAAAAAAAIAAYA=</HashCode>
+      <FileName>WebForms\Login_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.OrderFinish_WebForm" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAABAAAAAAAAAAAAAAAgAAQAAAAAAAAIAAIAAAA=</HashCode>
+      <FileName>WebForms\OrderFinish_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.OrderHistory_WebForm" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAEAIAAAAAAAAAAAgQACAAAAAAASAIgAAA=</HashCode>
+      <FileName>WebForms\OrderHistory_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.Payment_WebForm" Collapsed="true">
+    <Position X="3.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>WebForms\Payment_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.ProductPage_WebForm" Collapsed="true">
+    <Position X="7" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAEIAAAA=</HashCode>
+      <FileName>WebForms\ProductPage_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.Register_WebForm" Collapsed="true">
+    <Position X="10.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FCAAJCAgAAQAAgAEBCIBwRgBSBAAABBACAAAACoABII=</HashCode>
+      <FileName>WebForms\Register_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.SearchPage_WebForm" Collapsed="true">
+    <Position X="5.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABQAEAIABAAAAAAAAAAIAiAABAAAICAIACEA=</HashCode>
+      <FileName>WebForms\SearchPage_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.ShoppingCart_WebForm" Collapsed="true">
+    <Position X="10.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAABABCAUAIABAAAgQgAgAAQgCBAACAAgCAKADgA=</HashCode>
+      <FileName>WebForms\ShoppingCart_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.ShoppingPage_WebForm" Collapsed="true">
+    <Position X="12.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFAAAAAAAADQBRAAIQAAQDiAAAAAAIAAAAgAAQIAAAg=</HashCode>
+      <FileName>WebForms\ShoppingPage_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodStoreV2.WebForms.ShowAndEditProfile_WebForm" Collapsed="true">
+    <Position X="14" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FCAAJCAAAIQAQgAEBCNBgRgASBQCIBBACAAEACoBBAo=</HashCode>
+      <FileName>WebForms\ShowAndEditProfile_WebForm.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
