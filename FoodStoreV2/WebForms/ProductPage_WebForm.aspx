@@ -16,7 +16,7 @@
             string selectedProductID = "none";
             string selectedProductName = "none";
             string selectedProductPrice = "none";
-            string selectedProductCategory = "none";
+            string selectedProductCategory = "0";
             string selectedProductAmount = "none";
             string selectedProductOnSale = "none";
             string selectedProductInfo = "none";
@@ -97,16 +97,21 @@
             <br />
             <div class="col-sm-12 text-left" style="background-color: violet;">
                 <br />
-                product information:
                 <br />
                 <br />
-                Wrote water woman of heart it total other. By in entirely securing suitable graceful at families improved. Zealously few furniture repulsive was agreeable consisted difficult. Collected breakfast estimable questions in to favourite it. Known he place worth words it as to. Spoke now noise off smart her ready. 
+                .productINFO: <%: selectedProductInfo %>
                 <br />
                 <br />
-                Respect forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get nor. 
+                <br /><br />
                 <br />
                 <br />
-                With my them if up many. Lain week nay she them her she. Extremity so attending objection as engrossed gentleman something. Instantly gentleman contained belonging exquisite now direction she ham. West room at sent if year. Numerous indulged distance old law you. Total state as merit court green decay he. Steepest sex bachelor the may delicate its yourself. As he instantly on discovery concluded to. Open draw far pure miss felt say yet few sigh. 
+                .productINFO: <%: selectedProductInfo %>
+                <br />
+                <br />
+                <br /><br />
+                <br />
+                <br />
+                .productINFO: <%: selectedProductInfo %>
                 <br />
                 <br />
                 <br />
@@ -117,76 +122,33 @@
 
             <div class="col-sm-12" style="background-color: paleturquoise;">
                 <br />
-                <br />
-                <br />
-                .productID: <%: selectedProductID %>
-                <br />
-                <br />
+                Product Nbr: <%: selectedProductID %>
                 <br />
             </div>
             <div class="col-sm-12" style="background-color: cadetblue;">
                 <br />
-                <br />
-                <br />
-                .productNAME: <%: selectedProductName %>
-                <br />
-                <br />
-                <br />
-            </div>
-            <div class="col-sm-12" style="background-color: cyan;">
-                <br />
-                <br />
-                <br />
-                .productPRICE: <%: selectedProductPrice %> kr
-                <br />
-                <br />
-                <br />
-            </div>
-            <div class="col-sm-12" style="background-color: mediumpurple;">
-                <br />
-                <br />
-                <br />
-                .productAMOUNT: <%: selectedProductAmount %> left
-                <br />
-                <br />
+                Product Name: <%: selectedProductName %>
                 <br />
             </div>
             <div class="col-sm-12" style="background-color: orchid;">
                 <br />
-                <br />
-                <br />
-                .productCATEGORY: <%: selectedProductCategory %>
-                <br />
-                <br />
+                Category: <%: getCategoryName( Int32.Parse( selectedProductCategory) ) %>
                 <br />
             </div>
-            <div class="col-sm-12" style="background-color: mediumslateblue;">
+            <div class="col-sm-12" style="background-color: mediumpurple;">
                 <br />
-                <br />
-                <br />
-                .productINFO: <%: selectedProductInfo %>
-                <br />
-                <br />
+                Stock: <%: selectedProductAmount %> left
                 <br />
             </div>
-            <div class="col-sm-12" style="background-color: deepskyblue;">
+            <div class="col-sm-12" style="background-color: cyan;">
                 <br />
-                <br />
-                <br />
-                .productONSALE: <%: selectedProductOnSale %>
-                <br />
-                <br />
+                Price: <%: selectedProductPrice %> kr
                 <br />
             </div>
+            
+            
             <div class="col-sm-12" style="background-color: lightsteelblue;" >
-                <br />
-                <br />
-                <br />
-                .buy Click Button
-                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click1" />
-                <br />
-                <br />
-                <br />
+                <asp:Button class="btn btn-primary btn-lg btn-block" ID="Button1" runat="server" Text="BUY" OnClick="Button1_Click1" />
             </div>
         </div>
 

@@ -61,5 +61,25 @@ namespace FoodStoreV2.WebForms
 
             }
         }
+
+
+
+        protected string getCategoryName(int cateID)
+        {
+            DatabaseConnector databaseConnector = new DatabaseConnector();
+            List<Category> categoryList = databaseConnector.getCategories();
+            string categoryName = "";
+
+            for(int i=0; i<categoryList.Count; i++)
+            {
+                if (categoryList[i].getCategoryID() == cateID)
+                {
+                    categoryName = categoryList[i].getCategoryName();
+                }
+            }
+
+
+            return categoryName;
+        }
     }
 }
