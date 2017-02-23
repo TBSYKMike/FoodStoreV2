@@ -135,19 +135,24 @@
                 <div class="col-sm-12">
                     <br />
                 </div>
-                <div class="col-sm-12" style="background-color: greenyellow;">
-                    
-                    <br />
-                    <% 
+                <% 
                         FoodStoreV2.CSharpClasses.Product featuredProdObj = getRandomProduct(false);
                         string featuredProdURL ="";
+                        int featuredProdID = 0;
                         if (featuredProdObj != null)
                         {
                             featuredProdURL = featuredProdObj.getImageURL();
+                            featuredProdID = featuredProdObj.getProductID();
                         }
 
                         %>
+                <div class="col-sm-12" style="background-color: greenyellow;" onclick ="location.href='../../WebForms/ProductPage_WebForm?param1=<%: featuredProdID  %>'";>
+                    
+                    <br />
+                    
+                    
                     <img class="img-rounded" src="<%: featuredProdURL %>" alt="HTML5 Icon" style="width: 100%; height: 100%;">
+                    
                     <br />
                     Product Featured
                     <br />
@@ -155,19 +160,27 @@
                 <div class="col-sm-12">
                     <br />
                 </div>
-                <div class="col-sm-12" style="background-color: springgreen;">
-                    
-                    <br />
-                    <% 
+
+                <% 
                         FoodStoreV2.CSharpClasses.Product onSaleObj = getRandomProduct(true);
                         string onSaleURL ="";
+                        int onSaleID = 0;
+
                         if (onSaleObj != null)
                         {
                             onSaleURL = onSaleObj.getImageURL();
+                            onSaleID = onSaleObj.getProductID();
                         }
 
                         %>
+
+                <div class="col-sm-12" style="background-color: mediumspringgreen"; onclick="location.href='../../WebForms/ProductPage_WebForm?param1=<%: onSaleID  %>'";>
+                    
+                    <br />
+                    
+                    
                     <img class="img-rounded" src="<%: onSaleURL %>" alt="HTML5 Icon" style="width: 100%; height: 100%;">
+                        
                     <br />
                     Product ONSALE
                     <br />
