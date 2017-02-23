@@ -27,7 +27,7 @@
         <div class="g-recaptcha" ID="captcha" runat="server" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" style= " position:absolute; height: 77px; width: 270px; margin-top: 188px; margin-right: 0px; top: 129px; left: 135px;"></div>
         <asp:Label ID="robotLabel" runat="server" Text="Are you a robot? If not, check the box!" style="position:absolute; top: 344px; left: 430px; color: red;" Visible="False"></asp:Label>
 
-        <asp:Button  ID="ButtonInfo" class="btn btn-primary btn-lg" runat="server" Text="Information" style="position:absolute;  top: 450px; left: 150px; height: 42px; width: 126px;" OnClick="loadDoc()"/>
+        <Button ID="ButtonInfo" class="btn btn-primary btn-lg" runat="server" Text="Information" style="position:absolute;  top: 450px; left: 150px; height: 42px; width: 126px;" OnClick="loadDoc()"/>
         <asp:Label ID="LabelInfo" runat="server" Text="" style="position:absolute; top: 462px; left: 300px; color: red;" Visible="False"></asp:Label>
 
         <script>

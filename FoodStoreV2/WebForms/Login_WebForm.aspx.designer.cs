@@ -127,7 +127,7 @@ namespace FoodStoreV2.WebForms {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonInfo;
+        protected global::System.Web.UI.HtmlControls.HtmlButton ButtonInfo;
         
         /// <summary>
         /// LabelInfo control.
