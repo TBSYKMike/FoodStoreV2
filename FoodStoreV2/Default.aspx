@@ -80,9 +80,10 @@
     </div>
 
     <div class="jumbotron col-sm-12">
-        <h1>FoodStoreV2</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1>FoodForEveryone</h1>
+        <p class="lead">FoodForEveryone is a Shop for food lovers and food haters. Haters will hate and lovers will love. 
+            <br /> We welcome everyone from age of 0 to 100+.</p>
+        <p><a href="https://www.facebook.com/Foodforeveryone-354846188242297/" class="btn btn-primary btn-lg">Visit Our Facebook Page &raquo;</a></p>
     </div>
 
     <div class="row">
