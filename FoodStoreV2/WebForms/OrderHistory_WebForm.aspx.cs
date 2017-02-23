@@ -13,6 +13,7 @@ namespace FoodStoreV2.WebForms
     {
         private DataTable dataTable;
         private SessionValues sessionValues;
+        private List<Order> userOrders = new List<Order>();
         protected void Page_Load(object sender, EventArgs e)
         {
             sessionValues = new SessionValues();
@@ -83,21 +84,18 @@ namespace FoodStoreV2.WebForms
 
         private void addOrdersToGridView()
         {
-            DatabaseConnector databaseConnector = new DatabaseConnector();
+    /*        DatabaseConnector databaseConnector = new DatabaseConnector();
 
             Customer customer = sessionValues.getCustomerSessionObject();
+            userOrders = databaseConnector.getCustomerOrders(customer.getCustomerID());
 
-           /* List<Order> customerOrders = databaseConnector.getAllOrdersFromCustomer(customer.getCustomerID());
-
-            for (int i = 0; i < customerOrders.Count; i++)
-            {
-                System.Diagnostics.Debug.WriteLine("Order number:   " + customerOrders[i].getOrderNumber());
-                DataRow dataRow = dataTable.NewRow();
-                dataRow["Order number"] = customerOrders[i].getOrderNumber();
-                dataRow["Titles"] = customerOrders[i].getTitles();
-                dataRow["Total price"] = customerOrders[i].getTotalPrice();
-                dataTable.Rows.Add(dataRow);
-            }*/
+             for (int i = 0; i < userOrders.Count; i++)
+             {
+                 DataRow dataRow = dataTable.NewRow();
+                 dataRow["Order number"] = userOrders[i].getOrderNumber();
+                 dataRow["Date"] = userOrders[i].
+                 dataTable.Rows.Add(dataRow);
+             }*/
         }
 
         private void createDataTable()

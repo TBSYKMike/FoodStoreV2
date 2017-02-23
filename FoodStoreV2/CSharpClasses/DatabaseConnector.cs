@@ -101,19 +101,19 @@ namespace FoodStoreV2.CSharpClasses
             return null;
         }
 
-        public Order getCustomerOrders(int customerID)
+        public List<Order> getCustomerOrders(int customerID)
         {
             startConnection();
             createCommand("SELECT * FROM Orders WHERE idOrder=" + customerID);
-
+            List <Order> userOrders = new List<Order>();
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 Order order = new Order(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
-                conn.Close();
-                return order;
+                userOrders.Add(order);
             }
-            return null;
+            conn.Close();
+            return userOrders;
         }
         public void insertCustomer(String name, String streetAdress, String city, String postCode, String emailAdress, String userPassword, String userName, int isActivated, String code)
         {
