@@ -22,12 +22,23 @@
             string selectedProductInfo = "none";
             string selectedProductImageURL = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
 
-            
+
             int productListPosition = 0;
             string test = test_method()[0].getName();
             if (Request.QueryString["param1"] != null)
             {
-                int id = Int32.Parse(Request.QueryString["param1"]);
+                int id = 0;
+
+                try
+                {
+                    id = Int32.Parse(Request.QueryString["param1"]);
+                }
+                catch (Exception)
+                {
+
+                }
+
+
                 //Response.Write("From Page1 param1 value=" + Request.QueryString["param1"]);
 
                 for (int i = 0; i < test_method().Count(); i++)
