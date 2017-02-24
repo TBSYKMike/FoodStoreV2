@@ -2,7 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-
+    <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
+</asp:ScriptManagerProxy>
+    
+        
+           <ajaxToolkit:AutoCompleteExtender ID="searchTextBox_AutoCompleteExtender" runat="server" BehaviorID="searchTextBox_AutoCompleteExtender" ServiceMethod="GetCompletionList" DelimiterCharacters="" ServicePath="~/WebForms/SearchHints.asmx" TargetControlID="searchTextBox">
+           </ajaxToolkit:AutoCompleteExtender>
     
      <div style="height: 552px">
          <asp:GridView ID="searchResultGridView"  AutoGenerateColumns="false" runat="server" OnRowDataBound = "OnRowDataBound" OnSelectedIndexChanged = "OnSelectedIndexChanged" style="position:absolute; top: 65px; left: 122px; height: 193px; width: 256px;">

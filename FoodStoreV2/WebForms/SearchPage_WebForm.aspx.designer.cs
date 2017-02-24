@@ -13,6 +13,24 @@ namespace FoodStoreV2.WebForms {
     public partial class SearchPage_WebForm {
         
         /// <summary>
+        /// ScriptManagerProxy1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManagerProxy ScriptManagerProxy1;
+        
+        /// <summary>
+        /// searchTextBox_AutoCompleteExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender searchTextBox_AutoCompleteExtender;
+        
+        /// <summary>
         /// searchResultGridView control.
         /// </summary>
         /// <remarks>
