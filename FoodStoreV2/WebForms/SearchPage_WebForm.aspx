@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="SearchPage_WebForm.aspx.cs" Inherits="FoodStoreV2.WebForms.SearchPage_WebForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="SearchPage_WebForm.aspx.cs" Inherits="FoodStoreV2.WebForms.SearchPage_WebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
     
      <div style="height: 552px">
@@ -52,13 +52,13 @@
         <asp:CheckBox ID="vegetableCheckBox" runat="server" style="position:absolute; top: 208px; left: 590px;" Text="Vegetable" />
         <asp:CheckBox ID="otherTextBox" runat="server" style="position:absolute; top: 292px; left: 594px;" Text="Other" />
 
-          <asp:TextBox class="form-control" ID="searchTextBox"  runat="server" style="position:absolute; top: 155px; left: 755px; width: 248px;"></asp:TextBox>
              <asp:RequiredFieldValidator ID="searchFieldValidator" runat="server" ValidationGroup='search' ErrorMessage="Search field cant be empty" ControlToValidate="searchTextBox" style="position:absolute; top: 244px; left: 797px;"></asp:RequiredFieldValidator>
-     
-           <asp:Button class="btn btn-primary btn-lg" ID="searchButton" runat="server" ValidationGroup='search' Text="Search" style="position:absolute; top: 156px; left: 1048px;" OnClick="searchButton_Click" />
+        <asp:Button class="btn btn-primary btn-lg" ID="searchButton" runat="server" ValidationGroup='search' Text="Search" style="position:absolute; top: 156px; left: 1048px;" OnClick="searchButton_Click" />
+         <asp:TextBox class="form-control" ID="searchTextBox"  runat="server" style="position:absolute; top: 155px; left: 755px; width: 248px;"></asp:TextBox>
+       
          
                 </div>
     
-
+          
 </asp:Content>
  

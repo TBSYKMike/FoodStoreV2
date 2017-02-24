@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.4.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -215,6 +219,7 @@
     </Content>
     <Content Include="ImagesAd\elx_ad.jpg" />
     <Content Include="ImagesAd\valencia_ad.png" />
+    <Content Include="WebForms\SearchHints.asmx" />
     <Content Include="valencia_ad.png" />
     <Content Include="WebForms\Activation_WebForm.aspx" />
     <Content Include="WebForms\AdRedirector.aspx" />
@@ -232,6 +237,7 @@
     <Content Include="WebForms\ShoppingPage_WebForm.aspx" />
     <Content Include="WebForms\ShowAndEditProfile_WebForm.aspx" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="WebForms\testTabort.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -426,6 +432,10 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForms\SearchHints.asmx.cs">
+      <DependentUpon>SearchHints.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -552,6 +562,13 @@
     </Compile>
     <Compile Include="WebForms\ShowAndEditProfile_WebForm.aspx.designer.cs">
       <DependentUpon>ShowAndEditProfile_WebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\testTabort.aspx.cs">
+      <DependentUpon>testTabort.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\testTabort.aspx.designer.cs">
+      <DependentUpon>testTabort.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
