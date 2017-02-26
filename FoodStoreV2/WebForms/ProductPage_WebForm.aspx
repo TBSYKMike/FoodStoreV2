@@ -79,80 +79,88 @@
             }
 
         %>
-     
-        <br />       
+
+        <br />
     </div>
+    <div class="col-xs-12 row">
 
-    <div class="col-sm-12 row text-center " style="background-color: navajowhite;">
-        <h1>Product Desciption</h1>
+        <div class="col-xs-12 row text-left " style="background-color: none;">
+            <div class="col-xs-12 jumbotron ">
+                <!-- <div class="page-header"> -->
+                <h1>Product Desciption</h1>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 container rounded" style="background-color: beige; border: 1px solid #ccc; margin-right: 5px;">
+
+                <br />
+                <%= category_menu() %>
+
+                <br />
+
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 row container" style="background-color: none;">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" style="background-color: beige; border: 1px solid #ccc;">
+                    <br />
+                    <br />
+                    <img class="img-rounded" src="<%: selectedProductImageURL %>" alt="HTML5 Icon" style="background-color:white; width: 100%; height: 100%;">
+                    <br />
+                    <br />
+                    <br />
+                    Product INFO:
+                    <div class="col-xs-12 text-left" style="background-color: #efefcb; border: 1px solid #ccc;">
+                        <br />
+                        <br />
+                        <%: selectedProductInfo %>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                    <br />
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" style="background-color: beige; border: 1px solid #ccc;">
+
+                    <br />
+
+                    <div class="col-xs-12 text-left" style="background-color: #efefcb; border: 1px solid #ccc;">
+                        <div class="col-sm-12" style="background-color: inherit;">
+                            <br />
+                            Product Nbr: <%: selectedProductID %>
+                            <br />
+                        </div>
+                        <div class="col-sm-12" style="background-color: inherit;">
+                            <br />
+                            Product Name: <%: selectedProductName %>
+                            <br />
+                        </div>
+                        <div class="col-sm-12" style="background-color: inherit;">
+                            <br />
+                            Category: <%: getCategoryName( Int32.Parse( selectedProductCategory) ) %>
+                            <br />
+                        </div>
+                        <div class="col-sm-12" style="background-color: inherit;">
+                            <br />
+                            Stock: <%: selectedProductAmount %> left
+                            <br />
+                        </div>
+                        <div class="col-sm-12" style="background-color: inherit;">
+                            <br />
+                            Price: <%: selectedProductPrice %> kr
+                            <br />
+                        </div>
+                        <br />
+                    </div>
+                    <br />
+                    <div class="col-sm-12" style="background-color: inherit;">
+                        <asp:Button class="btn btn-primary btn-lg btn-block" ID="Button1" runat="server" Text="BUY" OnClick="Button1_Click1" />
+                    </div>
+                    <br />
+
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="col-sm-12 row text-center " style="background-color: blue;">
-        <div class="col-sm-2" style="background-color: burlywood;">
-            
-            <br />
-             <%= category_menu() %>
-            <br />
-            <br />
-        </div>
-        <div class="col-sm-6" style="background-color: blueviolet;">
-            <br />
-            <div class="col-sm-12" style="background-color: palevioletred;">
-                <br />
-                <img class="img-rounded" src="<%: selectedProductImageURL %>" alt="HTML5 Icon" style="width: 100%; height: 100%;">
-                <br />
-                <br />
-            </div>
-            <br />
-            <div class="col-sm-12 text-left" style="background-color: violet;">
-                <br />
-                Product INFO: 
-                <br />
-                <%: selectedProductInfo %>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-            </div>
-            <br />
-        </div>
-        <div class="col-sm-4" style="background-color: cornflowerblue;">
-
-            <div class="col-sm-12" style="background-color: paleturquoise;">
-                <br />
-                Product Nbr: <%: selectedProductID %>
-                <br />
-            </div>
-            <div class="col-sm-12" style="background-color: cadetblue;">
-                <br />
-                Product Name: <%: selectedProductName %>
-                <br />
-            </div>
-            <div class="col-sm-12" style="background-color: orchid;">
-                <br />
-                Category: <%: getCategoryName( Int32.Parse( selectedProductCategory) ) %>
-                <br />
-            </div>
-            <div class="col-sm-12" style="background-color: mediumpurple;">
-                <br />
-                Stock: <%: selectedProductAmount %> left
-                <br />
-            </div>
-            <div class="col-sm-12" style="background-color: cyan;">
-                <br />
-                Price: <%: selectedProductPrice %> kr
-                <br />
-            </div>
-            
-            
-            <div class="col-sm-12" style="background-color: lightsteelblue;" >
-                <asp:Button class="btn btn-primary btn-lg btn-block" ID="Button1" runat="server" Text="BUY" OnClick="Button1_Click1" />
-            </div>
-        </div>
-
-
-    </div>
-
 
 
 </asp:Content>

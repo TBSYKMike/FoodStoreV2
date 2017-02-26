@@ -22,6 +22,33 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Label cartLoginRequireLabel;
         
         /// <summary>
+        /// wrongEmailOrPasswordLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label wrongEmailOrPasswordLabel;
+        
+        /// <summary>
+        /// accountActivatedLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label accountActivatedLabel;
+        
+        /// <summary>
+        /// emailLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label emailLabel;
+        
+        /// <summary>
         /// emailTextBox control.
         /// </summary>
         /// <remarks>
@@ -31,6 +58,15 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
         
         /// <summary>
+        /// passwordLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label passwordLabel;
+        
+        /// <summary>
         /// passwordTextBox control.
         /// </summary>
         /// <remarks>
@@ -38,6 +74,24 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
+        
+        /// <summary>
+        /// captcha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl captcha;
+        
+        /// <summary>
+        /// robotLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label robotLabel;
         
         /// <summary>
         /// loginButton control.
@@ -65,59 +119,5 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button registerButton;
-        
-        /// <summary>
-        /// passwordLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordLabel;
-        
-        /// <summary>
-        /// accountActivatedLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label accountActivatedLabel;
-        
-        /// <summary>
-        /// wrongEmailOrPasswordLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label wrongEmailOrPasswordLabel;
-        
-        /// <summary>
-        /// emailLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailLabel;
-        
-        /// <summary>
-        /// captcha control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl captcha;
-        
-        /// <summary>
-        /// robotLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label robotLabel;
     }
 }

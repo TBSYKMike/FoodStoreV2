@@ -17,12 +17,12 @@
 </head>
 <body>
     <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -82,9 +82,9 @@
 
                         //if (string.IsNullOrEmpty(Session["logedInStatus"] as string)){    Session["logedInStatus"] = false;}
 
-                        
+
                         //  if ((String)Session["FirstName"] == (""))
-                        if ( callGetCustomerSessionObject() == null)
+                        if (callGetCustomerSessionObject() == null)
                         // if ((Boolean)Session["logedInStatus"] == false)
                         { %>
                     <ul style='display: inline' class="nav navbar-nav navbar-right">
@@ -111,75 +111,73 @@
         </div>
 
 
+        <br />
+        <div class=" row container-fluid col-xs-12 col-sm-12 col-md-12 rounded border ">
 
-        <div class=" row container-fluid col-xs-12 col-sm-12 col-md-12">
-            <div class=" col-xs-12 col-sm-10 col-md-10" style="background-color: lavenderblush;">
+            <div class=" col-xs-12 col-sm-12 col-md-10 col-lg-10" style="background-color: none;">
                 <div class="container body-content">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server">
                     </asp:ContentPlaceHolder>
                     <hr />
                 </div>
             </div>
-            <div class="col-sm-2 text-center" style="background-color: lavender;">
+            <div class=" col-xs-12 col-sm-6 col-md-2 col-lg-2 text-center thumbnail" style="background-color: beige;">
                 <br />
-                <div class="col-sm-12" style="background-color: lawngreen;">
+                <div class="col-sm-12 thumbnail" style="background-color: #efefcb;">
                     <br />
          
-                      <asp:AdRotator ID="AdRotator2" runat="server" DataSourceID="XmlDataSource1" Height="90%" Width="90%" />                   
+                      <asp:AdRotator ID="AdRotator2" runat="server" DataSourceID="XmlDataSource1" Height="95%" Width="95%" />                   
                      <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/App_Data/Adversitment1.xml"></asp:XmlDataSource>
                     Advertisement
                     <br />
                   
                           
                 </div>
-                <div class="col-sm-12">
                     <br />
-                </div>
+                
                 <% 
-                        FoodStoreV2.CSharpClasses.Product featuredProdObj = getRandomProduct(false);
-                        string featuredProdURL ="";
-                        int featuredProdID = 0;
-                        if (featuredProdObj != null)
-                        {
-                            featuredProdURL = featuredProdObj.getImageURL();
-                            featuredProdID = featuredProdObj.getProductID();
-                        }
+                    FoodStoreV2.CSharpClasses.Product featuredProdObj = getRandomProduct(false);
+                    string featuredProdURL = "";
+                    int featuredProdID = 0;
+                    if (featuredProdObj != null)
+                    {
+                        featuredProdURL = featuredProdObj.getImageURL();
+                        featuredProdID = featuredProdObj.getProductID();
+                    }
 
                         %>
-                <div class="col-sm-12" style="background-color: greenyellow;" onclick ="location.href='../../WebForms/ProductPage_WebForm?param1=<%: featuredProdID  %>'";>
+                <div class="col-sm-12 thumbnail" style="background-color: #efefcb;" onclick ="location.href='../../WebForms/ProductPage_WebForm?param1=<%: featuredProdID  %>'";>
                     
                     <br />
                     
                     
-                    <img class="img-rounded" src="<%: featuredProdURL %>" alt="HTML5 Icon" style="width: 100%; height: 100%;">
+                    <img class="img-rounded" src="<%: featuredProdURL %>" alt="HTML5 Icon" style="width: 95%; height: 95%; background-color:white;">
                     
                     <br />
                     Product Featured
                     <br />
                 </div>
-                <div class="col-sm-12">
                     <br />
-                </div>
 
                 <% 
-                        FoodStoreV2.CSharpClasses.Product onSaleObj = getRandomProduct(true);
-                        string onSaleURL ="";
-                        int onSaleID = 0;
+                    FoodStoreV2.CSharpClasses.Product onSaleObj = getRandomProduct(true);
+                    string onSaleURL = "";
+                    int onSaleID = 0;
 
-                        if (onSaleObj != null)
-                        {
-                            onSaleURL = onSaleObj.getImageURL();
-                            onSaleID = onSaleObj.getProductID();
-                        }
+                    if (onSaleObj != null)
+                    {
+                        onSaleURL = onSaleObj.getImageURL();
+                        onSaleID = onSaleObj.getProductID();
+                    }
 
                         %>
 
-                <div class="col-sm-12" style="background-color: mediumspringgreen"; onclick="location.href='../../WebForms/ProductPage_WebForm?param1=<%: onSaleID  %>'";>
+                <div class="col-sm-12 thumbnail" style="background-color: #efefcb;"; onclick="location.href='../../WebForms/ProductPage_WebForm?param1=<%: onSaleID  %>'";>
                     
                     <br />
                     
                     
-                    <img class="img-rounded" src="<%: onSaleURL %>" alt="HTML5 Icon" style="width: 100%; height: 100%;">
+                    <img class="img-rounded" src="<%: onSaleURL %>" alt="HTML5 Icon" style="width: 95%; height: 95%; background-color:white;" >
                         
                     <br />
                     Product ONSALE

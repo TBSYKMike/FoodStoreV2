@@ -49,6 +49,15 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Label passwordOneLabel;
         
         /// <summary>
+        /// LabelInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelInfo;
+        
+        /// <summary>
         /// passwordTextBox control.
         /// </summary>
         /// <remarks>
@@ -166,6 +175,15 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Label streetAdressLabel;
         
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
         /// streetAdressTextBox control.
         /// </summary>
         /// <remarks>
@@ -229,6 +247,15 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
+        /// robotLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label robotLabel;
+        
+        /// <summary>
         /// registerButton control.
         /// </summary>
         /// <remarks>
@@ -245,14 +272,5 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label accountCreatedLabel;
-        
-        /// <summary>
-        /// robotLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label robotLabel;
     }
 }

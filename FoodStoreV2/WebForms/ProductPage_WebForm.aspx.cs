@@ -102,20 +102,21 @@ namespace FoodStoreV2.WebForms
                   */
 
             string url = "ShoppingPage_WebForm";
-            string temp = " <div id=\"collapse1\" class=\"panel\">  <ul class=\"list-group\"> <div class=\"panel-footer\"><strong><u>Category Menu</u></strong></div>";
-            temp += "  <li class=\"list-group-item\">" +
-                    " <a href=\"" + url + "?category=" + "show_all" + "\">" + "Show All" + "</a> "
-                + "</li>  ";
+            string temp = "";
+            //temp += " <div id=\"collapse1\" class=\"container\">";
+            temp += "<div class=\"list-group-item active\"><strong><u>Category Menu</u></strong></div>";
+            temp += "<a href=\"" + url + "?category=" + "show_all" + "\"   class=\"list-group-item \"         >" + "Show All" + "</a> ";
             for (int i = 0; i < categoryList.Count(); i++)
             {
                 string categoryID = categoryList[i].getCategoryID().ToString();
                 string categoryName = categoryList[i].getCategoryName().ToString();
 
-                temp += "  <li class=\"list-group-item\">" +
-                    " <a href=\"" + url + "?category=" + categoryID + "\">" + categoryName + "</a> "
-                + "</li>  ";
+                temp += "   <a href=\"" + url + "?category=" + categoryID + "\"  class=\"list-group-item \"   >" + categoryName + "</a> ";
             }
-            temp += " </ul>  </div> ";
+            //temp += "  </div> ";
+
+
+
 
 
 

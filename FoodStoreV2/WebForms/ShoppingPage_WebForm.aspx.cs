@@ -96,20 +96,21 @@ namespace FoodStoreV2.WebForms
                   */
 
             string url = "ShoppingPage_WebForm";
-            string temp = " <div id=\"collapse1\" class=\"panel\">  <ul class=\"list-group\"> <div class=\"panel-footer\"><strong><u>Category Menu</u></strong></div>";
-            temp += "  <li class=\"list-group-item\">" +
-                    " <a href=\"" + url + "?category=" + "show_all" + "\">" + "Show All" + "</a> "
-                + "</li>  ";
+            string temp = "";
+            //temp += " <div id=\"collapse1\" class=\"container\">";
+            temp += "<div class=\"list-group-item active\"><strong><u>Category Menu</u></strong></div>";
+            temp += "<a href=\"" + url + "?category=" + "show_all" + "\"   class=\"list-group-item \"         >" + "Show All" + "</a> ";
             for (int i = 0; i < categoryList.Count(); i++)
             {
                 string categoryID = categoryList[i].getCategoryID().ToString();
                 string categoryName = categoryList[i].getCategoryName().ToString();
 
-                temp += "  <li class=\"list-group-item\">" +
-                    " <a href=\"" + url + "?category=" + categoryID + "\">" + categoryName + "</a> "
-                + "</li>  ";
+                temp += "   <a href=\"" + url + "?category=" + categoryID + "\"  class=\"list-group-item \"   >" + categoryName + "</a> "   ;
             }
-            temp += " </ul>  </div> ";
+            //temp += "  </div> ";
+
+            
+
 
 
 
@@ -210,15 +211,16 @@ namespace FoodStoreV2.WebForms
         protected string generateProductPartBegin(int i, int categoryID)
         {
             string tempHtml = "";
-            tempHtml += "<div class=\"col-xs-6 col sm-4 col-md-4 row panel text-center box1\" style=\"margin: 1px 0px; background-color: beige; \"><br />";
-            tempHtml += "<div class=\"col-sm-12  \" style=\"background-color: skyblue;\" onclick =\"location.href='ProductPage_WebForm?param1=" + getProductList(categoryID)[i].getProductID() + "';\" > ";
+            tempHtml += "";
+            tempHtml += "<br />";
+            tempHtml += "<div class=\"col-sm-12  \" style=\"background-color: none;\" onclick =\"location.href='ProductPage_WebForm?param1=" + getProductList(categoryID)[i].getProductID() + "';\" > ";
             tempHtml += "<p></p>";
             
-            tempHtml += "<img class=\"img -rounded\" src=\" " + getProductList(categoryID)[i].getImageURL() + " \" alt =\"HTML5 Icon\" style = \"width: 100%; height: 15vw;\">";
+            tempHtml += "<img class=\"img-rounded\" src=\" " + getProductList(categoryID)[i].getImageURL() + " \" alt =\"HTML5 Icon\" style = \"background-color:white; border: 1px solid #ccc; width: 100%; height: 15vw;\">";
             tempHtml += "<br />";
-            tempHtml += "<p> " + getProductList(categoryID)[i].getName() + "</p>";
+            tempHtml += "<strong><p> " + getProductList(categoryID)[i].getName() + "</p>";
             //tempHtml += "<p>.itemINFO  " + getProductList(categoryID)[i].getInfo() + " info</p>";
-            tempHtml += "<p>  " + getProductList(categoryID)[i].getPrice() + " kr</p>";
+            tempHtml += "<p>  " + getProductList(categoryID)[i].getPrice() + " kr</p> </strong>";
             tempHtml += "</div>";
             tempHtml += "<div class=\"col -sm-12 \" > ";
 
@@ -243,7 +245,7 @@ namespace FoodStoreV2.WebForms
             tempHtml += "<div class=\"col-sm-12 \" > ";
             tempHtml += "<p></p>";
             tempHtml += "</div>";
-            tempHtml += "</div>";
+            tempHtml += "";
 
             return tempHtml;
         }
@@ -253,7 +255,7 @@ namespace FoodStoreV2.WebForms
         protected void Submit(object sender, EventArgs e)
         {
             string name = Request.Form["Name"];
-            string email = txtEmail.Value;
+            //string email = txtEmail.Value;
             int i = Int32.Parse(name);
           //  ((List<FoodStoreV2.CSharpClasses.Cart>)Session["cartList"]).Add(new FoodStoreV2.CSharpClasses.Cart(i, 1000));
         }
