@@ -46,7 +46,6 @@
         .container1 .box1:hover {
             box-shadow: 3px 3px 15px #666;
             border-color: cadetblue;
-            background: #C76C0C;
             color: #000;
             text-shadow: 2px 2px 5px #444;
             cursor: pointer;
@@ -61,13 +60,13 @@
     <div class="container-fluid">
 
 
-        <div class="col-xs-12 row">
+        <div class="col-xs-12 row shopping-custom1">
             <div class="col-xs-12 jumbotron">
                 <!-- <div class="page-header"> -->
                 <h1>Welcome to the Shop</h1>
                 <p>Look around in our wonderful shop.</p>
             </div>
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 container rounded" style="background-color: beige; border: 1px solid #ccc; margin-right: 5px;">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 container border-custom1 menu" style=" margin-right: 5px;">
 
                 <br />
                 <%= category_menu() %>
@@ -75,7 +74,7 @@
                 <br />
 
             </div>
-            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 row container1" style="background-color: none;">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 row container1" style="">
 
                 <%  int categoryID = 0;
                     if (Request.QueryString["category"] != null)
@@ -100,13 +99,13 @@
 
 
                 %>
-                <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center " style="margin: 1px 0px; background-color: beige;">
+                <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center border-custom1" style="margin: 1px 0px; ">
                     <h3>All Products</h3>
                 </div>
                 <%      for (int i = 0; i < getProductList(categoryID).Count(); i++)
                     {%>
 
-                <div class="col-xs-12 col sm-6 col-md-6 col-lg-4 row panel text-center box1" style="margin: 1px 0px; background-color: beige; min-height: inherit;">
+                <div class="col-xs-12 col sm-6 col-md-6 col-lg-4 row panel text-center box1" style="margin: 1px 0px;  min-height: inherit;">
                     <%= generateProductPartBegin(i, categoryID) %>
                     <div class="col-xs-12">
                         <asp:PlaceHolder runat="server" ID="PlaceHolder01"></asp:PlaceHolder>
@@ -123,7 +122,7 @@
                 %>
 
 
-                <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center " style="margin: 1px 0px; background-color: beige;">
+                <div class="col-xs-12 col-sm-12 col-md-12 row panel text-center " style="margin: 1px 0px; ">
                     <h3>Category: <%= ""+getCategoryName( Request.QueryString["category"] ) %></h3>
                 </div>
                 <!-- Codes for categories -->
@@ -135,7 +134,7 @@
 
                 <!--  METHOD FOR PRODUCT ITEM Start  -->
 
-                <div class="col-xs-6 col sm-6 col-md-4 row panel text-center box1" style="margin: 1px 0px; background-color: beige;">
+                <div class="col-xs-6 col sm-6 col-md-4 row panel text-center box1" style="margin: 1px 0px; ">
                     <%= generateProductPartBegin(i, categoryID) %>
                     <!--<asp:Button ID="Button2" class="btn btn-primary btn-lg btn-block" runat="server" OnClick="testCartList" Text="New ASP ADDCART" /> -->
                     <asp:PlaceHolder runat="server" ID="PlaceHolder02"></asp:PlaceHolder>
