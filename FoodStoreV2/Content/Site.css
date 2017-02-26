@@ -118,3 +118,17 @@ input[type="select"] {
 
 
 
+
+.default-style{
+
+}
+
+.default-style .jumbotron{
+
+    background-color:beige;
+}
+
+.default-style .default-style-content{
+    
+}
+
