@@ -11,19 +11,17 @@ namespace FoodStoreV2.WebForms
 {
     public partial class Register_WebForm : System.Web.UI.Page
     {
-        private DatabaseConnector databaseConnector;
+        private DatabaseConnector databaseConnector = new DatabaseConnector();
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
         protected void emailExistValidator_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            databaseConnector = new DatabaseConnector();
             args.IsValid = databaseConnector.checkIfCollumnValueExist("Customers", "email", args.Value);
         }
         protected void userNameExistValidator_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            databaseConnector = new DatabaseConnector();
             args.IsValid = databaseConnector.checkIfCollumnValueExist("Customers", "userName", args.Value);
         }
 
@@ -48,7 +46,6 @@ namespace FoodStoreV2.WebForms
                     msg += "<br/><br/>Please click the link to activate your account: ";
                     msg += "<br/><a href = '" + Request.Url.AbsoluteUri.Replace("Register_WebForm", "Activation_WebForm.aspx?confirmationCode=" + activationCode) + "'>Activate here!</a>";
                     
-                    databaseConnector = new DatabaseConnector();
                     databaseConnector.insertCustomer(nameTextBox.Text, streetAdressTextBox.Text, cityTextbox.Text, postCodetextBox.Text, emailTextBox.Text, passwordTextBox.Text, userNameTextBox.Text, 0, activationCode);
                     System.Diagnostics.Debug.WriteLine("inserted User in database");
 
