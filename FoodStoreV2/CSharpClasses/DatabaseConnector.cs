@@ -287,17 +287,22 @@ namespace FoodStoreV2.CSharpClasses
         public int getOrderID()
         {
             startConnection();
-            createCommand("SELECT COUNT(*) FROM Orders");
-            Object o = cmd.ExecuteScalar();
-            Int32 id = Convert.ToInt32(o);
+            createCommand("SELECT MAX(idOrder) FROM Orders");
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int amount = Int32.Parse(reader.GetString(0));
+                conn.Close();
+                return amount;
+            }
             conn.Close();
-            return id;
+            return 0;
         }
 
         public void insertOrderDetails(Order order, int productAmount)
         {
             startConnection();
-            createCommand("INSERT INTO fooddatabase.orderdetails (ordersID,productID,orderAmount) VALUES('" + order.getOrderID() + "','" + order.getProductID() + "','" + productAmount + "')");
+            createCommand("INSERT INTO orderdetails (ordersID,productID,orderAmount) VALUES('" + order.getOrderID() + "','" + order.getProductID() + "','" + productAmount + "')");
             cmd.ExecuteNonQuery();
             conn.Close();
         }

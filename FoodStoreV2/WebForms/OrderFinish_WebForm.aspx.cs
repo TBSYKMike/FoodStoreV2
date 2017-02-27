@@ -44,12 +44,18 @@ namespace FoodStoreV2.WebForms
             int orderID = databaseConnector.getOrderID();
 
             // public Order(int orderID, int customerID, int productID, int productAmount)
-            
-            for(int i=0;i< cartlist.Count; i++)
+        
+            for (int i=0;i< cartlist.Count; i++)
             {
-                Order order = new Order(orderID, customer.getCustomerID(), cartlist[i].getProduct().getProductID(), Int32.Parse(cartlist[i].getProduct().getAmount()));
-                databaseConnector.insertOrderDetails(order, cartlist[i].getProductAmount());
+         
+                Order order = new Order(customer.getCustomerID(), orderID, cartlist[i].getProduct().getProductID(), Int32.Parse(cartlist[i].getProduct().getAmount()));
+           
 
+            String sven = order.getOrderID() + "    " + order.getProductID() + "      " + cartlist[i].getProductAmount();
+                System.Diagnostics.Debug.WriteLine(sven);
+
+           databaseConnector.insertOrderDetails(order, cartlist[i].getProductAmount());
+                System.Diagnostics.Debug.WriteLine("inserted order details");
                 int oldValue = databaseConnector.checkProductAmount(cartlist[i].getProduct().getProductID());
                 int newValue = oldValue - cartlist[i].getProductAmount();
                 databaseConnector.updateProductAmount(cartlist[i].getProduct().getProductID(), newValue);

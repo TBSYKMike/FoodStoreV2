@@ -19,7 +19,8 @@ namespace FoodStoreV2.WebForms
             if (!this.IsPostBack)
             {
                 string code = Request.QueryString["confirmationCode"];
-                
+                System.Diagnostics.Debug.Write(code);
+
                 //if the activationcode is valid activate the user
                 if (!con.checkIfCollumnValueExist("customers", "confirmationCode", code) && con.checkIfCustomerActive(code))
                 {
