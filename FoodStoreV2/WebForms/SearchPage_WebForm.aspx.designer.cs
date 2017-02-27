@@ -31,15 +31,6 @@ namespace FoodStoreV2.WebForms {
         protected global::AjaxControlToolkit.AutoCompleteExtender searchTextBox_AutoCompleteExtender;
         
         /// <summary>
-        /// searchResultGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView searchResultGridView;
-        
-        /// <summary>
         /// ppapCheckBox control.
         /// </summary>
         /// <remarks>
@@ -112,6 +103,15 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator searchFieldValidator;
         
         /// <summary>
+        /// searchTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox searchTextBox;
+        
+        /// <summary>
         /// searchButton control.
         /// </summary>
         /// <remarks>
@@ -121,12 +121,12 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Button searchButton;
         
         /// <summary>
-        /// searchTextBox control.
+        /// searchResultGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox searchTextBox;
+        protected global::System.Web.UI.WebControls.GridView searchResultGridView;
     }
 }

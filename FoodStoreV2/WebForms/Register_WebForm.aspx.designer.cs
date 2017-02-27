@@ -13,6 +13,15 @@ namespace FoodStoreV2.WebForms {
     public partial class Register_WebForm {
         
         /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
         /// userNameLabel control.
         /// </summary>
         /// <remarks>
@@ -22,15 +31,6 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Label userNameLabel;
         
         /// <summary>
-        /// userNameTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userNameTextBox;
-        
-        /// <summary>
         /// userNameExistValidator control.
         /// </summary>
         /// <remarks>
@@ -38,6 +38,15 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator userNameExistValidator;
+        
+        /// <summary>
+        /// userNameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox userNameTextBox;
         
         /// <summary>
         /// passwordOneLabel control.
@@ -58,15 +67,6 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Label LabelInfo;
         
         /// <summary>
-        /// passwordTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
-        
-        /// <summary>
         /// passwordValidator control.
         /// </summary>
         /// <remarks>
@@ -83,6 +83,15 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        
+        /// <summary>
+        /// passwordTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
         
         /// <summary>
         /// passwordTwoLabel control.
@@ -112,15 +121,6 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Label emailLabel;
         
         /// <summary>
-        /// emailTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTextBox;
-        
-        /// <summary>
         /// emailExistValidator control.
         /// </summary>
         /// <remarks>
@@ -139,6 +139,15 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator emailCorrectValidator;
         
         /// <summary>
+        /// emailTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox emailTextBox;
+        
+        /// <summary>
         /// nameLabel control.
         /// </summary>
         /// <remarks>
@@ -148,15 +157,6 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Label nameLabel;
         
         /// <summary>
-        /// nameTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nameTextBox;
-        
-        /// <summary>
         /// nameValidator control.
         /// </summary>
         /// <remarks>
@@ -164,6 +164,15 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator nameValidator;
+        
+        /// <summary>
+        /// nameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nameTextBox;
         
         /// <summary>
         /// streetAdressLabel control.
@@ -184,15 +193,6 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// streetAdressTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox streetAdressTextBox;
-        
-        /// <summary>
         /// adressValidator control.
         /// </summary>
         /// <remarks>
@@ -200,6 +200,15 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator adressValidator;
+        
+        /// <summary>
+        /// streetAdressTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox streetAdressTextBox;
         
         /// <summary>
         /// cityLabel control.
@@ -236,15 +245,6 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox postCodetextBox;
-        
-        /// <summary>
-        /// ValidationSummary1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
         /// robotLabel control.

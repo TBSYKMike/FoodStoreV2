@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - FoodForEveryone Application</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -186,7 +186,7 @@
         </div>
 
         <div class="row col-xs-12 col-sm-12 col-md-12">
-            <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            <p>&copy; <%: DateTime.Now.Year %> - FoodForEvery Application</p>
             <div class="fb-like" data-href="https://www.facebook.com/Foodforeveryone-354846188242297/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
         </div>
 
