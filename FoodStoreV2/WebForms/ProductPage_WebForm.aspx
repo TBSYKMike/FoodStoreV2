@@ -84,12 +84,12 @@
     </div>
     <div class="col-xs-12 row">
 
-        <div class="col-xs-12 row text-left " style="background-color: none;">
+        <div class="col-xs-12 row text-left productdesciption-custom1" >
             <div class="col-xs-12 jumbotron ">
                 <!-- <div class="page-header"> -->
                 <h1>Product Desciption</h1>
             </div>
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 container rounded" style="background-color: beige; border: 1px solid #ccc; margin-right: 5px;">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 container border-custom1 menu" style=" margin-right: 4px;">
 
                 <br />
                 <%= category_menu() %>
@@ -97,16 +97,16 @@
                 <br />
 
             </div>
-            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 row container" style="background-color: none;">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" style="background-color: beige; border: 1px solid #ccc;">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 row container" style="">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 border-custom1" style="">
                     <br />
                     <br />
-                    <img class="img-rounded" src="<%: selectedProductImageURL %>" alt="HTML5 Icon" style="background-color:white; width: 100%; height: 100%;">
+                    <img class="img-rounded image-custom1 border-custom1" src="<%: selectedProductImageURL %>" alt="HTML5 Icon" style=" width: 100%; height: 100%;">
                     <br />
                     <br />
                     <br />
                     Product INFO:
-                    <div class="col-xs-12 text-left" style="background-color: #efefcb; border: 1px solid #ccc;">
+                    <div class="col-xs-12 text-left  border-custom1 prodcuctinfo" style="">
                         <br />
                         <br />
                         <%: selectedProductInfo %>
@@ -118,32 +118,32 @@
                     </div>
                     <br />
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" style="background-color: beige; border: 1px solid #ccc;">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 border-custom1" style=" ">
 
                     <br />
 
-                    <div class="col-xs-12 text-left" style="background-color: #efefcb; border: 1px solid #ccc;">
-                        <div class="col-sm-12" style="background-color: inherit;">
+                    <div class="col-xs-12 text-left border-custom1 prodcuctinfo" style="">
+                        <div class="col-sm-12" style="">
                             <br />
                             Product Nbr: <%: selectedProductID %>
                             <br />
                         </div>
-                        <div class="col-sm-12" style="background-color: inherit;">
+                        <div class="col-sm-12" style="">
                             <br />
                             Product Name: <%: selectedProductName %>
                             <br />
                         </div>
-                        <div class="col-sm-12" style="background-color: inherit;">
+                        <div class="col-sm-12" style="">
                             <br />
                             Category: <%: getCategoryName( Int32.Parse( selectedProductCategory) ) %>
                             <br />
                         </div>
-                        <div class="col-sm-12" style="background-color: inherit;">
+                        <div class="col-sm-12" style="">
                             <br />
                             Stock: <%: selectedProductAmount %> left
                             <br />
                         </div>
-                        <div class="col-sm-12" style="background-color: inherit;">
+                        <div class="col-sm-12" style="">
                             <br />
                             Price: <%: selectedProductPrice %> kr
                             <br />
@@ -151,9 +151,9 @@
                         <br />
                     </div>
                     <br />
-                    <div class="col-sm-12" style="background-color: inherit;">
+                    
                         <asp:Button class="btn btn-primary btn-lg btn-block" ID="Button1" runat="server" Text="BUY" OnClick="Button1_Click1" />
-                    </div>
+                    
                     <br />
 
                 </div>

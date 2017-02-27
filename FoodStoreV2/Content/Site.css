@@ -36,3 +36,99 @@ input[type="select"] {
         padding: 0;
     }
 }
+
+
+
+.image-custom1{
+    background-color: white;
+}
+
+.border-custom1{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+.adholder-custom1{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: beige;
+}
+.adholder-custom1 div{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #eeeed6;
+}
+.adholder-custom1 div img{
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+}
+
+
+
+.shopping-custom1{
+    background-color: none;
+}
+.shopping-custom1 div{
+    background-color: none;
+}
+.shopping-custom1 .menu{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: beige;
+}
+.shopping-custom1 .jumbotron{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: beige;
+}
+.shopping-custom1 div div{
+    
+    background-color: beige;
+}
+
+.shopping-custom1 div div div{
+    background-color:  none;
+}
+
+
+
+
+.productdesciption-custom1{
+    background-color: none;
+}
+
+.productdesciption-custom1 .menu{
+    background-color: beige;
+}
+.productdesciption-custom1 .jumbotron{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: beige;
+}
+.productdesciption-custom1 div div{
+    background-color: beige;
+}
+
+.productdesciption-custom1 div div div{
+    background-color:  #eeeed6;
+}
+
+
+
+
+.default-style{
+
+}
+
+.default-style .jumbotron{
+
+    background-color:beige;
+}
+
+.default-style .default-style-content{
+    
+}
+

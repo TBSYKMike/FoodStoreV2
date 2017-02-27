@@ -13,7 +13,6 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
 <body>
     <div id="fb-root"></div>
@@ -121,9 +120,9 @@
                     <hr />
                 </div>
             </div>
-            <div class=" col-xs-12 col-sm-6 col-md-2 col-lg-2 text-center thumbnail" style="background-color: beige;">
+            <div class=" col-xs-12 col-sm-6 col-md-2 col-lg-2 text-center thumbnail adholder-custom1" style="">
                 <br />
-                <div class="col-sm-12 thumbnail" style="background-color: #efefcb;">
+                <div class="col-sm-12 thumbnail" style="">
                     <br />
          
                       <asp:AdRotator ID="AdRotator2" runat="server" DataSourceID="XmlDataSource1" Height="95%" Width="95%" />                   
@@ -146,14 +145,12 @@
                     }
 
                         %>
-                <div class="col-sm-12 thumbnail" style="background-color: #efefcb;" onclick ="location.href='../../WebForms/ProductPage_WebForm?param1=<%: featuredProdID  %>'";>
+                <div class="col-sm-12 thumbnail" style="" onclick ="location.href='../../WebForms/ProductPage_WebForm?param1=<%: featuredProdID  %>'";>
                     
                     <br />
                     
                     
                     <img class="img-rounded" src="<%: featuredProdURL %>" alt="HTML5 Icon" style="width: 95%; height: 95%; background-color:white;">
-                    
-                    <br />
                     Product Featured
                     <br />
                 </div>
@@ -172,21 +169,19 @@
 
                         %>
 
-                <div class="col-sm-12 thumbnail" style="background-color: #efefcb;"; onclick="location.href='../../WebForms/ProductPage_WebForm?param1=<%: onSaleID  %>'";>
+                <div class="col-sm-12 thumbnail" style=""; onclick="location.href='../../WebForms/ProductPage_WebForm?param1=<%: onSaleID  %>'";>
                     
                     <br />
                     
                     
-                    <img class="img-rounded" src="<%: onSaleURL %>" alt="HTML5 Icon" style="width: 95%; height: 95%; background-color:white;" >
-                        
-                    <br />
-                    Product ONSALE
+                    <img class="border-custom1 image-custom1" src="<%: onSaleURL %>" alt="HTML5 Icon" style="width: 95%; height: 95%; " >
+                        Product ONSALE
                     <br />
 
                 </div>
-                <div class="col-sm-12">
+                
                     <br />
-                </div>
+                
             </div>
         </div>
 

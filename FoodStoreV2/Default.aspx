@@ -43,8 +43,8 @@
                         <img src="<%: productObj1.getImageURL() %>" alt="Chania" width="460" height="345">
                         <div class="carousel-caption">
                             <a href="<%= ResolveUrl("~/WebForms/ProductPage_WebForm.aspx") + "?param1=" + productObj1.getProductID() %>">
-                                <h2 style="background-color:white"><%: productObj1.getName() %></h2>
-                                <h3 style="background-color:white"><%: productObj1.getPrice() %> kr </h3>
+                                <h2 style="background-color:rgba(255, 255, 255, 0.50)"><%: productObj1.getName() %></h2>
+                                <h3 style="background-color:rgba(255, 255, 255, 0.50)"><%: productObj1.getPrice() %> kr </h3>
                             </a>
                         </div>
                     </div>
@@ -53,8 +53,8 @@
                         <img src="<%: productObj2.getImageURL() %>" alt="Chania" width="460" height="345">
                         <div class="carousel-caption">
                             <a href="<%= ResolveUrl("~/WebForms/ProductPage_WebForm.aspx") + "?param1=" + productObj2.getProductID() %>">
-                                <h2 style="background-color:white"><%: productObj2.getName() %></h2>
-                                <h3 style="background-color:white"><%: productObj2.getPrice() %> kr </h3>
+                                <h2 style="background-color:rgba(255, 255, 255, 0.50)"><%: productObj2.getName() %></h2>
+                                <h3 style="background-color:rgba(255, 255, 255, 0.50)"><%: productObj2.getPrice() %> kr </h3>
                             </a>
                         </div>
                     </div>
@@ -63,8 +63,8 @@
                         <img src="<%: productObj3.getImageURL() %>" alt="Chania" width="460" height="345">
                         <div class="carousel-caption">
                             <a href="<%= ResolveUrl("~/WebForms/ProductPage_WebForm.aspx") + "?param1=" + productObj3.getProductID() %>">
-                                <h2 style="background-color:white"><%: productObj3.getName() %></h2>
-                                <h3 style="background-color:white"><%: productObj3.getPrice() %> kr </h3>
+                                <h2 style="background-color:rgba(255, 255, 255, 0.50)"><%: productObj3.getName() %></h2>
+                                <h3 style="background-color:rgba(255, 255, 255, 0.50)"><%: productObj3.getPrice() %> kr </h3>
                             </a>
                         </div>
                     </div>
@@ -73,8 +73,8 @@
                         <img src="<%: productObj4.getImageURL() %>" alt="Chania" width="460" height="345">
                         <div class="carousel-caption">
                             <a href="<%= ResolveUrl("~/WebForms/ProductPage_WebForm.aspx") + "?param1=" + productObj4.getProductID() %>">
-                                <h2 style="background-color:white"><%: productObj4.getName() %></h2>
-                                <h3 style="background-color:white"><%: productObj4.getPrice() %> kr </h3>
+                                <h2 style="background-color:rgba(255, 255, 255, 0.50)"><%: productObj4.getName() %></h2>
+                                <h3 style="background-color:rgba(255, 255, 255, 0.50)"><%: productObj4.getPrice() %> kr </h3>
                             </a>
                         </div>
                     </div>
