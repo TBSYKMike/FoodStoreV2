@@ -36,7 +36,7 @@ namespace FoodStoreV2.CSharpClasses
             }
             catch (Exception ex)
             {
-               
+                System.Diagnostics.Debug.Write(ex);
             }
         }
     }

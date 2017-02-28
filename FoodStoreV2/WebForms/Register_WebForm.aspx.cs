@@ -38,7 +38,7 @@ namespace FoodStoreV2.WebForms
                 System.Diagnostics.Debug.WriteLine("You are a real person!");
                 if (this.IsValid)//Needs to fulfill all validating
                 {
-                    String activationCode = Membership.GeneratePassword(10, 3);
+                    String activationCode = Membership.GeneratePassword(10, 0);
                     SendMail sendMail = new SendMail();
 
                     string msg = "Hello " + userNameTextBox.Text + "!";
