@@ -2,10 +2,43 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <script>
+        $(function () {
+
+            var overPopup = false;
+
+            $('[rel=popoverinfo]').popover({
+                trigger: 'manual',
+                placement: 'right'
+
+            }).mouseover(function (e) {
+                $('[rel=popoverinfo]').not('#' + $(this).attr('id')).popover('hide');
+                var $popover = $(this);
+                $popover.popover('show');
+
+                $popover.data('popoverinfo').tip().mouseenter(function () {
+                    overPopup = true;
+                }).mouseleave(function () {
+                    overPopup = false;
+                    $popover.popover('hide');
+                });
+
+            }).mouseout(function (e) {
+                var $popover = $(this);
+                setTimeout(function () {
+                    if (!overPopup) {
+                        $popover.popover('hide');
+                    }
+                }, 200);
+            });
+        });
+    </script>
+
+
     <div class="col-xs-12 default-style">
         <div class="col-sm-12 col-md-12 ">
             <div class="jumbotron">
-                <h1>Login</h1>
+                <h1>Profile</h1>
             </div>
         </div>
         <div class="col-sm-12 col-md-1" style="background-color: cornflowerblue">
