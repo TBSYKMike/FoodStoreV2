@@ -18,6 +18,7 @@ namespace FoodStoreV2.WebForms
         private DataTable dataTable;
         private SessionValues sessionValues = new SessionValues();
         private DatabaseConnector databaseConnector = new DatabaseConnector();
+        private Boolean pageRefresh;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -37,7 +38,6 @@ namespace FoodStoreV2.WebForms
 
             if (!cartlist.Any())
             {
-                System.Diagnostics.Debug.WriteLine("Not logged in");
                 // confirmAndPayButton.Enabled = false;
                 cartEmptyLabel.Visible = true;
                 totalPriceLabel.Visible = false;
@@ -48,6 +48,9 @@ namespace FoodStoreV2.WebForms
 
             if (!Page.IsPostBack)
             {
+                ViewState["postids"] = System.Guid.NewGuid().ToString();
+                Session["postid"] = ViewState["postids"].ToString();
+
                 System.Diagnostics.Debug.WriteLine("Not Post back");
                 dataTable = new DataTable();
                 createDataTable();
@@ -59,6 +62,13 @@ namespace FoodStoreV2.WebForms
             {
                 System.Diagnostics.Debug.WriteLine("Postback");
                 dataTable = (DataTable)ViewState["DataTable"];
+
+                if (ViewState["postids"].ToString() != Session["postid"].ToString())
+                {
+                    pageRefresh = true;
+                }
+                Session["postid"] = System.Guid.NewGuid().ToString();
+                ViewState["postids"] = Session["postid"].ToString();
             }
             ViewState["DataTable"] = dataTable;
             // setCustomerInfoLabel();
@@ -111,32 +121,40 @@ namespace FoodStoreV2.WebForms
         }
         protected void deleteFromCartButton_Click(object sender, EventArgs e)
         {
-            deleteFromCart(sender, "button");
+        
+                System.Diagnostics.Debug.WriteLine("Delete From cart button click");
+                System.Diagnostics.Debug.WriteLine("cartlist size:   " + cartlist.Count);
+                deleteFromCart(sender, "button");
+            
         }
         private void deleteFromCart(object sender, String buttonType)
         {
-            System.Diagnostics.Debug.WriteLine("Delete product");
-            GridViewRow row = null;
-            if (buttonType == "button")
-            {
-                Button button = (Button)sender;
-                row = (GridViewRow)button.NamingContainer;
-            }
-            else if (buttonType == "linkButton")
-            {
-                LinkButton button = (LinkButton)sender;
-                 row = (GridViewRow)button.NamingContainer;
-            }
-            else if (buttonType == "textBox")
-            {
-                TextBox button = (TextBox)sender;
-                row = (GridViewRow)button.NamingContainer;
-            }
+            if (!pageRefresh)
+                {
+                System.Diagnostics.Debug.WriteLine("Delete product");
+                GridViewRow row = null;
+                if (buttonType == "button")
+                {
+                    Button button = (Button)sender;
+                    row = (GridViewRow)button.NamingContainer;
+                }
+                else if (buttonType == "linkButton")
+                {
+                    LinkButton button = (LinkButton)sender;
+                    row = (GridViewRow)button.NamingContainer;
+                }
+                else if (buttonType == "textBox")
+                {
+                    TextBox button = (TextBox)sender;
+                    row = (GridViewRow)button.NamingContainer;
+                }
 
-            if (row != null)
-            {
-                int index = row.RowIndex;
-                cartlist.Remove(cartlist[index]);
+                if (row != null)
+                {
+                    int index = row.RowIndex;
+                    cartlist.Remove(cartlist[index]);
+                }
+             
             }
             sessionValues.setCartSession(cartlist);
             //Gör om hela gridviewen då jag inte hittar hur man uppdaterar en textfield som är i en kollumn
@@ -148,9 +166,19 @@ namespace FoodStoreV2.WebForms
         }
         protected void addButton_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("add");
-            updateProductAmount(sender, 1);
-
+            if (!pageRefresh)
+            {
+                System.Diagnostics.Debug.WriteLine("add");
+                updateProductAmount(sender, 1);
+            }
+            else
+            {
+                dataTable.Clear();
+                limitProductAmountOnStock();
+                updatePriceLabel();
+                addProductsDataToGridView();
+                gridViewDataBind();
+            }
         }
         private void updateProductAmount(object sender, int addValue)
         {
@@ -168,13 +196,18 @@ namespace FoodStoreV2.WebForms
                 else
                 {
                     //Delete
-                    deleteFromCart(sender, "linkButton");
+                    deleteFromCart(sender, "linkButton");           
                 }
               
             }
             sessionValues.setCartSession(cartlist);
 
             //Gör om hela gridviewen då jag inte hittar hur man uppdaterar en textfield som är i en kollumn
+            resetGridView();
+        }
+
+        private void resetGridView()
+        {
             dataTable.Clear();
             limitProductAmountOnStock();
             updatePriceLabel();
@@ -184,8 +217,14 @@ namespace FoodStoreV2.WebForms
 
         protected void removeButton_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("remove");
-            updateProductAmount(sender, -1);
+            if (!pageRefresh)
+            {
+                System.Diagnostics.Debug.WriteLine("remove");
+                updateProductAmount(sender, -1);
+            }else
+            {
+                resetGridView();
+            }
         }
 
         protected void product_onClick(object sender, EventArgs e)
@@ -229,7 +268,7 @@ namespace FoodStoreV2.WebForms
                 }
                 else if(value < 1)
                 {
-                    deleteFromCart(sender, "textBox");
+                    deleteFromCart(sender, "textBox");     
                 }
                 else
                 {
@@ -240,11 +279,7 @@ namespace FoodStoreV2.WebForms
             sessionValues.setCartSession(cartlist);
 
             //Gör om hela gridviewen då jag inte hittar hur man uppdaterar en textfield som är i en kollumn
-            dataTable.Clear();
-            limitProductAmountOnStock();
-            updatePriceLabel();
-            addProductsDataToGridView();
-            gridViewDataBind();
+            resetGridView();
         }
 
         protected void clearCartButton_Click(object sender, EventArgs e)
