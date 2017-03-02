@@ -219,6 +219,8 @@
     </Content>
     <Content Include="ImagesAd\elx_ad.jpg" />
     <Content Include="ImagesAd\valencia_ad.png" />
+    <Content Include="ImagesProducts\salmon1.jpg" />
+    <Content Include="ImagesProducts\salmon2.png" />
     <Content Include="WebForms\SearchHints.asmx" />
     <Content Include="valencia_ad.png" />
     <Content Include="WebForms\Activation_WebForm.aspx" />
