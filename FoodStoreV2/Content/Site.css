@@ -93,8 +93,21 @@ input[type="select"] {
     background-color: none;
 }
 
-.shopping-custom1 div div .col-xs-12 img{
-    background-color:brown; border: 1px solid #ccc; max-width: 100%; min-height: 200px; max-height: 230px; height: 200px; display:block;
+.shopping-custom1 div div div .div-imageholder{
+    background-color: none; 
+    width:100%;
+    height:200px;
+    text-align: center;
+}
+
+.shopping-custom1 div div div div img{
+    background-color:white; 
+    display: inline-block;
+    vertical-align: middle;
+      
+
+    max-height:100%;
+    max-width:100%;
 }
 
 .shopping-custom1 div div div .col-sm-12 img{
