@@ -11,8 +11,12 @@
         <div class="col-sm-12 col-md-1" style="background-color: cornflowerblue">
         </div>
         <div class="col-sm-12 col-md-8 border default-style-content" style="">
+            <div class="col-sm-12" style="background-color: burlywood">
 
+                <!-- Holder for error messages -->
+            </div>
             <div class="col-xs-12">
+                <!-- Holder for main content -->
                 <div class="container">
                     <h2>Order Progress</h2>
                     <p>Create a stacked progress bar by placing multiple bars into the same div with class .progress:</p>
@@ -74,10 +78,12 @@
 
                     </Columns>
                 </asp:GridView>
+                <asp:Label ID="cartEmptyLabel" color='red' runat="server" Text="Cart is empty!" Style=" " Visible="false">Cart is empty! <br /><br /> </asp:Label>
+                
                 <asp:Button ID="clearCartButton" class="btn btn-danger btn-md" runat="server" Text="Clear cart" Style="" OnClick="clearCartButton_Click" />
                 <br />
                 <br />
-                <asp:Label ID="cartEmptyLabel" color='red' runat="server" Text="Cart is empty!" Style=" " Visible="false"></asp:Label>
+                
                 <br />
                 <asp:Label ID="userInformation" runat="server" Style=" "></asp:Label>
                 <br />

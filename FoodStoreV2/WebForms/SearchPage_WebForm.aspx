@@ -12,7 +12,10 @@
         <div class="col-sm-12 col-md-1" style="background-color: cornflowerblue">
         </div>
         <div class="col-sm-12 col-md-8 border default-style-content" style="">
+            <div class="col-sm-12" style="background-color: burlywood">
 
+                <!-- Holder for error messages -->
+            </div>
             <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
             <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
             </asp:ScriptManagerProxy>

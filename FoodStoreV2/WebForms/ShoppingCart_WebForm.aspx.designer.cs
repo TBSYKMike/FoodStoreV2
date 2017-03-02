@@ -22,15 +22,6 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.GridView shoppingCartGridView;
         
         /// <summary>
-        /// clearCartButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button clearCartButton;
-        
-        /// <summary>
         /// cartEmptyLabel control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label cartEmptyLabel;
+        
+        /// <summary>
+        /// clearCartButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button clearCartButton;
         
         /// <summary>
         /// userInformation control.

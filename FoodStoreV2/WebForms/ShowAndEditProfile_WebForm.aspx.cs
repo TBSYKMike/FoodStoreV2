@@ -20,14 +20,16 @@ namespace FoodStoreV2.WebForms
             {
                 Response.Redirect("ShoppingPage_WebForm");
             }
-            // oldCustomerObject = (Customer)Session["currentLogedInUserObject"];
-            oldCustomerObject = sessionValues.getCustomerSessionObject();
-            databaseConnecctor = new DatabaseConnector();
-            if (!Page.IsPostBack)
+            else
             {
-                fillTextBoxesWithOldInformation();
+                // oldCustomerObject = (Customer)Session["currentLogedInUserObject"];
+                oldCustomerObject = sessionValues.getCustomerSessionObject();
+                databaseConnecctor = new DatabaseConnector();
+                if (!Page.IsPostBack)
+                {
+                    fillTextBoxesWithOldInformation();
+                }
             }
-
         }
 
         protected void updateButton_Click(object sender, EventArgs e)
