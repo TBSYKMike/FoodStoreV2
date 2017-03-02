@@ -152,7 +152,7 @@
                     </div>
                     <br />
                     
-                        <asp:Button class="btn btn-primary btn-lg btn-block" ID="Button1" runat="server" Text="BUY" OnClick="Button1_Click1" />
+                        <asp:Button class="btn btn-primary btn-lg btn-block" ID="Button1" runat="server" Text="Add to cart" OnClick="Button1_Click1" />
                     
                     <br />
 

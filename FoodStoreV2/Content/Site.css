@@ -90,8 +90,17 @@ input[type="select"] {
 }
 
 .shopping-custom1 div div div{
-    background-color:  none;
+    background-color: none;
 }
+
+.shopping-custom1 div div .col-xs-12 img{
+    background-color:brown; border: 1px solid #ccc; max-width: 100%; min-height: 200px; max-height: 230px; height: 200px; display:block;
+}
+
+.shopping-custom1 div div div .col-sm-12 img{
+    background-color: aqua; border: 1px solid #ccc; width: 100%; height: 15vw;
+}
+
 
 
 

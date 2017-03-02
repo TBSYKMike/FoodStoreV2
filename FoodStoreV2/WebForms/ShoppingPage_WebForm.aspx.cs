@@ -45,7 +45,7 @@ namespace FoodStoreV2.WebForms
                 ID = "ButtonBuy" + getProductList(categoryID)[i].getProductID(),
                 CommandArgument = getProductList(categoryID)[i].getProductID().ToString(),
                 //Text = "SubmitBuy" + getProductList(categoryID)[i].getProductID(),
-                Text = "BUY",
+                Text = "Add to cart",
                 CssClass = "btn btn-primary btn-lg btn-block"
 
             };
@@ -213,10 +213,10 @@ namespace FoodStoreV2.WebForms
             string tempHtml = "";
             tempHtml += "";
             tempHtml += "<br />";
-            tempHtml += "<div class=\"col-sm-12  \" style=\"background-color: none;\" onclick =\"location.href='ProductPage_WebForm?param1=" + getProductList(categoryID)[i].getProductID() + "';\" > ";
+            tempHtml += "<div class=\"col-xs-12 col-sm-12  \" style=\"background-color: none;\" onclick =\"location.href='ProductPage_WebForm?param1=" + getProductList(categoryID)[i].getProductID() + "';\" > ";
             tempHtml += "<p></p>";
             
-            tempHtml += "<img class=\"img-rounded\" src=\" " + getProductList(categoryID)[i].getImageURL() + " \" alt =\"HTML5 Icon\" style = \"background-color:white; border: 1px solid #ccc; width: 100%; height: 15vw;\">";
+            tempHtml += "<img class=\"img-rounded img-responsive\" src=\" " + getProductList(categoryID)[i].getImageURL() + " \" alt =\"HTML5 Icon\" style = \"      \">";
             tempHtml += "<br />";
             tempHtml += "<strong><p> " + getProductList(categoryID)[i].getName() + "</p>";
             //tempHtml += "<p>.itemINFO  " + getProductList(categoryID)[i].getInfo() + " info</p>";
