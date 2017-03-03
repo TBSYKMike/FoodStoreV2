@@ -18,18 +18,29 @@ namespace FoodStoreV2.WebForms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (sessionValues.getCartSessionList() != null)
+            if (sessionValues.getCustomerSessionObject() == null)
             {
-                cartlist = sessionValues.getCartSessionList();
+                //Response.Redirect("Login_WebForm");
+                Response.Redirect("Login_WebForm");
+            }
+            else if (sessionValues.getCartSessionList() == null)
+            {
+                Response.Redirect("Login_WebForm");
             }
             else
             {
+                if (sessionValues.getCartSessionList() != null)
+                {
+                    cartlist = sessionValues.getCartSessionList();
+                }
+                else
+                {
 
+                }
+                sendOrderCompleted();
+                insertOrder();
             }
-
-            sendOrderCompleted();
-            insertOrder();
+            
             Session.Clear();
             Session.RemoveAll();
             Session.Abandon();
@@ -39,7 +50,7 @@ namespace FoodStoreV2.WebForms
             HttpContext.Current.Response.Cache.SetNoStore();
 
         }
-        
+
         private void insertOrder()
         {
             Customer customer = sessionValues.getCustomerSessionObject();
@@ -51,17 +62,17 @@ namespace FoodStoreV2.WebForms
             int orderID = databaseConnector.getOrderID();
 
             // public Order(int orderID, int customerID, int productID, int productAmount)
-        
-            for (int i=0;i< cartlist.Count; i++)
-            {
-         
-                Order order = new Order(customer.getCustomerID(), orderID, cartlist[i].getProduct().getProductID(), Int32.Parse(cartlist[i].getProduct().getAmount()));
-           
 
-            String sven = order.getOrderID() + "    " + order.getProductID() + "      " + cartlist[i].getProductAmount();
+            for (int i = 0; i < cartlist.Count; i++)
+            {
+
+                Order order = new Order(customer.getCustomerID(), orderID, cartlist[i].getProduct().getProductID(), Int32.Parse(cartlist[i].getProduct().getAmount()));
+
+
+                String sven = order.getOrderID() + "    " + order.getProductID() + "      " + cartlist[i].getProductAmount();
                 System.Diagnostics.Debug.WriteLine(sven);
 
-           databaseConnector.insertOrderDetails(order, cartlist[i].getProductAmount());
+                databaseConnector.insertOrderDetails(order, cartlist[i].getProductAmount());
                 System.Diagnostics.Debug.WriteLine("inserted order details");
                 int oldValue = databaseConnector.checkProductAmount(cartlist[i].getProduct().getProductID());
                 int newValue = oldValue - cartlist[i].getProductAmount();
@@ -71,9 +82,11 @@ namespace FoodStoreV2.WebForms
 
         }
 
-        private void sendOrderCompleted() {
-            
-            for(int i = 0; i < cartlist.Count; i++) {
+        private void sendOrderCompleted()
+        {
+
+            for (int i = 0; i < cartlist.Count; i++)
+            {
                 order.Append(cartlist[i].getProduct().getName()).Append(" Quantity:").Append(cartlist[i].getProductAmount()).Append(" Price per item:").Append(cartlist[i].getProduct().getPrice()).Append("SEK<br></br>");
             }
             Customer customer = sessionValues.getCustomerSessionObject();
@@ -86,7 +99,7 @@ namespace FoodStoreV2.WebForms
             "City:  " + customer.getCity() + " <br />" +
             "Post code:  " + customer.getPostCode() + " <br />";
 
-            sendMail.mailer(sessionValues.getCustomerSessionObject().getEmailAdress(), "Your order at FoodForEveryone" , "Here are the details of your order.  <br /> <br />" + order + " <br />Total price is:    " + sessionValues.getTotalPrice() + " SEK" + "<br /><br /> " + customerInfo + "Thank you for buying at FoodForEveryone!");
+            sendMail.mailer(sessionValues.getCustomerSessionObject().getEmailAdress(), "Your order at FoodForEveryone", "Here are the details of your order.  <br /> <br />" + order + " <br />Total price is:    " + sessionValues.getTotalPrice() + " SEK" + "<br /><br /> " + customerInfo + "Thank you for buying at FoodForEveryone!");
 
 
         }
