@@ -22,11 +22,15 @@ namespace FoodStoreV2.WebForms
         {
             Customer customer = sessionValues.getCustomerSessionObject();
             StringBuilder userInformation = new StringBuilder();
-            userInformation.Append("Order will be sent to:   \n");
-            userInformation.Append("Name:   " + customer.getName() + "\n");
-            userInformation.Append("Adress:   " + customer.getStreetAdress() + "   " + customer.getPostCode() + "   " + customer.getCity() + "\n");
+            userInformation.Append("Order will be sent to:   <br />");
+            userInformation.Append("Name:   " + customer.getName() + "<br />");
+            userInformation.Append("Adress:   " + customer.getStreetAdress() + ", " + customer.getPostCode() + ", " + customer.getCity() + "<br />");
             userInformation.Append("Email:   " + customer.getEmailAdress());
             userDetailsLabel.Text = userInformation.ToString();
+        }
+        private void redirectToEditProfile(object sender, EventArgs e)
+        {
+            Response.Redirect("~/WebForms/ShowAndEditProfile_WebForm");
         }
     }
 }
