@@ -219,8 +219,19 @@
     </Content>
     <Content Include="ImagesAd\elx_ad.jpg" />
     <Content Include="ImagesAd\valencia_ad.png" />
+    <Content Include="ImagesProducts\carrot.jpeg" />
+    <Content Include="ImagesProducts\catfish.jpeg" />
+    <Content Include="ImagesProducts\melon.png" />
+    <Content Include="ImagesProducts\orange.jpeg" />
+    <Content Include="ImagesProducts\laxx.jpeg" />
+    <Content Include="ImagesProducts\pancake.jpg" />
     <Content Include="ImagesProducts\salmon1.jpg" />
     <Content Include="ImagesProducts\salmon2.png" />
+    <Content Include="ImagesProducts\strawberrypancake.jpg" />
+    <Content Include="ImagesProducts\tomato.jpg" />
+    <Content Include="ImagesProducts\tuna.jpg" />
+    <Content Include="ImagesProducts\waguu.png" />
+    <Content Include="ImagesProducts\watermelon.jpeg" />
     <Content Include="WebForms\SearchHints.asmx" />
     <Content Include="valencia_ad.png" />
     <Content Include="WebForms\Activation_WebForm.aspx" />

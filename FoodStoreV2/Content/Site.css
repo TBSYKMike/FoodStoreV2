@@ -32,7 +32,6 @@ input[type="select"] {
     .jumbotron {
         margin-top: 20px;
     }
-
     .body-content {
         padding: 0;
     }
@@ -40,151 +39,118 @@ input[type="select"] {
 
 
 
-.image-custom1 {
+.image-custom1{
     background-color: white;
 }
 
-.border-custom1 {
+.border-custom1{
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 
 
-.adholder-custom1 {
+.adholder-custom1{
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: beige;
 }
-
-    .adholder-custom1 div {
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        background-color: #eeeed6;
-    }
-
-        .adholder-custom1 div img {
-            border: 2px solid #ccc;
-            border-radius: 6px;
-            background-color: white;
-        }
+.adholder-custom1 div{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #eeeed6;
+}
+.adholder-custom1 div img{
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+}
 
 
 
-.shopping-custom1 {
+.shopping-custom1{
+    background-color: none;
+}
+.shopping-custom1 div{
+    background-color: none;
+}
+.shopping-custom1 .menu{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: beige;
+}
+.shopping-custom1 .jumbotron{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: beige;
+}
+.shopping-custom1 div div{
+    
+    background-color: beige;
+}
+
+.shopping-custom1 div div div{
     background-color: none;
 }
 
-    .shopping-custom1 div {
-        background-color: none;
-    }
+.shopping-custom1 div div div .div-imageholder{
+    background-color: none; 
+    width:100%;
+    height:200px;
+    text-align: center;
+}
 
-    .shopping-custom1 .menu {
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        background-color: beige;
-    }
+.shopping-custom1 div div div div img{
+    background-color:white; 
+    display: inline-block;
+    vertical-align: middle;
+      
 
-    .shopping-custom1 .jumbotron {
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        background-color: beige;
-    }
+    max-height:100%;
+    max-width:100%;
+}
 
-    .shopping-custom1 div div {
-        background-color: beige;
-    }
-
-        .shopping-custom1 div div div {
-            background-color: none;
-        }
-
-        .shopping-custom1 div div .col-xs-12 img {
-            background-color: brown;
-            border: 1px solid #ccc;
-            max-width: 100%;
-            min-height: 200px;
-            max-height: 230px;
-            height: 200px;
-            display: block;
-        }
-
-        .shopping-custom1 div div div .col-sm-12 img {
-            background-color: aqua;
-            border: 1px solid #ccc;
-            width: 100%;
-            height: 15vw;
-        }
+.shopping-custom1 div div div .col-sm-12 img{
+    background-color: aqua; border: 1px solid #ccc; width: 100%; height: 15vw;
+}
 
 
 
 
 
-.productdesciption-custom1 {
+.productdesciption-custom1{
     background-color: none;
 }
 
-    .productdesciption-custom1 .menu {
-        background-color: beige;
-    }
-
-    .productdesciption-custom1 .jumbotron {
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        background-color: beige;
-    }
-
-    .productdesciption-custom1 div div {
-        background-color: beige;
-    }
-
-        .productdesciption-custom1 div div div {
-            background-color: #eeeed6;
-        }
-
-
-
-
-.default-style {
+.productdesciption-custom1 .menu{
+    background-color: beige;
+}
+.productdesciption-custom1 .jumbotron{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: beige;
+}
+.productdesciption-custom1 div div{
+    background-color: beige;
 }
 
-    .default-style .jumbotron {
-        background-color: beige;
-    }
-
-    .default-style .default-style-content {
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.round_corners {
-    border: 1px solid #A1DCF2;
-    border-radius: 10px;
-    overflow: hidden;
+.productdesciption-custom1 div div div{
+    background-color:  #eeeed6;
 }
 
-    .round_corners td, .round_corners th {
-        border: 1px solid #99ccff;
-        font-family: Arial;
-        font-size: 11pt;
-        text-align: center;
-    }
 
-    .round_corners table table td {
-        border-style: none;
-    }
 
-    .round_corners .productgridview{
-    width: 100%;
+
+.default-style{
+
 }
+
+.default-style .jumbotron{
+
+    background-color:beige;
+}
+
+.default-style .default-style-content{
+    
+}
+
