@@ -28,9 +28,9 @@ namespace FoodStoreV2.WebForms
             userInformation.Append("Email:   " + customer.getEmailAdress());
             userDetailsLabel.Text = userInformation.ToString();
         }
-        private void redirectToEditProfile(object sender, EventArgs e)
+        protected void redirectToEditProfile(object sender, EventArgs e)
         {
-            Response.Redirect("~/WebForms/ShowAndEditProfile_WebForm");
+            Response.Redirect("ShowAndEditProfile_WebForm");
         }
     }
 }
