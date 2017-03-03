@@ -10,8 +10,23 @@ namespace FoodStoreV2.WebForms
 {
     public partial class ShoppingPage_WebForm : System.Web.UI.Page
     {
+        private Boolean pageRefresh;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                ViewState["postids"] = System.Guid.NewGuid().ToString();
+                Session["postid"] = ViewState["postids"].ToString();
+            }
+            else
+            {
+                if (ViewState["postids"].ToString() != Session["postid"].ToString())
+                {
+                    pageRefresh = true;
+                }
+                Session["postid"] = System.Guid.NewGuid().ToString();
+                ViewState["postids"] = Session["postid"].ToString();
+            }
 
             int categoryID = 0;
             
@@ -187,15 +202,18 @@ namespace FoodStoreV2.WebForms
 
         protected void Button1_Command(object sender, CommandEventArgs e)
         {
-            int value = Int32.Parse(e.CommandArgument.ToString());
+            if (!pageRefresh)
+            {
+                int value = Int32.Parse(e.CommandArgument.ToString());
 
-            //((List<FoodStoreV2.CSharpClasses.Cart>)Session["cartList"]).Add(new FoodStoreV2.CSharpClasses.Cart(value, 1000));
-            int id = Convert.ToInt32(e.CommandArgument);
-            // Do something with id
-            //Response.Redirect("ProductPage_WebForm?param1=" + id.ToString() + "");
+                //((List<FoodStoreV2.CSharpClasses.Cart>)Session["cartList"]).Add(new FoodStoreV2.CSharpClasses.Cart(value, 1000));
+                int id = Convert.ToInt32(e.CommandArgument);
+                // Do something with id
+                //Response.Redirect("ProductPage_WebForm?param1=" + id.ToString() + "");
 
-            SessionValues sv = new SessionValues();
-            sv.addToCart(id);
+                SessionValues sv = new SessionValues();
+                sv.addToCart(id);
+            }
         }
 
 

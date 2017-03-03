@@ -10,9 +10,24 @@ namespace FoodStoreV2.WebForms
 {
     public partial class ProductPage_WebForm : System.Web.UI.Page
     {
+        private Boolean pageRefresh;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                ViewState["postids"] = System.Guid.NewGuid().ToString();
+                Session["postid"] = ViewState["postids"].ToString();
+            }
+            else
+            {
+                if (ViewState["postids"].ToString() != Session["postid"].ToString())
+                {
+                    pageRefresh = true;
+                }
+                Session["postid"] = System.Guid.NewGuid().ToString();
+                ViewState["postids"] = Session["postid"].ToString();
+            }
         }
 
         protected List<Product> test_method()
@@ -35,29 +50,30 @@ namespace FoodStoreV2.WebForms
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            if (Request.QueryString["param1"] != null)
-            {
-
-                for (int i = 0; i < test_method().Count(); i++)
+            if (!pageRefresh) {
+                if (Request.QueryString["param1"] != null)
                 {
-                    if (test_method()[i].getProductID() == Convert.ToInt32(Request.QueryString["param1"]))
+
+                    for (int i = 0; i < test_method().Count(); i++)
                     {
-                        int id = Convert.ToInt32(Request.QueryString["param1"]);
+                        if (test_method()[i].getProductID() == Convert.ToInt32(Request.QueryString["param1"]))
+                        {
+                            int id = Convert.ToInt32(Request.QueryString["param1"]);
 
 
-                        SessionValues sv = new SessionValues();
-                        sv.addToCart(id);
+                            SessionValues sv = new SessionValues();
+                            sv.addToCart(id);
 
-                        break;
+                            break;
+                        }
+                        else
+                        {
+
+                        }
                     }
-                    else
-                    {
 
-                    }
+
                 }
-
-
-
 
             }
         }
