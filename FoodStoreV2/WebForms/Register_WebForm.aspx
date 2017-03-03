@@ -98,7 +98,7 @@
                 <asp:TextBox ID="emailTextBox" class="form-control" runat="server" placeholder="Enter Email here"></asp:TextBox>
                 
                 <asp:Label ID="nameLabel" runat="server" Text="Name"></asp:Label>
-                <asp:RegularExpressionValidator ID="nameValidator" ValidationGroup='register' runat="server" ControlToValidate="nameTextBox" Text="*" ErrorMessage="Name must be with letters" ValidationExpression="[a-zA-Z]{1,20}"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="nameValidator" ValidationGroup='register' runat="server" ControlToValidate="nameTextBox" Text="*" ErrorMessage="Name must be with letters and maxinum one space between first and last name" ValidationExpression="([a-zA-Z]{1}[a-zA-Z]*[\s]{0,1}[a-zA-Z])+([\s]{0,1}[a-öA-Ö]+)"></asp:RegularExpressionValidator>
                 <asp:TextBox ID="nameTextBox" class="form-control" runat="server" placeholder="Enter Name here"></asp:TextBox>
 
                 <asp:Label ID="streetAdressLabel" runat="server" Text="Address"></asp:Label>
@@ -107,10 +107,13 @@
                 <asp:TextBox ID="streetAdressTextBox" class="form-control" runat="server" placeholder="Enter Address here"></asp:TextBox>
                 
                 <asp:Label ID="cityLabel" runat="server" Text="City"></asp:Label>
+                <asp:RegularExpressionValidator ID="cityValidator" ValidationGroup='register' runat="server" ControlToValidate="cityTextbox" Text="*" ErrorMessage="City name must be with letters" ValidationExpression="^[a-öA-Ö]+$"></asp:RegularExpressionValidator>
                 <asp:TextBox ID="cityTextbox" class="form-control" runat="server" placeholder="Enter City here"></asp:TextBox>
 
                 <asp:Label ID="Postcodelabel" runat="server" Text="Post Code"></asp:Label>
+                <asp:RegularExpressionValidator ID="postCodeValidator" ValidationGroup='register' runat="server" ControlToValidate="postCodetextBox" Text="*" ErrorMessage="Post code must be with 5 numbers" ValidationExpression="^\d{5}$"></asp:RegularExpressionValidator>
                 <asp:TextBox ID="postCodetextBox" class="form-control" runat="server" placeholder="Enter Post code here"></asp:TextBox>
+
 
                 
                 <br />
