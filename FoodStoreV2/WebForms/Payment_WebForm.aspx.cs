@@ -13,10 +13,24 @@ namespace FoodStoreV2.WebForms
     {
         private SessionValues sessionValues = new SessionValues();
 
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            setUserDetails();
-
+            //Session["PageData"] = null;
+            if (sessionValues.getCustomerSessionObject() == null)
+            {
+                //Response.Redirect("Login_WebForm");
+                Response.Redirect("Login_WebForm");
+            }
+            else if (sessionValues.getCartSessionList() == null)
+            {
+                Response.Redirect("Login_WebForm");
+            }
+            else
+            {
+                setUserDetails();
+            }
+            
         }
         private void setUserDetails()
         {

@@ -34,6 +34,10 @@ namespace FoodStoreV2.WebForms
             Session.RemoveAll();
             Session.Abandon();
 
+            HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            HttpContext.Current.Response.Cache.SetNoServerCaching();
+            HttpContext.Current.Response.Cache.SetNoStore();
+
         }
         
         private void insertOrder()
