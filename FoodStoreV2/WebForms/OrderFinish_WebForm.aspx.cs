@@ -30,6 +30,9 @@ namespace FoodStoreV2.WebForms
 
             sendOrderCompleted();
             insertOrder();
+            Session.Clear();
+            Session.RemoveAll();
+            Session.Abandon();
 
         }
         

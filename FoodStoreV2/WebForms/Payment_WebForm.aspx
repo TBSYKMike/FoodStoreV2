@@ -46,5 +46,8 @@
                 }, '#paypal-button');
             </script>
 
+            <asp:Label ID="userDetailsLabel" runat="server" Style=" "></asp:Label>
+            <br />
+
             <div id="paypal-button"></div>
 </asp:Content>
