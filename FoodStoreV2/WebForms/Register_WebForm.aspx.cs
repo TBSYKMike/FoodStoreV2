@@ -39,6 +39,7 @@ namespace FoodStoreV2.WebForms
                 if (this.IsValid)//Needs to fulfill all validating
                 {
                     String activationCode = Membership.GeneratePassword(10, 0);
+                    activationCode = activationCode.Replace("&","A");
                     SendMail sendMail = new SendMail();
 
                     string msg = "Hello " + userNameTextBox.Text + "!";
