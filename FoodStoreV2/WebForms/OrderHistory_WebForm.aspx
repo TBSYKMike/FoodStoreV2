@@ -3,7 +3,7 @@
       <div class="col-xs-12 default-style">
         <div class="col-sm-12 col-md-12 ">
             <div class="jumbotron">
-                <h1>Login</h1>
+                <h1>Order History</h1>
             </div>
         </div>
         <div class="col-sm-12 col-md-1" style="background-color: cornflowerblue">
