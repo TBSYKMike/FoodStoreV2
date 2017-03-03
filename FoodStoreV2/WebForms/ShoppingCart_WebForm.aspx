@@ -19,16 +19,9 @@
                 <!-- Holder for main content -->
                 <div class="container">
                     <h2>Order Progress</h2>
-                    <p>Create a stacked progress bar by placing multiple bars into the same div with class .progress:</p>
+                    
                     <div class="progress">
                         <div class="progress-bar progress-bar-success active" role="progressbar" style="width: 33%">
-                            Cart
-                        </div>
-                        <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 33%">
-                            Payment
-                        </div>
-                        <div class="progress-bar progress-bar-striped " role="progressbar" style="width: 34%">
-                            Finished
                         </div>
                     </div>
                 </div>

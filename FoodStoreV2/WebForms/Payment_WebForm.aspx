@@ -45,6 +45,21 @@
 
                 }, '#paypal-button');
             </script>
+    <div class="col-xs-12">
+                <!-- Holder for main content -->
+                <div class="container">
+                    <h2>Order Progress</h2>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success " role="progressbar" style="width: 33%">
+                           
+                        </div>
+                        <div class="progress-bar progress-bar-success" role="progressbar" style="width: 33%">
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
             <h3>
             <asp:Label ID="userDetailsLabel" runat="server" Style=" "></asp:Label>
             </h3>
