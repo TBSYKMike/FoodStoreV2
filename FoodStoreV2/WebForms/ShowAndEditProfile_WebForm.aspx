@@ -93,10 +93,13 @@
 
 
                     <asp:Label ID="cityLabel" runat="server" Text="City" Style=""></asp:Label>
+                    <asp:RegularExpressionValidator ID="cityValidator" ValidationGroup='register' runat="server" ControlToValidate="cityTextbox" Text="*" ErrorMessage="City name must be with letters" ValidationExpression="^[a-öA-Ö]+$"></asp:RegularExpressionValidator>
                     <asp:TextBox ID="cityTextbox" class="form-control" runat="server" placeholder="Enter City here"></asp:TextBox>
 
 
                     <asp:Label ID="Postcodelabel" runat="server" Text="Post Code" Style=""></asp:Label>
+                    
+                    <asp:RegularExpressionValidator ID="postCodeValidator" ValidationGroup='register' runat="server" ControlToValidate="postCodetextBox" Text="*" ErrorMessage="Post code must be with 5 numbers" ValidationExpression="^\d{5}$"></asp:RegularExpressionValidator>
                     <asp:TextBox ID="postCodetextBox" class="form-control" runat="server" placeholder="Enter Post code here"></asp:TextBox>
 
 
