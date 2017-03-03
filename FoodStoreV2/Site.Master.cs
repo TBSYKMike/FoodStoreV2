@@ -47,6 +47,9 @@ namespace FoodStoreV2
             }
 
             Page.PreLoad += master_Page_PreLoad;
+            HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            HttpContext.Current.Response.Cache.SetNoServerCaching();
+            HttpContext.Current.Response.Cache.SetNoStore();
         }
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
