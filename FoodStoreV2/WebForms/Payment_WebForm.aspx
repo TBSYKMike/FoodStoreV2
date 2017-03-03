@@ -45,9 +45,11 @@
 
                 }, '#paypal-button');
             </script>
-
+            <h5>
             <asp:Label ID="userDetailsLabel" runat="server" Style=" "></asp:Label>
+            </h5>
             <br />
-
+            <Button runat="server" OnClick="redirectToEditProfile">Change Adress</Button>
+            <br />
             <div id="paypal-button"></div>
 </asp:Content>
