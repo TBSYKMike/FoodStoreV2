@@ -220,6 +220,15 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Label cityLabel;
         
         /// <summary>
+        /// cityValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator cityValidator;
+        
+        /// <summary>
         /// cityTextbox control.
         /// </summary>
         /// <remarks>
@@ -236,6 +245,15 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Postcodelabel;
+        
+        /// <summary>
+        /// postCodeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator postCodeValidator;
         
         /// <summary>
         /// postCodetextBox control.
@@ -263,6 +281,15 @@ namespace FoodStoreV2.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button registerButton;
+        
+        /// <summary>
+        /// reqFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator reqFieldValidator;
         
         /// <summary>
         /// accountCreatedLabel control.
