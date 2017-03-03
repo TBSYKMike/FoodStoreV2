@@ -113,7 +113,7 @@ namespace FoodStoreV2.WebForms
                 DataRow dataRow = dataTable.NewRow();
                 dataRow["Name"] = cartlist[i].getProduct().getName();
                 dataRow["Price"] = cartlist[i].getProduct().getPrice();
-                dataRow["Category"] = cartlist[i].getProduct().getCategory();
+                dataRow["Category"] = getCategoryName(cartlist[i].getProduct().getCategory());
                 dataRow["Quantity"] = cartlist[i].getProductAmount();
                 dataTable.Rows.Add(dataRow);
             }
@@ -344,6 +344,27 @@ namespace FoodStoreV2.WebForms
             userInformation.Append("Adress:   " + customer.getStreetAdress() + "   " +  customer.getPostCode() + "   " + customer.getCity() + "\n");
             userInformation.Append("Email:   " + customer.getEmailAdress());
             CustomerInfoLabel.Text = userInformation.ToString();
+        }
+
+
+
+
+        protected string getCategoryName(int cateID)
+        {
+            DatabaseConnector databaseConnector = new DatabaseConnector();
+            List<Category> categoryList = databaseConnector.getCategories();
+            string categoryName = "";
+
+            for (int i = 0; i < categoryList.Count; i++)
+            {
+                if (categoryList[i].getCategoryID() == cateID)
+                {
+                    categoryName = categoryList[i].getCategoryName();
+                }
+            }
+
+
+            return categoryName;
         }
 
 
