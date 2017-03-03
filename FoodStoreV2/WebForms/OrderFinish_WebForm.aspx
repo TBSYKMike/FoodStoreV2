@@ -13,7 +13,7 @@
                             
                         </div>
                          <div class="progress-bar progress-bar-success" role="progressbar" style="width: 34%">
-                            
+                            Order Finished
                         </div>
                        
                     </div>

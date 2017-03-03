@@ -22,6 +22,7 @@
                     
                     <div class="progress">
                         <div class="progress-bar progress-bar-success active" role="progressbar" style="width: 33%">
+                            Cart
                         </div>
                     </div>
                 </div>

@@ -54,7 +54,7 @@
                            
                         </div>
                         <div class="progress-bar progress-bar-success" role="progressbar" style="width: 33%">
-                            
+                            Payment
                         </div>
                        
                     </div>
