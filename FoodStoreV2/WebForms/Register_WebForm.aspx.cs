@@ -24,43 +24,62 @@ namespace FoodStoreV2.WebForms
         {
             args.IsValid = databaseConnector.checkIfCollumnValueExist("Customers", "userName", args.Value);
         }
+        private Boolean checkIfTextFieldsEmpty()
+        {
+            if (userNameTextBox.Text.Equals("") || passwordTextBox.Text.Equals("") || repasswordTextBox.Text.Equals("") || emailTextBox.Text.Equals("") || nameTextBox.Text.Equals("") ||
+                streetAdressTextBox.Text.Equals("") || cityTextbox.Text.Equals("") || postCodetextBox.Text.Equals(""))
+            {
+                return true;
+            }
+            return false;
+        }
 
         protected void registerButton_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            accountCreatedLabel.Visible = Page.IsValid;
-            var encodedResponse = Request.Form["g-Recaptcha-Response"];
-            VerifyReCaptcha captcha = new VerifyReCaptcha();
-            bool isCaptchaValid = captcha.verifyCapcha(encodedResponse);
+           // if (checkIfTextFieldsEmpty())
+            //{
+                this.Validate();
+                //  accountCreatedLabel.Visible = Page.IsValid;
+                var encodedResponse = Request.Form["g-Recaptcha-Response"];
+                VerifyReCaptcha captcha = new VerifyReCaptcha();
+                bool isCaptchaValid = captcha.verifyCapcha(encodedResponse);
 
-            if (isCaptchaValid)
-            {
-                System.Diagnostics.Debug.WriteLine("You are a real person!");
-                if (this.IsValid)//Needs to fulfill all validating
+
+
+                if (isCaptchaValid)
                 {
-                    String activationCode = Membership.GeneratePassword(10, 0);
-                    SendMail sendMail = new SendMail();
+                    System.Diagnostics.Debug.WriteLine("You are a real person!");
+                    if (this.IsValid)//Needs to fulfill all validating
+                    {
+                        accountCreatedLabel.Visible = true;
+                        String activationCode = Membership.GeneratePassword(10, 0);
+                        SendMail sendMail = new SendMail();
 
-                    string msg = "Hello " + userNameTextBox.Text + "!";
-                    msg += "<br/>In order to use your account you need to activate it first.";
-                    msg += "<br/><br/>Please click the link to activate your account: ";
-                    msg += "<br/><a href = '" + Request.Url.AbsoluteUri.Replace("Register_WebForm", "Activation_WebForm.aspx?confirmationCode=" + activationCode) + "'>Activate here!</a>";
-                    
-                    databaseConnector.insertCustomer(nameTextBox.Text, streetAdressTextBox.Text, cityTextbox.Text, postCodetextBox.Text, emailTextBox.Text, passwordTextBox.Text, userNameTextBox.Text, 0, activationCode);
-                    System.Diagnostics.Debug.WriteLine("inserted User in database");
+                        string msg = "Hello " + userNameTextBox.Text + "!";
+                        msg += "<br/>In order to use your account you need to activate it first.";
+                        msg += "<br/><br/>Please click the link to activate your account: ";
+                        msg += "<br/><a href = '" + Request.Url.AbsoluteUri.Replace("Register_WebForm", "Activation_WebForm.aspx?confirmationCode=" + activationCode) + "'>Activate here!</a>";
 
-                    sendMail.mailer(emailTextBox.Text, "Account Activation", msg);
+                        databaseConnector.insertCustomer(nameTextBox.Text, streetAdressTextBox.Text, cityTextbox.Text, postCodetextBox.Text, emailTextBox.Text, passwordTextBox.Text, userNameTextBox.Text, 0, activationCode);
+                        System.Diagnostics.Debug.WriteLine("inserted User in database");
+
+                        sendMail.mailer(emailTextBox.Text, "Account Activation", msg);
+                    }
+
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("You are not human!");
+                    robotLabel.Visible = true;
                 }
 
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("You are not human!");
-                robotLabel.Visible = true;
-            }
-          
-
+            //}
+          //  else
+           // {
+           //     System.Diagnostics.Debug.WriteLine("have empty reg fields");
+         //   }
         }
+
 
 
         /* protected void searchButton_Click(object sender, EventArgs e)
@@ -82,7 +101,10 @@ namespace FoodStoreV2.WebForms
                 */
 
         //}
-
+        protected void texfieldEmptyValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = !checkIfTextFieldsEmpty();
+        }
 
         protected void streetValidate(object source, ServerValidateEventArgs args)
         {

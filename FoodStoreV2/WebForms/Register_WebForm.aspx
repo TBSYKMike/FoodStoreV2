@@ -120,6 +120,7 @@
                 </div>
                 <br />
                 <asp:Button ID="registerButton" class="btn btn-primary btn-lg" runat="server" OnClientClick="hideResultLabel();" Text="Register" ValidationGroup='register' OnClick="registerButton_Click" />
+                  <asp:CustomValidator ID="reqFieldValidator" runat="server" ValidationGroup='register' Text="." ErrorMessage="fields cant be empty" OnServerValidate="texfieldEmptyValidate"></asp:CustomValidator>
                 <asp:Label ID="accountCreatedLabel" runat="server" Text="Account created. Before login account activation is required. Check your mail!" Visible="False"></asp:Label>
 
 

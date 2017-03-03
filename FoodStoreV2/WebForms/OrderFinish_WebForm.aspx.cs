@@ -79,7 +79,7 @@ namespace FoodStoreV2.WebForms
             "City:  " + customer.getCity() + " <br />" +
             "Post code:  " + customer.getPostCode() + " <br />";
 
-            sendMail.mailer(sessionValues.getCustomerSessionObject().getEmailAdress(), "Your order at Foodstore" , "Here are the details of your order.  <br /> <br />" + order + " <br />Total price is:    " + sessionValues.getTotalPrice() + " <br /> " +customerInfo + "< br /> < br />Thank you for buying at Foodstore!");
+            sendMail.mailer(sessionValues.getCustomerSessionObject().getEmailAdress(), "Your order at Foodstore" , "Here are the details of your order.  <br /> <br />" + order + " <br />Total price is:    " + sessionValues.getTotalPrice() + " <br /> " +customerInfo + "Thank you for buying at Foodstore!");
 
 
         }

@@ -265,6 +265,15 @@ namespace FoodStoreV2.WebForms {
         protected global::System.Web.UI.WebControls.Button registerButton;
         
         /// <summary>
+        /// reqFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator reqFieldValidator;
+        
+        /// <summary>
         /// accountCreatedLabel control.
         /// </summary>
         /// <remarks>
