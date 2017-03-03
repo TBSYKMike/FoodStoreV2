@@ -53,6 +53,7 @@ namespace FoodStoreV2.WebForms
                     {
                         accountCreatedLabel.Visible = true;
                         String activationCode = Membership.GeneratePassword(10, 0);
+                        activationCode = activationCode.Replace("&", "A");
                         SendMail sendMail = new SendMail();
 
                         string msg = "Hello " + userNameTextBox.Text + "!";
