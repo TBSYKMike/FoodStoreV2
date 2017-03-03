@@ -215,8 +215,9 @@ namespace FoodStoreV2.WebForms
             tempHtml += "<br />";
             tempHtml += "<div class=\"col-xs-12 col-sm-12  \" style=\"background-color: none;\" onclick =\"location.href='ProductPage_WebForm?param1=" + getProductList(categoryID)[i].getProductID() + "';\" > ";
             tempHtml += "<p></p>";
-            
+            tempHtml += "<div class=\"div-imageholder\">";
             tempHtml += "<img class=\"img-rounded img-responsive\" src=\" " + getProductList(categoryID)[i].getImageURL() + " \" alt =\"HTML5 Icon\" style = \"      \">";
+            tempHtml += "</div>";
             tempHtml += "<br />";
             tempHtml += "<strong><p> " + getProductList(categoryID)[i].getName() + "</p>";
             //tempHtml += "<p>.itemINFO  " + getProductList(categoryID)[i].getInfo() + " info</p>";

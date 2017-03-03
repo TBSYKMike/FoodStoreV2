@@ -35,7 +35,10 @@
             </div>
 
             <div class="col-xs-12">
-                <asp:GridView AutoGenerateColumns="false" ID="shoppingCartGridView" runat="server" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="OnSelectedIndexChanged" Style=" height: 324px; width: 422px;">
+                  <div class="round_corners">  
+                <asp:GridView AutoGenerateColumns="false" ID="shoppingCartGridView" HeaderStyle-BackColor="#99ccff"
+        HeaderStyle-ForeColor="White" RowStyle-BackColor="#e1e1d0" AlternatingRowStyle-BackColor="#f5f5ef"
+        RowStyle-ForeColor="#3A3A3A" runat="server" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="OnSelectedIndexChanged" class="productgridview">
                     <Columns>
 
                         <asp:TemplateField HeaderText="Name">
@@ -46,8 +49,8 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Price">
                             <ItemTemplate>
-                                <asp:Label ID="txtPrice" runat="server" Text='<%# Eval("Price") %>'>
-
+                                <asp:Label ID="txtPrice" runat="server">
+                                    <%# Eval("Price") %> kr
                                 </asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -78,6 +81,7 @@
 
                     </Columns>
                 </asp:GridView>
+                           </div>
                 <asp:Label ID="cartEmptyLabel" color='red' runat="server" Text="Cart is empty!" Style=" " Visible="false">Cart is empty! <br /><br /> </asp:Label>
                 
                 <asp:Button ID="clearCartButton" class="btn btn-danger btn-md" runat="server" Text="Clear cart" Style="" OnClick="clearCartButton_Click" />

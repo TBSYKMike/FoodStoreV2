@@ -52,8 +52,8 @@
             </div>
             <br />
             <div class="col-sm-12">
-
-                <asp:GridView ID="searchResultGridView" AutoGenerateColumns="false" runat="server" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="OnSelectedIndexChanged" Style="height: 193px; width: 256px;">
+                 <div class="round_corners">  
+                 <asp:GridView ID="searchResultGridView" AutoGenerateColumns="false" runat="server" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="OnSelectedIndexChanged" class="productgridview">
                     <Columns>
 
                         <asp:TemplateField HeaderText="Name">
@@ -64,8 +64,8 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Price">
                             <ItemTemplate>
-                                <asp:Label ID="txtPrice" runat="server" Text='<%# Eval("Price") %>'>
-
+                                <asp:Label ID="txtPrice" runat="server">
+                                     <%# Eval("Price") %> kr
                                 </asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -90,7 +90,7 @@
                     </Columns>
 
                 </asp:GridView>
-
+                      </div>
             </div>
             <br />
         </div>
