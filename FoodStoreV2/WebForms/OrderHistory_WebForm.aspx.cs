@@ -16,6 +16,7 @@ namespace FoodStoreV2.WebForms
         private DataTable orderDetailTabel;
         private SessionValues sessionValues;
         private DatabaseConnector databaseConnector = new DatabaseConnector();
+        private List<Order> orderDetailsList = new List<Order>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,6 +33,8 @@ namespace FoodStoreV2.WebForms
             {
                 orderTable = (DataTable)ViewState["orderTable"];
                 orderDetailTabel = (DataTable)ViewState["orderDetailTabel"];
+                //orderDetailsList = (List<Order>)ViewState["orderDetailsList"];
+                orderDetailsList = (List<Order>)HttpContext.Current.Session["orderDetailsList"];
             }
             ViewState["orderTable"] = orderTable;
             ViewState["orderDetailTabel"] = orderDetailTabel;
@@ -92,18 +95,35 @@ namespace FoodStoreV2.WebForms
         {
             orderDetailLabel.Visible = true;
             orderDetailTabel.Clear();
-            List<Order> orderDetails = databaseConnector.getCustomerOrderDetails(orderID);
-            for (int i = 0; i < orderDetails.Count; i++)
+            orderDetailsList = databaseConnector.getCustomerOrderDetails(orderID);
+            for (int i = 0; i < orderDetailsList.Count; i++)
             {
                 DataRow dataRow = orderDetailTabel.NewRow();
-                Product product = databaseConnector.getProductObject(orderDetails[i].getProductID());
-                dataRow["Amount"] = orderDetails[i].getProductAmount();
+                Product product = databaseConnector.getProductObject(orderDetailsList[i].getProductID());
+                dataRow["Amount"] = orderDetailsList[i].getProductAmount();
                 dataRow["ProductName"] = product.getName();
                 dataRow["productPrice"] = product.getPrice();
                 orderDetailTabel.Rows.Add(dataRow);
             }
             orderDetailsGridView.DataSource = orderDetailTabel;
             orderDetailsGridView.DataBind();
+
+            //  ViewState["orderDetailsList"] = orderDetailsList;
+            Session["orderDetailsList"] = orderDetailsList;
+        }
+
+
+        protected void product_onClick(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(orderDetailsList.Count);
+            LinkButton linkButton = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)linkButton.NamingContainer;
+
+            if (row != null)
+            {
+                int index = row.RowIndex;
+                Response.Redirect("ProductPage_WebForm?param1=" + orderDetailsList[index].getProductID());
+            }
         }
     }
 }

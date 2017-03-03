@@ -1,11 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrderHistory_WebForm.aspx.cs" Inherits="FoodStoreV2.WebForms.OrderHistory_WebForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="height: 552px">
-    </div>
-      <p style="height: 470px; margin-left: 0px; width: 1299px; margin-right: 0px;" align="right">
-               <asp:Label ID="orderDetailLabel" runat="server" Text="Products on selected order" Visible="false" style="position:absolute; top: 124px; left: 617px;"></asp:Label>
-               <asp:Label ID="orderHistoryLabel" runat="server" Text="Your Order History" style="position:absolute; top: 116px; left: 192px;"></asp:Label>        
-               <asp:GridView ID="orderHistoryGridView" AutoGenerateColumns="false" runat="server" OnRowDataBound = "OnRowDataBound" OnSelectedIndexChanged = "OnSelectedIndexChanged" style="position:absolute; top: 163px; left: 176px; height: 193px; width: 256px;">
+      <div class="col-xs-12 default-style">
+        <div class="col-sm-12 col-md-12 ">
+            <div class="jumbotron">
+                <h1>Login</h1>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-1" style="background-color: cornflowerblue">
+        </div>
+        <div class="col-sm-12 col-md-8 border default-style-content" style="">
+      
+            <div class="col-sm-12" style="background-color: burlywood">
+
+
+            </div>
+            <br />
+            <div class="col-sm-12 rounded" style="background-color: none">
+
+
+          
+               <asp:Label ID="orderHistoryLabel" runat="server" Text="Your Order History"></asp:Label>      
+           <div class="round_corners">  
+               <asp:GridView ID="orderHistoryGridView" HeaderStyle-BackColor="#99ccff"
+        HeaderStyle-ForeColor="White" RowStyle-BackColor="#e1e1d0" AlternatingRowStyle-BackColor="#f5f5ef"
+        RowStyle-ForeColor="#3A3A3A" AutoGenerateColumns="false" AllowPaging="true" PageSize="10" runat="server" OnRowDataBound = "OnRowDataBound" OnSelectedIndexChanged = "OnSelectedIndexChanged" class="productgridview">
                  <Columns>
                       <asp:TemplateField HeaderText="Order ID">
             <ItemTemplate>
@@ -26,15 +44,14 @@
                    
                     </asp:GridView>
 
+                  </div>
+               <br />
 
-
-
-
-
-
-
-
-             <asp:GridView ID="orderDetailsGridView" AutoGenerateColumns="false" runat="server" style="position:absolute; top: 164px; left: 569px; height: 193px; width: 256px;">                  
+                     <asp:Label ID="orderDetailLabel" runat="server" Text="Products on selected order" Visible="false"></asp:Label>
+                <div class="round_corners">  
+             <asp:GridView ID="orderDetailsGridView" HeaderStyle-BackColor="#99ccff"
+        HeaderStyle-ForeColor="White" RowStyle-BackColor="#e1e1d0" AlternatingRowStyle-BackColor="#f5f5ef"
+        RowStyle-ForeColor="#3A3A3A" AutoGenerateColumns="false" AllowPaging="true" PageSize="10" runat="server" class="productgridview">                  
      
                  
                  
@@ -42,9 +59,7 @@
                  
         <asp:TemplateField HeaderText="Product Name">
             <ItemTemplate>
-                <asp:Label ID="txtProductName" runat="server" Text='<%# Eval("ProductName") %>'>
-
-                </asp:Label>
+                      <asp:LinkButton runat="server" CssClass="noeffect" ID="openProductButton" Text='<%# Eval("ProductName") %>' Style="font-size: 12px;" OnClick="product_onClick" CausesValidation="False"></asp:LinkButton>
             </ItemTemplate>
         </asp:TemplateField>
 
@@ -63,18 +78,22 @@
             </ItemTemplate>
         </asp:TemplateField>
                    
-                   
-                   
+            
                       </Columns>
-                 
-                 
-                 
-                 
-                 
-                 
                                 </asp:GridView>
                
-               
+                </div>
+                      </div>
+             
+            <br />
+        </div>
+        <div class="col-sm-12 col-md-3" style="background-color: deepskyblue">
+        </div>
+    </div>
 
-        </p>     
+
+
+    <style type="text/css">
+    
+</style>
 </asp:Content>
