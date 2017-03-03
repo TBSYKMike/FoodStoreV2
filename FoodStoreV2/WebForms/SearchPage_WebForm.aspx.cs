@@ -117,7 +117,7 @@ namespace FoodStoreV2.WebForms
                 DataRow dataRow = dataTable.NewRow();
                 dataRow["Name"] = productList[i].getName();
                 dataRow["Price"] = productList[i].getPrice();
-                dataRow["Category"] = productList[i].getCategory();
+                dataRow["Category"] = getCategoryName(productList[i].getCategory());
                 dataRow["Amount"] = productList[i].getAmount();
                 dataTable.Rows.Add(dataRow);
             }
@@ -155,7 +155,7 @@ namespace FoodStoreV2.WebForms
 
                 for (int i = 0; i < productList.Count; i++)
                 {
-                    if (((otherTextBox.Checked.Equals(true) && productList[i].getCategory().Equals(1)) || (ppapCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(2)) || (fruitCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(3))
+                    if (((otherTextBox.Checked.Equals(true) && productList[i].getCategory().Equals(8)) || (ppapCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(2)) || (fruitCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(3))
                     || (fishCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(4)) || (japaneseFoodCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(5))
                     || (pancakeCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(6)) || (vegetableCheckBox.Checked.Equals(true) && productList[i].getCategory().Equals(7))))
                     {
@@ -179,6 +179,23 @@ namespace FoodStoreV2.WebForms
                 gridViewDataBind();
                 //    Response.Redirect("SearchPage_WebForm.aspx");
             }
+        }
+        protected string getCategoryName(int cateID)
+        {
+            DatabaseConnector databaseConnector = new DatabaseConnector();
+            List<Category> categoryList = databaseConnector.getCategories();
+            string categoryName = "";
+
+            for (int i = 0; i < categoryList.Count; i++)
+            {
+                if (categoryList[i].getCategoryID() == cateID)
+                {
+                    categoryName = categoryList[i].getCategoryName();
+                }
+            }
+
+
+            return categoryName;
         }
     }
 
