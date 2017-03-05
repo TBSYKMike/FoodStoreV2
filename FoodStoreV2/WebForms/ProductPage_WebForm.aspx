@@ -119,7 +119,7 @@
                     
 
                     <div class="fb-comments col-xs-12 border-custom1 prodcuctinfo" data-href="http://localhost:53559/WebForms/ProductPage_WebForm?param1=<%: selectedProductID %>" data-numposts="5"></div>
-                    <div class="fb-like " data-href="http://localhost:53559/WebForms/ProductPage_WebForm?param1=<%: selectedProductID %>" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                    <br />
                     <br />
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 border-custom1" style="">
