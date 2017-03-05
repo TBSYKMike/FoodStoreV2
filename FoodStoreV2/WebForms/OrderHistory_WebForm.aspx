@@ -73,12 +73,14 @@
 
                      <asp:TemplateField HeaderText="Price">
             <ItemTemplate>
-                <asp:Label ID="txtProductPrice" runat="server" Text='<%# Eval("productPrice") %>'>
+                        <asp:Label ID="txtProductPrice"  runat="server">
+                                     <%# Eval("productPrice") %> kr
                 </asp:Label>
+            
             </ItemTemplate>
         </asp:TemplateField>
                    
-            
+              
                       </Columns>
                                 </asp:GridView>
                
