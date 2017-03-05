@@ -116,16 +116,10 @@
                     </div>
                     <br />
                     Facebook comments:
-                    <div id="fb-root"></div>
-                    <script>(function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v2.8";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
                     
-                    <div class="col-xs-12 fb-comments border-custom1 prodcuctinfo" data-href="http://localhost:53559/WebForms/ProductPage_WebForm?param1=<%: selectedProductID %>" data-numposts="5"></div>
+
+                    <div class="fb-comments col-xs-12 border-custom1 prodcuctinfo" data-href="http://localhost:53559/WebForms/ProductPage_WebForm?param1=<%: selectedProductID %>" data-numposts="5"></div>
+                    <div class="fb-like " data-href="http://localhost:53559/WebForms/ProductPage_WebForm?param1=<%: selectedProductID %>" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
                     <br />
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 border-custom1" style="">
