@@ -79,17 +79,15 @@
             }
 
         %>
-
-        
     </div>
     <div class="col-xs-12 row">
 
-        <div class="col-xs-12 row text-left productdesciption-custom1" >
+        <div class="col-xs-12 row text-left productdesciption-custom1">
             <div class="col-xs-12 jumbotron ">
                 <!-- <div class="page-header"> -->
                 <h1>Product Desciption</h1>
             </div>
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 container border-custom1 menu" style=" margin-right: 4px;">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 container border-custom1 menu" style="margin-right: 4px;">
 
                 <br />
                 <%= category_menu() %>
@@ -101,7 +99,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 border-custom1" style="">
                     <br />
                     <br />
-                    <img class="img-rounded image-custom1 border-custom1" src="<%: selectedProductImageURL %>" alt="HTML5 Icon" style=" width: 100%; height: 100%;">
+                    <img class="img-rounded image-custom1 border-custom1" src="<%: selectedProductImageURL %>" alt="HTML5 Icon" style="width: 100%; height: 100%;">
                     <br />
                     <br />
                     <br />
@@ -117,8 +115,20 @@
                         <br />
                     </div>
                     <br />
+                    Facebook comments:
+                    <div id="fb-root"></div>
+                    <script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+                    
+                    <div class="col-xs-12 fb-comments border-custom1 prodcuctinfo" data-href="http://localhost:53559/WebForms/ProductPage_WebForm?param1=<%: selectedProductID %>" data-numposts="5"></div>
+                    <br />
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 border-custom1" style=" ">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 border-custom1" style="">
 
                     <br />
 
@@ -151,9 +161,9 @@
                         <br />
                     </div>
                     <br />
-                    
-                        <asp:Button class="btn btn-primary btn-lg btn-block" ID="Button1" runat="server" Text="Add to cart" OnClick="Button1_Click1" />
-                    
+
+                    <asp:Button class="btn btn-primary btn-lg btn-block" ID="Button1" runat="server" Text="Add to cart" OnClick="Button1_Click1" />
+
                     <br />
 
                 </div>
