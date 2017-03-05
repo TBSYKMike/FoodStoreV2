@@ -61,7 +61,12 @@ namespace FoodStoreV2.WebForms
         protected String createPass()
         {
             //Creates a randomly generated password that is 10 characters long with 3 numerals
-            String pass = Membership.GeneratePassword(10, 3);
+            String pass = Membership.GeneratePassword(10, 0);
+            pass = pass.Replace("&", "A").Replace("(","A").Replace(")", "A").Replace(";", "A").Replace(":", "A").Replace("%", "A").Replace("[", "A").Replace("]", "A").Replace("{", "A").Replace("}", "A").Replace("-", "A").Replace("*", "A").Replace("#", "A").Replace("|", "A");
+
+            //DateTime localDate = DateTime.Now;
+            //String pass = localDate.ToString();
+            ///System.Diagnostics.Debug.WriteLine(pass);
 
             return pass;
         }
