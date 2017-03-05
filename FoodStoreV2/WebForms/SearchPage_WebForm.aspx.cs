@@ -162,24 +162,38 @@ namespace FoodStoreV2.WebForms
                     {
                         //Produkten matchar
                         System.Diagnostics.Debug.WriteLine("Sökresultat :     " + productList[i].getName() + "  kategori:   " + productList[i].getCategory());
-                        matchedProductList.Add(productList[i]);
+                        if(!checkIfExistInList(matchedProductList, productList[i]))
+                             matchedProductList.Add(productList[i]);
                     }
                     else if (otherTextBox.Checked.Equals(false) && ppapCheckBox.Checked.Equals(false) && fruitCheckBox.Checked.Equals(false) && fishCheckBox.Checked.Equals(false) && japaneseFoodCheckBox.Checked.Equals(false)
                         && pancakeCheckBox.Checked.Equals(false) && vegetableCheckBox.Checked.Equals(false))
                     {
                         //Om vi inte gjort någon kategorisökning
-                        matchedProductList.Add(productList[i]);                
+                        if (!checkIfExistInList(matchedProductList, productList[i]))
+                            matchedProductList.Add(productList[i]);                
                     }
                     else
                     {
             
                     }
                 }
+
                 Session.Add("productList", matchedProductList);
                 addProductsDataToGridView();
                 gridViewDataBind();
                 //    Response.Redirect("SearchPage_WebForm.aspx");
             }
+        }
+        private Boolean checkIfExistInList(List<Product> matchedProducts, Product productToAdd)
+        {
+            for(int i=0;i<matchedProducts.Count; i++)
+            {
+                if (matchedProducts[i].getName().Equals(productToAdd.getName()))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         protected string getCategoryName(int cateID)
         {
