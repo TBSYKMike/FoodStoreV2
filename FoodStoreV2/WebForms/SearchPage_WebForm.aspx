@@ -55,21 +55,29 @@
                  <div class="round_corners">  
                  <asp:GridView ID="searchResultGridView" AutoGenerateColumns="false" runat="server" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="OnSelectedIndexChanged" class="productgridview">
                     <Columns>
-
-                        <asp:TemplateField HeaderText="Name">
+                        <asp:TemplateField>
+                              <HeaderTemplate>
+                    <asp:Button runat="server" class="btn btn-primary btn-xs" ID="nameSortButton" HeaderText="Name" Text="Name" OnClick="sortOnName_click"/>
+                </HeaderTemplate>
                             <ItemTemplate>
                                 <asp:LinkButton runat="server" CssClass="noeffect" ID="openProductButton" Text='<%# Eval("name") %>' Style="font-size: 12px;" OnClick="product_onClick" CausesValidation="False"></asp:LinkButton>
 
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Price">
+                        <asp:TemplateField>
+                             <HeaderTemplate>
+                    <asp:Button runat="server" class="btn btn-primary btn-xs" ID="priceSortButton" HeaderText="Price" Text="Price" OnClick="sortOnPrice_click"/>
+                </HeaderTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="txtPrice" runat="server">
                                      <%# Eval("Price") %> kr
                                 </asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Category">
+                        <asp:TemplateField>
+                             <HeaderTemplate>
+                    <asp:Button runat="server" class="btn btn-primary btn-xs" ID="categorySortButton" HeaderText="Category" Text="Category" OnClick="sortOnCategory_click"/>
+                </HeaderTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="txtCategory" runat="server" Text='<%# Eval("Category") %>'>
 
@@ -77,7 +85,10 @@
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Amount">
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                              <asp:Button runat="server" class="btn btn-primary btn-xs" ID="amountSortButton" HeaderText="Amount" Text="Amount" OnClick="sortOnAmount_click"/>
+                                </HeaderTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="txtAmount" runat="server" Text='<%# Eval("Amount") %>'>
 

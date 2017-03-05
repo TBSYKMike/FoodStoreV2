@@ -24,6 +24,7 @@ namespace FoodStoreV2.WebForms
             }
             if (!Page.IsPostBack)
             {
+                setSortValues();
                 dataTable = new DataTable();
                 createDataTable();
 
@@ -197,6 +198,81 @@ namespace FoodStoreV2.WebForms
 
             return categoryName;
         }
+
+        protected void sortOnName_click(object sender, EventArgs e)
+        {
+            if ((int)ViewState["nameSortValue"] == 0)
+            {
+                ViewState["nameSortValue"] = 1;
+                productList = productList.OrderBy(o => o.getName()).ToList();
+            }
+            else
+            {
+                ViewState["nameSortValue"] = 0;
+                productList = productList.OrderByDescending(o => o.getName()).ToList();
+            }
+            updateTable();
+        }
+        protected void sortOnCategory_click(object sender, EventArgs e)
+        {
+            if ((int)ViewState["categorySortValue"] == 0)
+            {
+                ViewState["categorySortValue"] = 1;
+                productList = productList.OrderBy(o => o.getCategory()).ToList();
+            }
+            else
+            {
+                ViewState["categorySortValue"] = 0;
+                productList = productList.OrderByDescending(o => o.getCategory()).ToList();
+            }
+      
+            updateTable();
+        }
+        protected void sortOnAmount_click(object sender, EventArgs e)
+        {
+            if ((int)ViewState["amountSortValue"] == 0)
+            {
+                ViewState["amountSortValue"] = 1;
+                productList = productList.OrderBy(c => int.Parse(c.getAmount())).ToList();
+            }
+            else
+            {
+                ViewState["amountSortValue"] = 0;
+                productList = productList.OrderByDescending(c => int.Parse(c.getAmount())).ToList();
+            }
+            
+            updateTable();
+        }
+        protected void sortOnPrice_click(object sender, EventArgs e)
+        {
+            if ((int)ViewState["priceSortValue"] == 0)
+            {
+                ViewState["priceSortValue"] = 1;
+                productList = productList.OrderBy(c => int.Parse(c.getPrice())).ToList();
+            }
+            else
+            {
+                ViewState["priceSortValue"] = 0;
+                productList = productList.OrderByDescending(c => int.Parse(c.getPrice())).ToList();
+            }
+          
+            updateTable();
+        }
+        private void updateTable()
+        {
+            Session.Add("productList", productList);
+            dataTable.Clear();
+            addProductsDataToGridView();
+            gridViewDataBind();
+        }
+        private void setSortValues()
+        {
+            ViewState["nameSortValue"] = 0;
+            ViewState["priceSortValue"] = 0;
+            ViewState["categorySortValue"] = 0;
+            ViewState["amountSortValue"] = 0;
+        }
+       
     }
 
 }
